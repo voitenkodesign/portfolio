@@ -85,6 +85,9 @@ strong { color: var(--title); font-weight: 600; }
 .card__media { position: relative; aspect-ratio: 5 / 4; overflow: hidden; background: #1a1a1b; }
 .card__media img { width: 100%; height: 100%; object-fit: cover; transition: filter .25s ease; }
 .card__link:hover .card__media img { filter: brightness(.82); }
+/* 3F Superliga card: show the whole cover at full card width (natural aspect ratio, no crop) */
+.card__media--contain { aspect-ratio: auto; }
+.card__media--contain img { height: auto; object-fit: contain; }
 .card__media .badge { position: absolute; top: 16px; left: 16px; background: rgba(16, 16, 16, .72); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
 .card__body { display: flex; flex-direction: column; flex: 1; padding: 22px 24px 24px; }
 .card__title { font-size: 1.25rem; line-height: 1.3; letter-spacing: -.015em; margin-bottom: 8px; }
