@@ -61,7 +61,12 @@ strong { color: var(--title); font-weight: 600; }
 .hero { padding-top: 112px; padding-bottom: 24px; }
 .hero__title { font-size: clamp(2.25rem, 4.6vw, 3.6rem); line-height: 1.12; letter-spacing: -.03em; max-width: 20ch; }
 .hero__sub { margin: 24px 0 0; font-size: 1.125rem; color: var(--text); }
-.hero__lead { margin-top: 24px; max-width: 46ch; font-size: 1.15rem; color: var(--text); }
+.hero__intro { margin-top: 48px; max-width: 46ch; }
+.hero__hi { color: var(--text); font-size: 1rem; margin: 0 0 14px; }
+.tags { list-style: none; padding: 0; margin: 0 0 20px; display: flex; flex-wrap: wrap; gap: 8px; }
+.tags li { font-size: .85rem; font-weight: 500; color: var(--text); background: rgba(255, 255, 255, .06); border-radius: 999px; padding: 4px 12px; }
+.hero__lead { margin: 24px 0 0; max-width: 46ch; font-size: 1.15rem; color: var(--text); }
+.hero__intro .hero__lead { margin-top: 0; font-size: 1.0625rem; }
 
 .section { padding-top: 112px; }
 .section--work { padding-top: 80px; }
