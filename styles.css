@@ -111,53 +111,54 @@ strong { color: var(--title); font-weight: 600; }
 
 .about { max-width: var(--prose); font-size: 1.125rem; }
 
-/* Case pages — one ~720px text column, wider media column, numbered sections */
-:root { --media: 1080px; --col: 720px; }
-.case-hero { padding-top: 72px; padding-bottom: 8px; max-width: calc(var(--col) + 48px); }
-.case-hero .eyebrow { font-size: .85rem; margin-bottom: 14px; }
-.case-hero h1 { font-size: clamp(1.9rem, 4.2vw, 2.375rem); line-height: 1.18; letter-spacing: -.025em; }
-.case-meta { margin: 14px 0 0; font-size: .95rem; line-height: 1.55; color: var(--text); max-width: 62ch; }
+/* Case pages — left-aligned in a 1120px content column (structure follows the reference case study):
+   title, then numbered section rows; body text 640px; images run the full content width. */
+:root { --case: 1120px; --body: 640px; }
+.case-hero, .prose, .pager { max-width: calc(var(--case) + 48px); }
+.case-hero { padding-top: 72px; padding-bottom: 0; }
+.case-hero h1 { font-size: clamp(2rem, 4vw, 2.5rem); font-weight: 500; line-height: 1.15; letter-spacing: -.025em; color: var(--title); max-width: 24ch; }
+.case-hero .badge { margin-top: 20px; }
 
-.prose { max-width: calc(var(--col) + 48px); counter-reset: section; }
-.prose > hr { border: 0; border-top: 1px solid var(--line); margin: 40px 0; }
+.prose { counter-reset: section; font-size: 1.125rem; line-height: 1.65; }
+.prose > p, .prose > ul, .prose > h3 { max-width: var(--body); }
 .prose > p, .prose > ul { color: var(--text); }
-.prose > p:first-child { font-size: 1.2rem; margin-top: 40px; }
-.prose h2 { font-size: clamp(1.4rem, 2.4vw, 1.65rem); margin: 80px 0 18px; }
+.prose > p:first-child { font-size: 1.25rem; line-height: 1.6; max-width: 760px; margin-top: 40px; }
+.prose > hr { border: 0; border-top: 1px solid var(--line); margin: 48px 0; }
+.prose h2 { font-size: clamp(1.6rem, 3vw, 2rem); line-height: 1.2; letter-spacing: -.02em; margin: 120px 0 24px; }
+/* Section row: muted number + heading on one line (number via CSS counter, heading text untouched) */
+.prose > h2 { display: flex; align-items: baseline; gap: 20px; }
 .prose > h2::before {
   counter-increment: section; content: counter(section, decimal-leading-zero);
-  display: inline-block; min-width: 2.4em; margin-right: .2em;
-  font-size: .62em; font-weight: 500; letter-spacing: 0; color: var(--text);
-  font-variant-numeric: tabular-nums; vertical-align: .18em;
+  flex: none; font-size: 1em; font-weight: 500; color: var(--text); font-variant-numeric: tabular-nums;
 }
-.prose h3 { font-size: 1.1rem; margin: 48px 0 12px; }
+.prose h3 { font-size: 1.2rem; margin: 48px 0 12px; }
 .prose ul { padding-left: 1.2em; margin: 0 0 1.2em; }
 .prose li { margin-bottom: .45em; }
 .prose li::marker { color: var(--text); }
 .prose a { text-decoration: underline; text-decoration-color: rgba(255, 255, 255, .3); }
 .prose a:hover { text-decoration-color: currentColor; }
+.prose .stats { max-width: none; }
 
-/* Media inside cases: wide images break out of the text column into a wider media column */
-.media, .gallery { margin: 40px 0; }
-@media (min-width: 900px) {
-  .media, .gallery { width: min(var(--media), 100vw - 48px); margin-left: 50%; transform: translateX(-50%); }
-}
+/* Media: same left edge as the title, full content width */
+.media, .gallery { margin: 40px 0; width: 100%; }
 .fig { margin: 0; }
 .fig img { width: 100%; border-radius: var(--radius); background: #1a1a1b; border: 0; box-shadow: none; }
-.fig figcaption { margin-top: 10px; font-size: .85rem; line-height: 1.5; color: var(--text); }
-.media--tall .fig { max-width: 420px; margin: 0 auto; }
-.media--mid .fig { max-width: 760px; margin: 0 auto; }
+.fig figcaption { margin-top: 10px; font-size: .8125rem; line-height: 1.5; color: var(--text); }
+/* Tall non-phone captures (long web pages) stay left-aligned at half width so they are not metres tall */
+.media--tall .fig { max-width: calc((100% - 16px) / 2); }
+/* Single phone capture: the width of one cell in a 3-up phone row */
+.media--phone .fig { max-width: calc((100% - 32px) / 3); }
 .gallery { display: grid; gap: 16px; grid-template-columns: repeat(var(--cols, 3), 1fr); }
-@media (max-width: 699px) { .gallery { grid-template-columns: 1fr; } }
-/* Phone-screenshot groups: 3 per row on desktop (a short last row is centred), 1 per row on mobile */
-.gallery--phones { display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; gap: 24px 16px; }
-.gallery--phones .fig { flex: 0 0 calc((100% - 32px) / 3); }
+/* Phone-screenshot groups: 3 per row, left-aligned (a short last row stays on the left) */
+.gallery--phones { grid-template-columns: repeat(3, 1fr); gap: 32px 16px; align-items: start; }
 @media (max-width: 699px) {
-  .gallery--phones { gap: 24px; }
-  .gallery--phones .fig { flex: 0 0 100%; max-width: 360px; }
+  .prose h2 { margin-top: 88px; }
+  .gallery, .gallery--phones { grid-template-columns: 1fr; gap: 24px; }
+  .media--tall .fig, .media--phone .fig { max-width: 100%; }
 }
 
-/* Prev / next: quiet text rows */
-.pager { display: flex; flex-direction: column; gap: 10px; margin-top: 96px; max-width: calc(var(--col) + 48px); }
+/* Prev / next: quiet text rows, left-aligned */
+.pager { display: flex; flex-direction: column; gap: 10px; margin-top: 120px; }
 .pager .more { margin: 0; }
 .pager > span:empty { display: none; }
 
