@@ -146,15 +146,21 @@ strong { color: var(--title); font-weight: 600; }
 .fig figcaption { margin-top: 10px; font-size: .8125rem; line-height: 1.5; color: var(--text); }
 /* Tall non-phone captures (long web pages) stay left-aligned at half width so they are not metres tall */
 .media--tall .fig { max-width: calc((100% - 16px) / 2); }
-/* Single phone capture: the width of one cell in a 3-up phone row */
-.media--phone .fig { max-width: calc((100% - 32px) / 3); }
 .gallery { display: grid; gap: 16px; grid-template-columns: repeat(var(--cols, 3), 1fr); }
-/* Phone-screenshot groups: 3 per row, left-aligned (a short last row stays on the left) */
-.gallery--phones { grid-template-columns: repeat(3, 1fr); gap: 32px 16px; align-items: start; }
+/* Phone screens as cards: 3 equal cards per row, left-aligned grid (a leftover card keeps card width
+   and stays on the left). A single phone capture (.media--phone) uses the same grid as one card. */
+.gallery--phones, .media--phone { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; align-items: stretch; }
+.gallery--phones .fig, .media--phone .fig {
+  max-width: none; display: flex; flex-direction: column; align-items: center;
+  background: #1a1a1c; border-radius: 24px; padding: 28px 20px; border: 0; box-shadow: none;
+}
+.gallery--phones .fig img, .media--phone .fig img { width: 100%; max-width: 280px; height: auto; object-fit: contain; background: transparent; }
+.gallery--phones .fig figcaption, .media--phone .fig figcaption { width: 100%; max-width: 280px; margin-top: 14px; font-size: 13px; }
 @media (max-width: 699px) {
   .prose h2 { margin-top: 88px; }
-  .gallery, .gallery--phones { grid-template-columns: 1fr; gap: 24px; }
-  .media--tall .fig, .media--phone .fig { max-width: 100%; }
+  .gallery { grid-template-columns: 1fr; gap: 24px; }
+  .gallery--phones, .media--phone { grid-template-columns: 1fr; gap: 16px; }
+  .media--tall .fig { max-width: 100%; }
 }
 
 /* Prev / next: quiet text rows, left-aligned */
