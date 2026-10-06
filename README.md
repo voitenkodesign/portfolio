@@ -1,6 +1,6 @@
 # Voitenko Design — Portfolio
 
-Static portfolio site: plain HTML + one shared `styles.css` and a tiny optional `script.js` (scroll fade-in, respects `prefers-reduced-motion`). No framework, no npm, no build step.
+Static portfolio site: plain HTML + one shared `styles.css`. No JavaScript, no framework, no npm, no build step.
 
 ## Pages
 
