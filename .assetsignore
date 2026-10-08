@@ -1,2 +1,7 @@
 .git
 .github
+# Source material and repo docs: kept in git, not deployed
+Voitenko Design*
+about.png
+*.md
+wrangler.json

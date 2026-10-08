@@ -1,6 +1,6 @@
 # Voitenko Design — Portfolio
 
-Static portfolio site: plain HTML + one shared `styles.css`. No JavaScript, no framework, no npm, no build step.
+Static portfolio site: plain HTML + one shared `styles.css`. No framework, no npm, no build step. Case pages load one small script, `motion.js` (image fade-in, progressive enhancement: the page works without it).
 
 ## Pages
 
@@ -16,11 +16,25 @@ Static portfolio site: plain HTML + one shared `styles.css`. No JavaScript, no f
 | `other-work.html` | Other work (visual and marketing work) |
 | `404.html` | Not-found page |
 
+## Images
+
+Site images live in `img/<case>/` as WebP with ASCII kebab-case names (home card covers are 1200px wide, case images at most 2048px). `og.jpg` (1200×630) is the share image.
+
 ## Source
 
-Text and images come from the Notion/Super export in `Voitenko Design — Portfolio/` and the root markdown file. Images are referenced in place (URL-encoded paths); the export files are not modified.
+Text and original images come from the Notion/Super export in `Voitenko Design — Portfolio/` and the root markdown file. The export is kept in git unchanged as the source of truth, but it is not deployed (see `.assetsignore`).
 
-## Preview / deploy
+## Deploy
 
-- Local: `python3 -m http.server` in the repo root, then open http://localhost:8000
-- Cloudflare Pages: no build command, output directory `/` (repo root).
+Cloudflare Workers static assets, configured in `wrangler.json`:
+
+- `assets.directory: "."`: the repo root is the site; no build command.
+- `html_handling: "none"`: URLs are exactly the file names (`/live-quiz.html`, not `/live-quiz`). `_redirects` serves `/` as `index.html`.
+- `not_found_handling: "404-page"`: unknown paths get `404.html` (it uses root-absolute paths so it works at any depth).
+- `.assetsignore` keeps `.git`, the Notion export, `*.md` and `wrangler.json` out of the deployed assets.
+
+SEO files: `robots.txt` and `sitemap.xml` (add a new page to the sitemap when you add a case).
+
+## Preview
+
+Any static server in the repo root, e.g. `python3 -m http.server`, then open http://localhost:8000
