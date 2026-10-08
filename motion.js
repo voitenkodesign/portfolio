@@ -1,10 +1,10 @@
-// Case pages: image blocks fade in (opacity only, 200ms in styles.css) as they enter the viewport.
+// Case image blocks and home sections fade in (styles.css: .case-media) as they enter the viewport.
 // Progressive enhancement: nothing is hidden unless this script runs, IntersectionObserver exists
 // and the visitor has not asked for reduced motion. Blocks already in view are shown immediately.
 (function () {
   if (!('IntersectionObserver' in window)) return;
   if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  var blocks = document.querySelectorAll('.case .prose > .media, .case .prose > .gallery');
+  var blocks = document.querySelectorAll('.case .prose > .media, .case .prose > .gallery, .cards > .card, .clubs, .stats, .about__row, .cta');
   if (!blocks.length) return;
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
