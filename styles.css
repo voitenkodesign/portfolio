@@ -131,7 +131,7 @@ strong { color: var(--title); font-weight: 600; }
 .hero__cta { margin: 28px 0 0; }
 
 .section { padding-top: var(--space-section); }
-.section--work { padding-top: 80px; }
+.section--clubs { padding-top: 80px; }
 
 /* Home: case cards — image on top, title, one line, "View case" */
 .cards { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr; gap: 16px; }
@@ -196,6 +196,7 @@ strong { color: var(--title); font-weight: 600; }
   .about__intro > .about__portrait { max-height: 630px; min-height: 0; }
 }
 .about__portrait { border-radius: var(--radius-lg); overflow: hidden; background: var(--surface); min-height: 280px; }
+@media (max-width: 759px) { .about__portrait { height: min(440px, 110vw); } }
 .about__portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
 .about__value { font-size: clamp(1.8rem, 3.2vw, 2.3rem); font-weight: 500; color: var(--title); letter-spacing: -.03em; line-height: 1.1; margin: 0 0 8px; }
 .about__label { color: var(--text); margin: 0; font-size: 1rem; }
