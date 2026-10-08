@@ -31,7 +31,8 @@ Cloudflare Workers static assets, configured in `wrangler.json`:
 - `assets.directory: "."`: the repo root is the site; no build command.
 - `html_handling: "none"`: URLs are exactly the file names (`/live-quiz.html`, not `/live-quiz`). `_redirects` serves `/` as `index.html`.
 - `not_found_handling: "404-page"`: unknown paths get `404.html` (it uses root-absolute paths so it works at any depth).
-- `.assetsignore` keeps `.git`, the Notion export, `*.md` and `wrangler.json` out of the deployed assets.
+- `previews: {}`: required by `npx wrangler preview`, which Workers Builds runs for non-`main` branches (PR previews).
+- `.assetsignore` keeps `.git`, `.wrangler` (build temp files), the Notion export, `*.md` and `wrangler.json` out of the deployed assets.
 
 SEO files: `robots.txt` and `sitemap.xml` (add a new page to the sitemap when you add a case).
 
