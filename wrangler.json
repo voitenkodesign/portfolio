@@ -1,6 +1,7 @@
 {
   "name": "portfolio",
   "compatibility_date": "2026-10-01",
+  "previews": {},
   "assets": {
     "directory": ".",
     "html_handling": "none",
