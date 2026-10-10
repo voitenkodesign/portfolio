@@ -121,11 +121,16 @@ strong { color: var(--title); font-weight: 600; }
 .status__dot { position: relative; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
 .status__dot::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: var(--accent); animation: pulse 2.4s ease-out infinite; }
 @keyframes pulse { from { transform: scale(1); opacity: .6; } 70%, to { transform: scale(2.6); opacity: 0; } }
-.hero__sub { margin: 0 0 20px; font-size: 1.125rem; color: var(--text); }
-.hero__intro { margin-top: 48px; max-width: 46ch; }
+/* The title sits in equal space: same gap to the role line above and to the lead below */
+.hero { --hero-gap: 24px; }
+.hero__sub { margin: 0 0 var(--hero-gap); font-size: 1.125rem; color: var(--text); }
+.hero__intro { margin-top: var(--hero-gap); max-width: 46ch; }
+/* "actually use." in a true italic (Manrope has none, a synthetic slant looks cheap) */
+.hero__title em { font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-weight: 400; font-size: 1.12em; letter-spacing: -.01em; }
 .hero__hi { color: var(--text); font-size: 1rem; margin: 0 0 14px; }
-.tags { list-style: none; padding: 0; margin: 0 0 20px; display: flex; flex-wrap: wrap; gap: 8px; }
-.tags li { font-size: .85rem; font-weight: 500; color: var(--text); background: rgba(255, 255, 255, .06); border-radius: 999px; padding: 4px 12px; }
+/* Skills: a quiet text line under the button, not pills that look tappable */
+.tags { list-style: none; padding: 0; margin: 20px 0 0; display: flex; flex-wrap: wrap; gap: 4px 0; font-size: .875rem; color: var(--text); }
+.tags li + li::before { content: "·"; margin: 0 10px; opacity: .6; }
 .hero__lead { margin: 24px 0 0; max-width: 46ch; font-size: 1.15rem; color: var(--text); }
 .hero__intro .hero__lead { margin-top: 0; font-size: 1.0625rem; }
 .hero__cta { margin: 28px 0 0; }
