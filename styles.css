@@ -97,6 +97,16 @@ strong { color: var(--title); font-weight: 600; }
 .local-time time { font-variant-numeric: tabular-nums; }
 .local-time .colon { animation: colon-blink 1s ease-in-out infinite; }
 @keyframes colon-blink { 0%, 100% { opacity: 1; } 50% { opacity: .25; } }
+/* Clock easter egg: a small bubble above the footer line (anchored to its left edge, so it never overflows) */
+.site-footer__inner > p:first-child { position: relative; }
+.local-time__clock { border-radius: 4px; cursor: default; }
+.local-time__note {
+  position: absolute; left: 0; bottom: calc(100% + var(--s-2)); z-index: 2;
+  padding: 6px var(--s-3); border-radius: var(--s-2); background: var(--surface-hover);
+  font-size: .8125rem; line-height: 1.4; color: var(--title); white-space: nowrap;
+  opacity: 0; transform: translateY(4px); pointer-events: none; transition: opacity .2s ease, transform .2s var(--ease-out);
+}
+.local-time.is-open .local-time__note { opacity: 1; transform: none; }
 
 /* Shared bits */
 .eyebrow { font-size: .9rem; font-weight: 500; color: var(--text); margin: 0 0 12px; display: flex; align-items: center; gap: 10px; }
