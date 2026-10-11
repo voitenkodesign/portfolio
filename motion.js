@@ -25,6 +25,21 @@
   slot.hidden = false;
 })();
 
+// Home: on touch screens there is no hover, so a tap on "Open to work" makes the dot wink (CSS .is-winking).
+(function () {
+  var status = document.querySelector('.status');
+  if (!status) return;
+  var timer;
+  status.addEventListener('pointerdown', function (e) {
+    if (e.pointerType === 'mouse') return; // mouse already winks on hover
+    clearTimeout(timer);
+    status.classList.remove('is-winking');
+    void status.offsetWidth; // restart the animation on repeated taps
+    status.classList.add('is-winking');
+    timer = setTimeout(function () { status.classList.remove('is-winking'); }, 400); // wink is .34s
+  });
+})();
+
 // Home: hide the header "Email me" while the hero buttons are visible, show it once they scroll away.
 (function () {
   var cta = document.querySelector('.hero__cta');

@@ -130,6 +130,14 @@ strong { color: var(--title); font-weight: 600; }
 .status__dot { position: relative; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
 .status__dot::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: var(--accent); animation: pulse 2.4s ease-out infinite; }
 @keyframes pulse { from { transform: scale(1); opacity: .6; } 70%, to { transform: scale(2.6); opacity: 0; } }
+/* Easter egg: the dot winks once on hover (tap on touch: motion.js adds .is-winking); the pulse ring rests meanwhile */
+.status.is-winking .status__dot { animation: wink .34s ease-in-out 1; }
+.status.is-winking .status__dot::after { animation: none; opacity: 0; }
+@media (hover: hover) {
+  .status:hover .status__dot { animation: wink .34s ease-in-out 1; }
+  .status:hover .status__dot::after { animation: none; opacity: 0; }
+}
+@keyframes wink { 0%, 100% { transform: scaleY(1); } 40%, 60% { transform: scaleY(.15); } }
 /* The title sits in equal space: same gap to the role line above and to the lead below */
 .hero { --hero-gap: var(--s-5); }
 .hero__sub { margin: 0 0 var(--hero-gap); font-size: 1.125rem; color: var(--text); }
