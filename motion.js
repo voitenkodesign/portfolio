@@ -1,6 +1,16 @@
 // Case image blocks and home sections fade in (styles.css: .case-media) as they enter the viewport.
 // Progressive enhancement: nothing is hidden unless this script runs, IntersectionObserver exists
 // and the visitor has not asked for reduced motion. Blocks already in view are shown immediately.
+// Home: hide the header "Email me" while the hero buttons are visible, show it once they scroll away.
+(function () {
+  var cta = document.querySelector('.hero__cta');
+  if (!cta || !('IntersectionObserver' in window)) return;
+  var root = document.documentElement;
+  new IntersectionObserver(function (entries) {
+    root.classList.toggle('hero-cta-visible', entries[0].isIntersecting);
+  }, { rootMargin: '-64px 0px 0px 0px' }).observe(cta);
+})();
+
 (function () {
   if (!('IntersectionObserver' in window)) return;
   if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;

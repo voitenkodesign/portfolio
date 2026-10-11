@@ -133,7 +133,11 @@ strong { color: var(--title); font-weight: 600; }
 .tags li + li::before { content: "·"; margin: 0 10px; opacity: .6; }
 .hero__lead { margin: 24px 0 0; max-width: 46ch; font-size: 1.15rem; color: var(--text); }
 .hero__intro .hero__lead { margin-top: 0; font-size: 1.0625rem; }
-.hero__cta { margin: 28px 0 0; }
+.hero__cta { display: flex; flex-wrap: wrap; gap: 12px; margin: 28px 0 0; }
+/* Home: the header "Email me" stays hidden while the hero buttons are on screen (motion.js toggles
+   .hero-cta-visible on <html>), so there is only ever one "Email me" in view. No JS = always shown. */
+.site-nav .btn { transition: opacity .2s ease, visibility .2s, transform .2s var(--ease-out); }
+.hero-cta-visible .site-nav .btn { opacity: 0; visibility: hidden; transform: translateY(-4px); }
 
 .section { padding-top: var(--space-section); }
 .section--clubs { padding-top: 80px; }
