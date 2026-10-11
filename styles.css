@@ -229,6 +229,8 @@ strong { color: var(--title); font-weight: 600; }
 /* In running text the arrow is a touch larger than next to big figures; centre stays at .375em */
 .arrow { width: .95em; height: .66em; vertical-align: .045em; }
 .arrow--end { margin-right: 0; margin-left: .3em; transition: transform .3s var(--ease-out); }
+/* After lowercase words (links, "View case"): sized to and centred on the x-height (Mona Sans .53em) */
+.arrow--x { width: .81em; height: .5em; vertical-align: .015em; }
 a:hover .arrow--end { transform: translateX(3px); }
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 .section .stats { margin-top: 0; }
