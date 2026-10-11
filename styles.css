@@ -6,7 +6,7 @@
   --title: #f4f4f5;
   --text: rgba(255, 255, 255, .62);
   --link: #fff;
-  --font: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font: "Mona Sans", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --wrap: 1200px;
   --prose: 700px;
   --surface: #1a1a1c;
@@ -41,6 +41,8 @@ a { color: var(--link); text-decoration: none; text-underline-offset: .2em; text
 a:hover { color: var(--link); text-decoration: underline; }
 :focus-visible { outline: 2px solid var(--title); outline-offset: 3px; border-radius: 4px; }
 h1, h2, h3 { font-family: var(--font); font-weight: 500; color: var(--title); line-height: 1.2; letter-spacing: -.02em; margin: 0; }
+/* One family, two voices: display text uses Mona Sans' width axis a little wider, body text stays at 100% */
+h1, h2, h3, .stat__value, .about__value { font-stretch: 112%; }
 p { margin: 0 0 1em; }
 strong { color: var(--title); font-weight: 600; }
 
@@ -97,7 +99,7 @@ strong { color: var(--title); font-weight: 600; }
 
 /* Home: hero — text, then the work visual (side by side from 1000px) */
 .hero { padding-top: clamp(40px, 8vw, 112px); padding-bottom: 24px; }
-.hero__title { font-size: clamp(2.25rem, 4.6vw, 3.6rem); line-height: 1.12; letter-spacing: -.03em; max-width: 20ch; }
+.hero__title { font-size: clamp(2.125rem, 4.6vw, 3.6rem); line-height: 1.12; letter-spacing: -.03em; max-width: 20ch; }
 .hero__media { margin-top: 56px; border-radius: var(--radius-lg); overflow: hidden; background: #1d1d1f; }
 .hero__media img { width: 100%; }
 @media (min-width: 1000px) {
@@ -125,8 +127,8 @@ strong { color: var(--title); font-weight: 600; }
 .hero { --hero-gap: 24px; }
 .hero__sub { margin: 0 0 var(--hero-gap); font-size: 1.125rem; color: var(--text); }
 .hero__intro { margin-top: var(--hero-gap); max-width: 46ch; }
-/* "actually use." in a true italic (Manrope has none, a synthetic slant looks cheap) */
-.hero__title em { font-family: "Instrument Serif", Georgia, serif; font-style: italic; font-weight: 400; font-size: 1.12em; letter-spacing: -.01em; }
+/* "actually use." in Mona Sans' own true italic */
+.hero__title em { font-style: italic; white-space: nowrap; }
 .hero__hi { color: var(--text); font-size: 1rem; margin: 0 0 14px; }
 /* Skills: a quiet text line under the button, not pills that look tappable */
 .tags { list-style: none; padding: 0; margin: 20px 0 0; display: flex; flex-wrap: wrap; gap: 4px 0; font-size: .875rem; color: var(--text); }
