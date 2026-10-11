@@ -92,6 +92,7 @@ strong { color: var(--title); font-weight: 600; }
 .site-footer { border-top: 1px solid var(--line); margin-top: var(--space-section); padding: var(--s-6) 0 var(--s-7); color: var(--text); font-size: .9rem; }
 .site-footer__inner { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--s-2) var(--s-5); }
 .site-footer p { margin: 0; }
+.local-time time { font-variant-numeric: tabular-nums; }
 
 /* Shared bits */
 .eyebrow { font-size: .9rem; font-weight: 500; color: var(--text); margin: 0 0 12px; display: flex; align-items: center; gap: 10px; }

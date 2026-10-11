@@ -1,6 +1,25 @@
 // Case image blocks and home sections fade in (styles.css: .case-media) as they enter the viewport.
 // Progressive enhancement: nothing is hidden unless this script runs, IntersectionObserver exists
 // and the visitor has not asked for reduced motion. Blocks already in view are shown immediately.
+// Footer: current time in Kyiv ("Kyiv 14:32"), updated on the minute. Hidden if the browser can't do it.
+(function () {
+  var slot = document.querySelector('.local-time');
+  if (!slot || !window.Intl) return;
+  var out = slot.querySelector('time');
+  var fmt, zones = ['Europe/Kyiv', 'Europe/Kiev']; // older browsers only know the old spelling
+  for (var i = 0; i < zones.length && !fmt; i++) {
+    try { fmt = new Intl.DateTimeFormat('en-GB', { timeZone: zones[i], hour: '2-digit', minute: '2-digit', hour12: false }); } catch (e) {}
+  }
+  if (!fmt) return;
+  function tick() {
+    var now = new Date();
+    out.textContent = fmt.format(now);
+    setTimeout(tick, 60000 - (now.getSeconds() * 1000 + now.getMilliseconds()) + 50);
+  }
+  tick();
+  slot.hidden = false;
+})();
+
 // Home: hide the header "Email me" while the hero buttons are visible, show it once they scroll away.
 (function () {
   var cta = document.querySelector('.hero__cta');
