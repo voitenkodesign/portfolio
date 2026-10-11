@@ -11,9 +11,14 @@
     try { fmt = new Intl.DateTimeFormat('en-GB', { timeZone: zones[i], hour: '2-digit', minute: '2-digit', hour12: false }); } catch (e) {}
   }
   if (!fmt) return;
+  // "14:32" is rendered as 14<span class="colon">:</span>32 so the colon can blink (CSS)
+  var hh = document.createTextNode(''), mm = document.createTextNode(''), colon = document.createElement('span');
+  colon.className = 'colon'; colon.textContent = ':';
+  out.textContent = ''; out.appendChild(hh); out.appendChild(colon); out.appendChild(mm);
   function tick() {
-    var now = new Date();
-    out.textContent = fmt.format(now);
+    var now = new Date(), parts = fmt.format(now).split(':');
+    hh.nodeValue = parts[0]; mm.nodeValue = parts[1];
+    out.setAttribute('datetime', now.toISOString());
     setTimeout(tick, 60000 - (now.getSeconds() * 1000 + now.getMilliseconds()) + 50);
   }
   tick();
