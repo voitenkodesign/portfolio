@@ -171,6 +171,7 @@ strong { color: var(--title); font-weight: 600; }
 .card:hover .card__title, .card:has(.card__link:focus-visible) .card__title { text-decoration: underline; text-underline-offset: .15em; text-decoration-thickness: 1px; }
 .card__media .badge { position: absolute; top: 16px; left: 16px; background: rgba(16, 16, 16, .72); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
 .card__body { display: flex; flex-direction: column; flex: 1; padding: 22px 24px 24px; }
+.card__meta { margin: 0 0 8px; font-size: .8125rem; font-weight: 500; color: var(--text); letter-spacing: .01em; }
 .card__title { font-size: 1.25rem; line-height: 1.3; letter-spacing: -.015em; margin-bottom: 8px; }
 .card__desc { color: var(--text); font-size: 1rem; line-height: 1.55; margin: 0 0 18px; }
 .card__cta { margin-top: auto; color: var(--link); font-size: .95rem; font-weight: 500; }
@@ -181,15 +182,22 @@ strong { color: var(--title); font-weight: 600; }
 .more { margin: 28px 0 0; display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 1rem; }
 .more__label { color: var(--text); }
 
-/* Home: clubs, stats, about */
-.clubs { display: flex; flex-wrap: wrap; gap: 24px 48px; align-items: center; }
-.clubs img { width: 416px; max-width: 100%; }
-.clubs__text { margin-top: 32px; color: var(--text); max-width: 60ch; }
+/* Home: clubs as a quiet trust strip (small label, dimmed logos), then stats, about */
+.trust__label { font-size: .95rem; font-weight: 500; font-stretch: 100%; letter-spacing: 0; color: var(--text); margin: 0 0 20px; }
+.clubs { display: flex; flex-wrap: wrap; gap: 20px 48px; align-items: center; }
+.clubs img { width: 416px; max-width: 100%; opacity: .72; }
+.clubs__text { margin-top: 20px; color: var(--text); font-size: .95rem; max-width: 60ch; }
 
+/* Stats: open figures on a hairline, no boxes — boxes are kept for things you can click */
 .stats { margin: 40px 0; }
-.stats__kicker { font-size: .95rem; color: var(--text); margin-bottom: 20px; max-width: 60ch; }
-.stats__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
-.stat { background: var(--card); border-radius: var(--radius); padding: 24px; }
+.stats__kicker { font-size: .95rem; color: var(--text); margin-bottom: 24px; max-width: 60ch; }
+.stats__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 28px 32px; }
+.stat { padding: 20px 0 0; border-top: 1px solid var(--line); }
+@media (max-width: 599px) {
+  .stats__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 20px; }
+  .stat__value { font-size: clamp(1.3rem, 6.4vw, 1.6rem) !important; white-space: nowrap; }
+  .stat__label { font-size: .875rem !important; }
+}
 .stat__value { font-size: clamp(1.8rem, 3.2vw, 2.3rem); font-weight: 500; color: var(--accent); letter-spacing: -.03em; line-height: 1.1; margin-bottom: 10px; }
 .stat__label { color: var(--text); margin: 0; font-size: .95rem; }
 /* "40% → 15%": an SVG arrow centred on the figures' cap height (the font's → sits on the x-height) */
@@ -207,21 +215,21 @@ strong { color: var(--title); font-weight: 600; }
   .about__intro { grid-template-columns: 1fr 1fr; align-items: stretch; max-height: 630px; }
   .about__facts, .about__contacts { grid-template-columns: 1fr 1fr; }
 }
-.about__text, .about__card {
-  background: var(--surface); border-radius: var(--radius-lg); padding: 32px;
-}
+/* About: text and facts sit open on the page; only the contact cards (clickable) keep a box */
+.about__card { padding: 20px 0 0; border-top: 1px solid var(--line); }
 .about__text { display: flex; flex-direction: column; justify-content: center; }
+@media (min-width: 760px) { .about__text { padding-right: 24px; } }
 .about__text p:last-child { margin-bottom: 0; }
 @media (min-width: 760px) {
   .about__intro > .about__text,
   .about__intro > .about__portrait { max-height: 630px; min-height: 0; }
 }
 .about__portrait { border-radius: var(--radius-lg); overflow: hidden; background: var(--surface); min-height: 280px; }
-@media (max-width: 759px) { .about__portrait { height: min(440px, 110vw); } }
+@media (max-width: 759px) { .about__portrait { aspect-ratio: 1 / 1; min-height: 0; } }
 .about__portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
 .about__value { font-size: clamp(1.8rem, 3.2vw, 2.3rem); font-weight: 500; color: var(--title); letter-spacing: -.03em; line-height: 1.1; margin: 0 0 8px; }
 .about__label { color: var(--text); margin: 0; font-size: 1rem; }
-.about__card--link { display: flex; align-items: center; gap: 14px; color: var(--title); text-decoration: none; font-weight: 500; transition: background-color .15s ease; }
+.about__card--link { display: flex; align-items: center; gap: 14px; padding: 24px 28px; border-top: 0; background: var(--surface); border-radius: var(--radius-lg); color: var(--title); text-decoration: none; font-weight: 500; transition: background-color .15s ease; }
 .about__card--link:hover { color: var(--title); text-decoration: none; background: var(--surface-hover); }
 .about__card--link:hover span { text-decoration: underline; text-underline-offset: .2em; }
 .about__card--link img { width: 28px; height: 28px; flex: none; }
@@ -243,9 +251,19 @@ strong { color: var(--title); font-weight: 600; }
 @media (min-width: 900px) { .case-facts { grid-template-columns: 1fr 1fr 1.2fr 1.6fr; } }
 .case-facts dt { font-size: .8125rem; font-weight: 500; color: var(--text); margin: 0 0 6px; }
 .case-facts dd { margin: 0; font-size: .95rem; line-height: 1.45; color: var(--title); }
+/* Case at a glance: Problem / What I did / Result, three columns on desktop */
+.case-summary {
+  display: grid; grid-template-columns: 1fr; gap: 20px 32px;
+  margin: 28px 0 0; padding: 24px 0 0; border-top: 1px solid var(--line);
+}
+@media (min-width: 900px) { .case-summary { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.case-summary dt { font-size: .8125rem; font-weight: 500; color: var(--accent); margin: 0 0 6px; }
+.case-summary dd { margin: 0; font-size: 1rem; line-height: 1.55; color: var(--title); }
+.case-summary a { text-decoration: underline; text-decoration-color: rgba(255, 255, 255, .3); text-underline-offset: .2em; }
 .case-hero > * { animation: rise .6s var(--ease-out) both; }
 .case-hero > :nth-child(2) { animation-delay: .06s; }
 .case-hero > :nth-child(3) { animation-delay: .12s; }
+.case-hero > :nth-child(4) { animation-delay: .18s; }
 
 /* Closing call to action on case pages */
 .cta { max-width: calc(var(--case) + 48px); margin-top: var(--space-section); }
