@@ -175,7 +175,13 @@ strong { color: var(--title); font-weight: 600; }
 .card__title { font-size: 1.25rem; line-height: 1.3; letter-spacing: -.015em; margin-bottom: 8px; }
 .card__desc { color: var(--text); font-size: 1rem; line-height: 1.55; margin: 0 0 18px; }
 .card__cta { margin-top: auto; color: var(--link); font-size: .95rem; font-weight: 500; }
-.card__cta::after { content: "→"; display: inline-block; margin-left: 6px; transition: transform .3s var(--ease-out); }
+/* Same arrow as .arrow, drawn with a mask so it stays CSS-only and takes the text colour */
+.card__cta::after {
+  content: ""; display: inline-block; width: .95em; height: .66em; margin-left: .3em; vertical-align: .045em; background: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 16'%3E%3Cpath d='M2 8h17.5M14.5 3 19.5 8 14.5 13' fill='none' stroke='black' stroke-width='2.3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 16'%3E%3Cpath d='M2 8h17.5M14.5 3 19.5 8 14.5 13' fill='none' stroke='black' stroke-width='2.3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+  transition: transform .3s var(--ease-out);
+}
 .card:hover .card__cta::after, .card:has(.card__link:focus-visible) .card__cta::after { transform: translateX(4px); }
 
 /* Home: "Other work" — a quiet text row */
@@ -201,8 +207,14 @@ strong { color: var(--title); font-weight: 600; }
 .stat__value { font-size: clamp(1.8rem, 3.2vw, 2.3rem); font-weight: 500; color: var(--accent); letter-spacing: -.03em; line-height: 1.1; margin-bottom: 10px; }
 .stat__label { color: var(--text); margin: 0; font-size: .95rem; }
 /* "40% → 15%": an SVG arrow centred on the figures' cap height (the font's → sits on the x-height) */
-.stat__arrow { display: inline-block; width: .8em; height: .58em; margin: 0 .2em; vertical-align: .085em; }
-.stat__arrow svg { display: block; width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 2.3; stroke-linecap: round; stroke-linejoin: round; }
+/* One arrow for the whole site (stats, body text, links, "View case"): same shape and proportions,
+   sized in em so it follows the text, centred on the cap height */
+.stat__arrow, .arrow { display: inline-block; width: .8em; height: .58em; margin: 0 .2em; vertical-align: .085em; }
+.stat__arrow svg, .arrow svg { display: block; width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 2.3; stroke-linecap: round; stroke-linejoin: round; }
+/* In running text the arrow is a touch larger than next to big figures; centre stays at .375em */
+.arrow { width: .95em; height: .66em; vertical-align: .045em; }
+.arrow--end { margin-right: 0; margin-left: .3em; transition: transform .3s var(--ease-out); }
+a:hover .arrow--end { transform: translateX(3px); }
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 .section .stats { margin-top: 0; }
 
