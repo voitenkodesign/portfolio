@@ -51,7 +51,7 @@
     if (weekend) {
       if (h >= 8 && h < 12) return 'slow weekend morning';
       if (h >= 12 && h < 18) return 'weekend, out and about';
-      if (h >= 18 && h < 23) return 'probably watching football';
+      if (h >= 18 && h < 23) return 'probably watching a movie';
       return 'probably asleep';
     }
     if (h >= 7 && h < 10) return 'morning coffee';
