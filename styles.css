@@ -219,14 +219,15 @@ strong { color: var(--title); font-weight: 600; }
 .clubs img { width: 416px; max-width: 100%; opacity: .72; }
 .clubs__text { margin-top: var(--s-5); color: var(--text); font-size: .95rem; max-width: 60ch; }
 
-/* Stats: open figures on a hairline, no boxes — boxes are kept for things you can click */
+/* Stats: figures in cards (a card grid holds the row together on wide screens) */
 .stats { margin: var(--s-7) 0; }
 .stats__kicker { font-size: .95rem; color: var(--text); margin-bottom: var(--s-5); max-width: 60ch; }
-.stats__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--s-6); }
-.stat { padding: var(--s-4) 0 0; border-top: 1px solid var(--line); }
+.stats__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--s-4); }
+.stat { padding: var(--s-5); background: var(--card); border-radius: var(--radius); }
 @media (max-width: 599px) {
-  .stats__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-5) var(--s-4); }
-  .stat__value { font-size: clamp(1.3rem, 6.4vw, 1.6rem) !important; white-space: nowrap; }
+  .stats__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s-3); }
+  .stat { padding: var(--s-4); }
+  .stat__value { font-size: clamp(1.1rem, 5.4vw, 1.6rem) !important; white-space: nowrap; }
   .stat__label { font-size: .875rem !important; }
 }
 .stat__value { font-size: clamp(1.8rem, 3.2vw, 2.3rem); font-weight: 500; color: var(--accent); letter-spacing: -.03em; line-height: 1.1; margin-bottom: var(--s-2); }
@@ -246,9 +247,9 @@ a:hover .arrow--end { transform: translateX(3px); }
 .section .stats { margin-top: 0; }
 
 .about { font-size: 1.125rem; }
-.about__row { display: grid; gap: var(--s-5); margin-top: var(--s-7); }
-.about__intro { gap: var(--s-6); }
-.about__contacts { gap: var(--s-3); }
+.about__row { display: grid; gap: var(--s-4); margin-top: var(--s-4); }
+
+
 .about__row:first-child { margin-top: 0; }
 .about__intro { grid-template-columns: 1fr; }
 .about__facts, .about__contacts { grid-template-columns: 1fr; }
@@ -256,10 +257,12 @@ a:hover .arrow--end { transform: translateX(3px); }
   .about__intro { grid-template-columns: 1fr 1fr; align-items: stretch; max-height: 630px; }
   .about__facts, .about__contacts { grid-template-columns: 1fr 1fr; }
 }
-/* About: text and facts sit open on the page; only the contact cards (clickable) keep a box */
+/* About: a card grid (text, portrait, facts, contacts), one 16px gap everywhere like a bento */
+.about__text, .about__card { background: var(--surface); border-radius: var(--radius-lg); padding: var(--s-6); }
+@media (max-width: 759px) { .about .about__text, .about .about__card { padding: var(--s-5); } }
 
 .about__text { display: flex; flex-direction: column; justify-content: center; }
-@media (min-width: 760px) { .about__intro { gap: var(--s-7); } .about__contacts { gap: var(--s-4); } }
+
 .about__text p:last-child { margin-bottom: 0; }
 @media (min-width: 760px) {
   .about__intro > .about__text,
@@ -270,7 +273,7 @@ a:hover .arrow--end { transform: translateX(3px); }
 .about__portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
 .about__value { font-size: clamp(1.8rem, 3.2vw, 2.3rem); font-weight: 500; color: var(--title); letter-spacing: -.03em; line-height: 1.1; margin: 0 0 var(--s-2); }
 .about__label { color: var(--text); margin: 0; font-size: 1rem; }
-.about__card--link { display: flex; align-items: center; gap: var(--s-3); padding: var(--s-5); background: var(--surface); border-radius: var(--radius-lg); color: var(--title); text-decoration: none; font-weight: 500; transition: background-color .15s ease; }
+.about__card--link { display: flex; align-items: center; gap: var(--s-3); padding: var(--s-5) var(--s-6); background: var(--surface); border-radius: var(--radius-lg); color: var(--title); text-decoration: none; font-weight: 500; transition: background-color .15s ease; }
 .about__card--link:hover { color: var(--title); text-decoration: none; background: var(--surface-hover); }
 .about__card--link:hover span { text-decoration: underline; text-underline-offset: .2em; }
 .about__card--link img { width: 28px; height: 28px; flex: none; }
