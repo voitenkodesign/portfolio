@@ -64,7 +64,7 @@
   function open(autoClose) {
     var k = kyivNow();
     note.textContent = '';
-    var s = document.createElement('span'); s.className = 'sep'; s.textContent = 'Â·';
+    var s = document.createElement('span'); s.className = 'sep'; s.textContent = '·';
     note.appendChild(document.createTextNode(difference(k))); note.appendChild(s); note.appendChild(document.createTextNode(activity(k)));
     slot.classList.add('is-open');
     clearTimeout(hideTimer);
