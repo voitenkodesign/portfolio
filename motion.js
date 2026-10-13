@@ -43,7 +43,7 @@
     var diff = kyivOffset + now.getTimezoneOffset(); // Kyiv minus visitor, in minutes
     if (!diff) return 'same time as you';
     var abs = Math.abs(diff), h = Math.floor(abs / 60), m = abs % 60;
-    var span = (h ? h + ' h' : '') + (h && m ? ' ' : '') + (m ? m + ' min' : '');
+    var span = (h ? h + '\u00a0h' : '') + (h && m ? ' ' : '') + (m ? m + '\u00a0min' : '');
     return span + (diff > 0 ? ' ahead of you' : ' behind you');
   }
   function activity(k) {

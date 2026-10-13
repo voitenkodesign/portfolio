@@ -101,6 +101,11 @@ h1, h2, h3 { font-family: var(--font); font-weight: 500; color: var(--title); li
 /* One family, two voices: display text uses Mona Sans' width axis a little wider, body text stays at 100% */
 h1, h2, h3, .stat__value, .about__value { font-stretch: 112%; }
 p { margin: 0 0 1em; }
+/* Typography: headings balance their lines (no one-word last line), text avoids orphans.
+   The hero title keeps its hand-tuned 3-line break. Browsers without support just wrap as usual. */
+h1, h2, h3, .kicker, .cta__title { text-wrap: balance; }
+.hero__title { text-wrap: wrap; }
+p, li, dd, figcaption { text-wrap: pretty; }
 strong { color: var(--title); font-weight: 600; }
 
 .wrap { width: 100%; max-width: var(--wrap); margin: 0 auto; padding: 0 var(--s-5); }
