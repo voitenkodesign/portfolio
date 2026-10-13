@@ -290,7 +290,7 @@ a:hover .arrow--back { transform: scaleX(-1) translateX(3px); }
 /* Stats: figures in cards (a card grid holds the row together on wide screens) */
 .stats { margin: var(--s-7) 0; }
 .section .stats { margin: 0; } /* on the home page the section padding is the only gap */
-.prose .stats { max-width: none; }
+.prose .stats { max-width: none; margin: var(--s-5) 0; } /* in a case, figures are an illustration block: same gap as images */
 .stats__kicker { font-size: var(--fs-small); color: var(--text); margin-bottom: var(--s-5); max-width: 60ch; }
 .stats__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--s-4); }
 .stat { padding: var(--s-5); background: var(--surface); border-radius: var(--radius); }
