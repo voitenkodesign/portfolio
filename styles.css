@@ -172,7 +172,10 @@ strong { color: var(--title); font-weight: 600; }
 .hero__hi { color: var(--text); font-size: var(--fs-body); margin: 0 0 14px; }
 /* Skills: a quiet text line under the button, not pills that look tappable */
 .tags { list-style: none; padding: 0; margin: var(--s-4) 0 0; display: flex; flex-wrap: wrap; gap: 4px 0; font-size: var(--fs-caption); color: var(--text); }
-.tags li + li::before { content: "·"; margin: 0 var(--s-2); opacity: .6; }
+/* Separator dot: one rule for every ' . ' on the site (skills, card meta, case facts, footer, clock bubble).
+   Space around the dot is .6em per side, about 2.5x a word space (.23em): items are further apart than words inside them. */
+.sep, .tags li + li::before { display: inline-block; margin: 0 .6em; opacity: .6; }
+.tags li + li::before { content: "·"; }
 .hero__lead { margin: 24px 0 0; max-width: 46ch; font-size: var(--fs-body); color: var(--text); }
 .hero__intro .hero__lead { margin-top: 0; }
 .hero__cta { display: flex; flex-wrap: wrap; gap: var(--s-3); margin: var(--s-6) 0 0; }

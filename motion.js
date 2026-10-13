@@ -63,7 +63,9 @@
   var hideTimer;
   function open(autoClose) {
     var k = kyivNow();
-    note.textContent = difference(k) + ' · ' + activity(k);
+    note.textContent = '';
+    var s = document.createElement('span'); s.className = 'sep'; s.textContent = 'Â·';
+    note.appendChild(document.createTextNode(difference(k))); note.appendChild(s); note.appendChild(document.createTextNode(activity(k)));
     slot.classList.add('is-open');
     clearTimeout(hideTimer);
     if (autoClose) hideTimer = setTimeout(close, 3000);
