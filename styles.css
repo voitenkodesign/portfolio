@@ -11,7 +11,7 @@
    Radius      --radius-xs 4 (focus ring), --radius-sm 8, --radius 16, --radius-lg 24, --radius-pill
    Motion      --dur-fast .15s (colour), --dur .3s (move), --dur-slow .6s (entrance), --stagger .06s;
                --ease-out for movement, ease for fades, ease-in-out for blinks and loops
-   Separators  .sep: .6em per side. Arrows: .arrow (cap height), .arrow--x (x-height). Links: in-text vs UI. */
+   Separators  .sep: .6em per side; .seplist for wrapping lists (no dangling dot). Arrows: .arrow (cap height), .arrow--x (x-height). Links: in-text vs UI. */
 :root {
   /* Colour */
   --bg: #101010;
@@ -175,6 +175,12 @@ strong { color: var(--title); font-weight: 600; }
    Space around the dot is .6em per side, about 2.5x a word space (.23em): items are further apart than words inside them. */
 .sep, .tags li + li::before { display: inline-block; margin: 0 .6em; opacity: .6; }
 .tags li + li::before { content: "·"; }
+/* Wrapping lists with separators (case facts): every item carries its dot in front; the row is shifted left by one
+   separator width (dot .206em + 2 x .6em = 1.406em) and clipped, so a dot that would end a line hides at the start of the
+   next one instead of dangling. */
+.seplist { overflow: hidden; }
+.seplist__items { display: flex; flex-wrap: wrap; margin-left: -1.406em; }
+.seplist__items > span::before { content: "·"; display: inline-block; margin: 0 .6em; opacity: .6; }
 
 /* Arrows: one shape for the whole site, sized in em so it follows the text.
    .arrow / .stat__arrow: centred on the cap height (between figures, e.g. 40% → 15%).
@@ -190,7 +196,6 @@ a:hover .arrow--back { transform: scaleX(-1) translateX(3px); }
 
 /* Shared bits */
 .kicker { font-size: var(--fs-h1); font-weight: 500; letter-spacing: var(--ls-heading); color: var(--title); margin-bottom: var(--s-5); line-height: var(--lh-heading); }
-.badge { display: inline-block; font-size: var(--fs-caption); font-weight: 500; color: var(--title); background: var(--fill); border-radius: var(--radius-pill); padding: var(--s-1) var(--s-3); margin: var(--s-5) 0 0; }
 
 /* Home: hero — text, then the work visual (side by side from 1000px) */
 .hero { --hero-gap: var(--s-5); padding-top: clamp(40px, 8vw, 112px); padding-bottom: var(--s-5); }
@@ -339,7 +344,6 @@ a:hover .arrow--back { transform: scaleX(-1) translateX(3px); }
 .case-hero, .prose, .pager, .cta { max-width: calc(var(--case) + 2 * var(--s-5)); }
 .case-hero { padding-top: var(--s-8); padding-bottom: 0; }
 .case-hero h1 { font-size: var(--fs-h1); max-width: 24ch; }
-.case-hero .badge { margin-top: var(--s-5); }
 .case-hero > * { animation: rise var(--dur-slow) var(--ease-out) both; }
 .case-hero > :nth-child(2) { animation-delay: var(--stagger); }
 .case-hero > :nth-child(3) { animation-delay: calc(var(--stagger) * 2); }
