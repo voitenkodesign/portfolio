@@ -11,8 +11,9 @@ Static portfolio site: plain HTML + one shared `styles.css`. No framework, no np
 | `live-quiz.html` | 02. Live Quiz for match-day engagement |
 | `design-system.html` | 03. Design system for multi-brand club apps |
 | `keel-ai-financial-management.html` | 04. Keel — AI Financial Management (concept, not shipped) |
-| `personalized-offers.html` | 05. Personalized offers and voucher flows |
-| `3f-superliga.html` | 06. 3F Superliga website |
+| `kvit-business-banking-freelancers.html` | 05. Kvit — business banking for Ukrainian freelancers (concept, not shipped) |
+| `personalized-offers.html` | 06. Personalized offers and voucher flows |
+| `3f-superliga.html` | 07. 3F Superliga website |
 | `other-work.html` | Other work (visual and marketing work) |
 | `404.html` | Not-found page |
 
