@@ -24,6 +24,14 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wdth,wght@0,100..125,400..600;1,100..125,400..600&display=swap">
 <link rel="stylesheet" href="styles.css">
 <script src="motion.js" defer></script>
+<!-- Preview only (branch explore-visual-direction): ?look=type | ?look=system. Remove before merging. -->
+<script>
+(function () {
+  var look = new URLSearchParams(location.search).get('look');
+  if (look !== 'system' && look !== 'type') { try { look = localStorage.getItem('look'); } catch (e) {} }
+  document.documentElement.dataset.look = look === 'system' ? 'system' : 'type';
+})();
+</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -46,10 +54,9 @@
     <div class="hero__intro">
       <p class="hero__lead">From brief to the live screen: prototypes, a system other people can reuse, and handoff with product and engineering.</p>
       <p class="hero__cta"><a class="btn" href="mailto:voitenko.design@pm.me">Email me</a><a class="btn btn--ghost" href="#work">See work</a></p>
-      <ul class="tags" aria-label="Skills"><li>Figma</li><li>Flows &amp; states</li><li>Shipped UI</li></ul>
     </div>
   </div>
-  <div class="hero__media"><img src="img/home/hero-1200.webp" srcset="img/home/hero-800.webp 800w, img/home/hero-1200.webp 1200w" sizes="(min-width: 1000px) 600px, 100vw" alt="Club app for FC Copenhagen: live match screen, ticket transfer notification, digital ticket and a shop card" width="1200" height="1300" fetchpriority="high" decoding="async"></div>
+  <figure class="hero__figure"><div class="hero__media"><img src="img/home/hero-1200.webp" srcset="img/home/hero-800.webp 800w, img/home/hero-1200.webp 1200w" sizes="(min-width: 1000px) 600px, 100vw" alt="Club app for FC Copenhagen: live match screen, ticket transfer notification, digital ticket and a shop card" width="1200" height="1300" fetchpriority="high" decoding="async"></div><figcaption class="spec">FC&nbsp;Copenhagen club app: live match, ticket transfer, digital ticket and a shop card</figcaption></figure>
 </section>
 
 <section class="section section--clubs wrap" aria-labelledby="clubs-h">
@@ -64,8 +71,8 @@
 <section class="section section--work wrap" id="work" aria-labelledby="work-h">
   <h2 class="kicker" id="work-h">Selected work</h2>
   <ol class="cards">
-<li class="card">
-  <div class="card__media"><img src="img/home/cover-white-label-app.webp" alt="" width="1200" height="813" loading="lazy" decoding="async"></div>
+<li class="card card--feature">
+  <div class="card__media"><img src="img/home/cover-white-label-app.webp" alt="" width="1200" height="813" loading="lazy" decoding="async"><ul class="card__spec spec" aria-hidden="true"><li>Home screen</li><li>Match‑day entry</li><li>Wallet</li></ul></div>
   <div class="card__body">
     <p class="card__meta">SportTech<span class="sep">·</span>iOS, Android, Web</p>
     <h3 class="card__title"><a class="card__link" href="white-label-app.html">White-label mobile app for football clubs</a></h3>
@@ -74,7 +81,7 @@
   </div>
 </li>
 <li class="card">
-  <div class="card__media"><img src="img/home/cover-live-quiz.webp" alt="" width="1200" height="813" loading="lazy" decoding="async"></div>
+  <div class="card__media"><img src="img/home/cover-live-quiz.webp" alt="" width="1200" height="813" loading="lazy" decoding="async"><ul class="card__spec spec" aria-hidden="true"><li>Entry point</li><li>Question screen</li><li>After the quiz</li></ul></div>
   <div class="card__body">
     <p class="card__meta">SportTech<span class="sep">·</span>iOS, Android, Web</p>
     <h3 class="card__title"><a class="card__link" href="live-quiz.html">Live Quiz for match-day engagement</a></h3>
@@ -83,7 +90,7 @@
   </div>
 </li>
 <li class="card">
-  <div class="card__media"><img src="img/home/cover-design-system.webp" alt="" width="1200" height="813" loading="lazy" decoding="async"></div>
+  <div class="card__media"><img src="img/home/cover-design-system.webp" alt="" width="1200" height="813" loading="lazy" decoding="async"><ul class="card__spec spec card__spec--one" aria-hidden="true"><li>Same layout, different club brand</li></ul></div>
   <div class="card__body">
     <p class="card__meta">SportTech<span class="sep">·</span>Design system</p>
     <h3 class="card__title"><a class="card__link" href="design-system.html">Design system for multi-brand club apps</a></h3>
@@ -92,7 +99,7 @@
   </div>
 </li>
 <li class="card">
-  <div class="card__media"><img src="img/home/cover-keel.webp" alt="" width="1200" height="813" loading="lazy" decoding="async"></div>
+  <div class="card__media"><img src="img/home/cover-keel.webp" alt="" width="1200" height="813" loading="lazy" decoding="async"><ul class="card__spec spec" aria-hidden="true"><li>Home</li><li>Spending</li><li>Investments</li></ul></div>
   <div class="card__body">
     <p class="card__meta">FinTech<span class="sep">·</span>iOS<span class="sep">·</span>Concept</p>
     <h3 class="card__title"><a class="card__link" href="keel-ai-financial-management.html">Keel — AI Financial Management</a></h3>
@@ -101,7 +108,7 @@
   </div>
 </li>
 <li class="card">
-  <div class="card__media"><img src="img/home/cover-kvit-business-banking-freelancers.webp" alt="" width="1200" height="813" loading="lazy" decoding="async"></div>
+  <div class="card__media"><img src="img/home/cover-kvit-business-banking-freelancers.webp" alt="" width="1200" height="813" loading="lazy" decoding="async"><ul class="card__spec spec" aria-hidden="true"><li>Home</li><li>Money in transit</li><li>AI flag</li></ul></div>
   <div class="card__body">
     <p class="card__meta">FinTech<span class="sep">·</span>Mobile<span class="sep">·</span>Concept</p>
     <h3 class="card__title"><a class="card__link" href="kvit-business-banking-freelancers.html">Kvit — business banking for Ukrainian freelancers</a></h3>
@@ -110,7 +117,7 @@
   </div>
 </li>
 <li class="card">
-  <div class="card__media"><img src="img/home/cover-personalized-offers.webp" alt="" width="1200" height="813" loading="lazy" decoding="async"></div>
+  <div class="card__media"><img src="img/home/cover-personalized-offers.webp" alt="" width="1200" height="813" loading="lazy" decoding="async"><ul class="card__spec spec" aria-hidden="true"><li>Activation, step 1</li><li>Activation, step 2</li><li>Activated state</li></ul></div>
   <div class="card__body">
     <p class="card__meta">SportTech<span class="sep">·</span>iOS, Android</p>
     <h3 class="card__title"><a class="card__link" href="personalized-offers.html">Personalized offers and voucher flows</a></h3>
@@ -119,7 +126,7 @@
   </div>
 </li>
 <li class="card">
-  <div class="card__media"><img src="img/home/cover-3f-superliga.webp" alt="" width="1200" height="813" loading="lazy" decoding="async"></div>
+  <div class="card__media"><img src="img/home/cover-3f-superliga.webp" alt="" width="1200" height="813" loading="lazy" decoding="async"><ul class="card__spec spec card__spec--one" aria-hidden="true"><li>Home page</li></ul></div>
   <div class="card__body">
     <p class="card__meta">SportTech<span class="sep">·</span>Web</p>
     <h3 class="card__title"><a class="card__link" href="3f-superliga.html">3F&nbsp;Superliga website</a></h3>
@@ -166,5 +173,20 @@
     <p class="contact"><a href="mailto:voitenko.design@pm.me"><img src="mail-01.svg" alt="" width="16" height="16" decoding="async">Email</a><span class="sep">·</span><a href="https://www.linkedin.com/in/voitenkodesign" target="_blank" rel="noopener"><img src="linkedin-01.svg" alt="" width="16" height="16" decoding="async">LinkedIn</a></p>
   </div>
 </footer>
+<!-- Preview only: look switcher. Remove before merging. -->
+<div class="look-switch" role="group" aria-label="Preview look">
+  <button type="button" data-set-look="type">A · Типографика</button>
+  <button type="button" data-set-look="system">B · Система</button>
+</div>
+<script>
+document.querySelectorAll('[data-set-look]').forEach(function (b) {
+  b.addEventListener('click', function () {
+    var look = b.dataset.setLook;
+    document.documentElement.dataset.look = look;
+    try { localStorage.setItem('look', look); } catch (e) {}
+    var u = new URL(location.href); u.searchParams.set('look', look); history.replaceState(null, '', u);
+  });
+});
+</script>
 </body>
 </html>
