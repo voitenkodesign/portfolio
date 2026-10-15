@@ -82,6 +82,8 @@ Breakpoints currently in use: 360, 480, 600, 700, 760, 900, 1000 (cleanup to 480
 
 ## 6. Adding a new case — checklist
 
+Case structure: see CASE-TEMPLATE.md (block order, HTML patterns, image and writing rules; it wins over the template below on structure).
+
 1. **Branch** `new-case-<slug>`; file `<slug>.html` (lowercase, kebab-case).
 2. **Images**: put source PNG/JPG into `Voitenko Design — Portfolio/<NN Case name>/` (kept in git, not deployed);
    export WebP into `img/<slug>/<kebab-name>.webp`:

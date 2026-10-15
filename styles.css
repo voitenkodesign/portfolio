@@ -354,6 +354,7 @@ a:hover .arrow--back { transform: scaleX(-1) translateX(3px); }
   margin: var(--s-7) 0 0; padding: var(--s-5) 0 0; border-top: 1px solid var(--line);
 }
 @media (min-width: 900px) { .case-facts { grid-template-columns: 1fr 1fr 1.2fr 1.6fr; } }
+@media (min-width: 900px) { .case-facts:has(> :nth-child(5)) { grid-template-columns: 1fr 1fr 1.2fr 1.6fr .8fr; } }
 .case-facts dt, .case-summary dt { font-size: var(--fs-caption); font-weight: 500; line-height: var(--lh-ui); color: var(--text); margin: 0 0 var(--s-1); }
 .case-facts dd { margin: 0; font-size: var(--fs-small); line-height: var(--lh-ui); color: var(--title); }
 /* Case at a glance: Problem / What I did / Result, three columns on desktop */
