@@ -29,7 +29,7 @@ Status: v1, 2026-10-15. First case to migrate: `white-label-app.html` (plan in A
 
 | # | Block | | What goes in | Budget |
 |---|---|---|---|---|
-| 0 | **Case facts** | R | Role · Platform · Domain · Team · **Timeline** (new row) | — |
+| 0 | **Case facts** | R | Role · Platform · Domain · Team (no Timeline row — it says nothing about the work) | — |
 | 1 | **Case summary** | R | Problem / What I did / Result — one or two sentences each | 25 words each |
 | 2 | **Lead** | R | One sentence: what the product is and for whom. Not a repeat of Problem | 30 |
 | 3 | **Hero image** | R | One composition that explains the case in 2 seconds (see §4) | caption ≤ 10 |
@@ -60,11 +60,7 @@ No new CSS without asking the owner. Everything below uses classes that already 
 
 ### 3.1 Header (facts + summary)
 
-As in `CLAUDE.md` §6, plus a Timeline row at the end of `.case-facts`:
-
-```html
-<div><dt>Timeline</dt><dd>2&nbsp;years</dd></div>
-```
+As in `CLAUDE.md` §6. Four facts only: Role, Platform, Domain, Team.
 
 ### 3.2 Lead + hero
 
@@ -174,13 +170,13 @@ Per case:
 | Personalized offers | Add one Key decision (offer card options); show sponsor branding |
 | Keel | Put each screen next to its 2-line description; add one Key decision |
 | 3F Superliga | Rebuild to the skeleton: Context with my part, Constraints, one decision (home as a round board), Result, Learned |
-| Kvit | Work in progress — already closest to the template; add Timeline, shorten Process |
+| Kvit | Work in progress — already closest to the template; shorten Process |
 
 ---
 
 ## 7. Checklist before a case is "done"
 
-- [ ] Facts have Timeline; summary is ≤ 25 words per item
+- [ ] Summary is ≤ 25 words per item
 - [ ] No sentence in the body repeats the summary
 - [ ] Hero image exists and is the case `og:image`
 - [ ] At least one Key decision with options → choice → cost
@@ -210,7 +206,7 @@ Figma file `hML2htcfzwCFXafq3E0sh9`. Work page for exports: **White label case**
 
 | # | Block | Content | Source (Figma node / file) |
 |---|---|---|---|
-| 0 | Facts | Role · iOS, Android, Web · SportTech · B2B white-label · 2&nbsp;designers, project manager, developers, QA · 2&nbsp;years | — |
+| 0 | Facts | Role · iOS, Android, Web · SportTech · B2B white-label · 2&nbsp;designers, project manager, developers, QA | — |
 | 1 | Summary | Problem: fans barely used the club app; it had to work for 10+ club brands at once. What I did: club apps and features on a shared variable-based system, ticketing for two providers (wallet, transfer, release). Result: FC&nbsp;Copenhagen release result + platform numbers | — |
 | 2 | Lead | One product, 10+ football clubs, each app still feels like the club’s own | — |
 | 3 | Hero | Same screen (Home, live match — top 852px only) in FCM, FCK, DBU side by side | TEST source `16814:101201`; FCM Home `37094:56357`; FCK page `35568:85153`; DBU: owner converts `16814:101201` from TEST with the plugin |
