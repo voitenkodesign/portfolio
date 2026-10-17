@@ -11,6 +11,7 @@
    Radius      --radius-xs 4 (focus ring), --radius-sm 8, --radius 16, --radius-lg 24, --radius-pill
    Motion      --dur-fast .15s (colour), --dur .3s (move), --dur-slow .6s (entrance), --stagger .06s;
                --ease-out for movement, ease for fades, ease-in-out for blinks and loops
+   Device      --device (phone bezel, Dynamic Island). .phone wraps a gallery screen: iPhone 393x852 pt proportions
    Separators  .sep: .6em per side; .seplist for wrapping lists (no dangling dot). Arrows: .arrow (cap height), .arrow--x (x-height). Links: in-text vs UI. */
 :root {
   /* Colour */
@@ -24,6 +25,7 @@
   --line: rgba(255, 255, 255, .08);
   --fill: rgba(255, 255, 255, .08);
   --stroke: rgba(255, 255, 255, .24);
+  --device: #000;
   --underline: rgba(255, 255, 255, .3);
   --btn-hover: #d4d4d8;
   --accent: #4ade80;
@@ -395,6 +397,19 @@ a:hover .arrow--back { transform: scaleX(-1) translateX(3px); }
   background: var(--surface); border-radius: var(--radius-lg); padding: var(--s-5);
 }
 .gallery--phones .fig img { width: 100%; max-width: 280px; height: auto; object-fit: contain; background: transparent; }
+/* Phone frame: iPhone 393x852 pt screen, 12 pt bezel (417x876 outside). All sizes are % of the phone,
+   so the frame stays true at any card width. Screen corner 55 pt, outer corner 55 + 12 = 67 pt (concentric).
+   Dynamic Island 126x37 pt, 11 pt below the screen top; home indicator 134x5 pt, 8 pt above the screen bottom,
+   drawn with difference blending so it is dark on light screens and light on dark ones, like iOS. */
+.phone {
+  position: relative; display: block; width: 100%; max-width: 280px;
+  padding: 2.878%; background: var(--device);
+  border-radius: 16.07% / 7.65%; box-shadow: 0 0 0 1px var(--line);
+}
+.gallery--phones .fig .phone img { display: block; max-width: none; border-radius: 13.99% / 6.46%; }
+.phone::before, .phone::after { content: ""; position: absolute; left: 50%; transform: translateX(-50%); border-radius: var(--radius-pill); }
+.phone::before { top: 2.63%; width: 30.22%; aspect-ratio: 126 / 37; background: var(--device); }
+.phone::after { bottom: 2.28%; width: 32.13%; aspect-ratio: 134 / 5; background: var(--title); mix-blend-mode: difference; }
 .gallery--phones .fig figcaption { width: 100%; max-width: 280px; margin-top: var(--s-3); }
 /* Tablet: two phone cards per row so screens stay readable */
 @media (min-width: 700px) and (max-width: 999px) {
