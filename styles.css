@@ -257,9 +257,9 @@ strong { color: var(--title); font-weight: 600; }
 @keyframes rise { from { opacity: 0; transform: translateY(var(--s-3)); } }
 
 /* Availability status: the accent's main job */
-/* Plain text on the role line (no pill): green dot + "Open to work", then the role */
-.status { display: inline-flex; align-items: center; gap: var(--s-2); font-weight: 500; color: var(--accent); }
-.status__dot { position: relative; width: var(--s-2); height: var(--s-2); border-radius: 50%; background: var(--accent); }
+/* Inline text, so "Open to work" shares the baseline of the role next to it; the dot sits on the x-height middle */
+.status { font-weight: 500; color: var(--accent); }
+.status__dot { position: relative; display: inline-block; vertical-align: .12em; margin-right: var(--s-2); width: var(--s-2); height: var(--s-2); border-radius: 50%; background: var(--accent); }
 .status__dot::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: var(--accent); animation: pulse 2.4s ease-out 3; /* three rings on arrival, then rest */ }
 @keyframes pulse { from { transform: scale(1); opacity: .6; } 70%, to { transform: scale(2.6); opacity: 0; } }
 /* Easter egg: the dot winks once on hover (tap on touch: motion.js adds .is-winking); the pulse ring rests meanwhile */
