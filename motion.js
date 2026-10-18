@@ -127,3 +127,146 @@
   }
   document.documentElement.classList.add('js');
 })();
+
+// Theme toy on the design-system case: pick a club theme and drag the split to compare it with the TEST
+// skeleton. Values are the real club variables from the Figma file. Starts a short demo when it comes into
+// view and stops for good at the first touch, click or key. Reduced motion: no demo, no wipe.
+(function () {
+  var toy = document.querySelector('[data-toy]');
+  if (!toy) return;
+  var screen = toy.querySelector('[data-toy-screen]'), handle = toy.querySelector('[data-toy-handle]');
+  var radios = [].slice.call(toy.querySelectorAll('[data-toy-switch] [role="radio"]'));
+  var tokens = toy.querySelector('[data-toy-tokens]'), nameEl = toy.querySelector('[data-toy-name]');
+  var tagEl = toy.querySelector('[data-toy-tag]'), status = toy.querySelector('[data-toy-status]');
+  var scan = toy.querySelector('.toy__scan');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var CLUBS = {
+    test: { name: 'TEST skeleton', tag: 'TEST', primary: '#7C3AED', radius: 9999, font: 'Inter Black', page: '#FFFFFF', picture: 'Grey placeholder' },
+    fck:  { name: 'FC Copenhagen', tag: 'FCK', primary: '#0F2DB9', radius: 4, font: 'FCK Sans Bold', page: '#FCFCFD', picture: 'Club photo' },
+    fcm:  { name: 'FC Midtjylland', tag: 'FCM', primary: '#DE2807', radius: 9999, font: 'FCM Rialta Bold', page: '#000000', picture: 'Club photo' },
+    dbu:  { name: 'DBU · ForDanmark', tag: 'DBU', primary: '#C90B0E', radius: 6, font: 'DBU Bold', page: '#FFFFFF', picture: 'Club photo' }
+  };
+  var current = 'fck', split = 50, demo = null, touched = false;
+
+  function setSplit(v) {
+    split = Math.max(0, Math.min(100, v));
+    screen.style.setProperty('--split', split + '%');
+    screen.classList.toggle('is-left-small', split < 18);
+    screen.classList.toggle('is-right-small', split > 82);
+    var c = CLUBS[current], t = Math.round(split);
+    handle.setAttribute('aria-valuenow', t);
+    handle.setAttribute('aria-valuetext', t + '% TEST, ' + (100 - t) + '% ' + c.name.replace(' ', ' '));
+  }
+
+  function setValue(key, text, delay) {
+    var el = tokens.querySelector('[data-v="' + key + '"]');
+    if (!el || el.textContent === text) return;
+    el.classList.remove('is-new');
+    setTimeout(function () { el.textContent = text; void el.offsetWidth; if (!reduce) el.classList.add('is-new'); }, reduce ? 0 : delay);
+  }
+
+  function pick(id, quiet) {
+    if (!CLUBS[id] || id === current) return;
+    var c = CLUBS[id], prev = current; current = id;
+    radios.forEach(function (r) { var on = r.getAttribute('data-club') === id; r.setAttribute('aria-checked', on); r.tabIndex = on ? 0 : -1; });
+    screen.classList.toggle('is-test', id === 'test');
+    nameEl.textContent = c.name; tagEl.textContent = c.tag;
+    tokens.style.setProperty('--primary', c.primary);
+    tokens.style.setProperty('--page', c.page);
+    tokens.style.setProperty('--radius-control', c.radius > 999 ? '999px' : c.radius + 'px');
+    var step = 60;
+    setValue('primary', c.primary, 0);
+    setValue('radius', c.radius > 999 ? 'pill' : c.radius + ' px', step);
+    setValue('font', c.font, step * 2);
+    setValue('page', c.page, step * 3);
+    setValue('picture', c.picture, step * 4);
+    if (id !== 'test') swapShot(id);
+    setSplit(split);
+    if (!quiet && status) status.textContent = 'Plugin applied ' + c.tag + ' variables';
+  }
+
+  function swapShot(id) {
+    var shots = [].slice.call(toy.querySelectorAll('[data-shot]'));
+    var next = toy.querySelector('[data-shot="' + id + '"]');
+    if (next.classList.contains('is-on')) return;
+    if (next.loading === 'lazy') next.loading = 'eager';
+    if (reduce) { shots.forEach(function (s) { s.classList.toggle('is-on', s === next); }); return; }
+    next.classList.remove('is-go'); next.classList.add('is-entering');
+    scan.classList.remove('is-go');
+    void next.offsetWidth;
+    next.classList.add('is-go'); scan.classList.add('is-go');
+    setTimeout(function () {
+      shots.forEach(function (s) { if (s !== next) s.classList.remove('is-on'); });
+      next.classList.add('is-on'); next.classList.remove('is-entering', 'is-go');
+      scan.classList.remove('is-go');
+    }, 650);
+  }
+
+  function stopDemo() { touched = true; if (demo) { clearTimeout(demo); demo = null; } }
+
+  // Club buttons: click, arrows and Home/End move between them (radio group), 1-4 jump from anywhere in the toy
+  var order = ['test', 'fck', 'fcm', 'dbu'];
+  radios.forEach(function (r, i) {
+    r.addEventListener('click', function () { stopDemo(); pick(r.getAttribute('data-club')); });
+    r.addEventListener('keydown', function (e) {
+      var k = e.key, j = null;
+      if (k === 'ArrowRight' || k === 'ArrowDown') j = (i + 1) % radios.length;
+      if (k === 'ArrowLeft' || k === 'ArrowUp') j = (i - 1 + radios.length) % radios.length;
+      if (k === 'Home') j = 0;
+      if (k === 'End') j = radios.length - 1;
+      if (j === null) return;
+      e.preventDefault(); stopDemo(); radios[j].focus(); pick(radios[j].getAttribute('data-club'));
+    });
+  });
+  toy.addEventListener('keydown', function (e) {
+    var n = parseInt(e.key, 10);
+    if (n >= 1 && n <= 4) { stopDemo(); pick(order[n - 1]); }
+  });
+
+  // Split: drag anywhere on the screen (vertical scroll still works on touch: touch-action pan-y), or arrows on the handle
+  var dragging = false;
+  function fromEvent(e) { var r = screen.getBoundingClientRect(); setSplit((e.clientX - r.left) / r.width * 100); }
+  screen.addEventListener('pointerdown', function (e) {
+    if (current === 'test') return;
+    stopDemo(); dragging = true; screen.setPointerCapture(e.pointerId); fromEvent(e);
+  });
+  screen.addEventListener('pointermove', function (e) { if (dragging) fromEvent(e); });
+  ['pointerup', 'pointercancel', 'lostpointercapture'].forEach(function (t) { screen.addEventListener(t, function () { dragging = false; }); });
+  handle.addEventListener('keydown', function (e) {
+    var d = { ArrowLeft: -5, ArrowRight: 5, PageDown: -20, PageUp: 20 }[e.key];
+    if (e.key === 'Home') d = -100; if (e.key === 'End') d = 100;
+    if (d === undefined) return;
+    e.preventDefault(); stopDemo(); setSplit(split + d);
+  });
+
+  // Demo: the split slides open, then themes take turns until someone touches the toy
+  function tween(from, to, ms, done) {
+    var t0 = null;
+    function f(t) {
+      if (touched) return;
+      if (t0 === null) t0 = t;
+      var k = Math.min(1, (t - t0) / ms), e = 1 - Math.pow(1 - k, 3);
+      setSplit(from + (to - from) * e);
+      if (k < 1) requestAnimationFrame(f); else if (done) done();
+    }
+    requestAnimationFrame(f);
+  }
+  function cycle() {
+    if (touched) return;
+    var i = order.indexOf(current), next = order[i === order.length - 1 ? 1 : i + 1];
+    pick(next, true);
+    demo = setTimeout(cycle, 2600);
+  }
+  toy.addEventListener('pointerdown', stopDemo, { passive: true });
+
+  toy.classList.add('is-ready');
+  setSplit(50);
+  if (reduce || !('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function (entries) {
+    if (!entries[0].isIntersecting || touched) return;
+    io.disconnect();
+    setSplit(100);
+    demo = setTimeout(function () { tween(100, 50, 900, function () { if (!touched) demo = setTimeout(cycle, 1400); }); }, 400);
+  }, { threshold: 0.5 });
+  io.observe(screen);
+})();
