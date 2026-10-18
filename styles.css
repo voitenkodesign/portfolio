@@ -458,6 +458,7 @@ strong { color: var(--title); font-weight: 600; }
   flex: none; font-size: 1em; font-weight: 500; color: var(--text); font-variant-numeric: tabular-nums;
 }
 .prose h3 { font-size: var(--fs-h3); margin: var(--s-8) 0 var(--s-3); }
+.prose > h2 + h3 { margin-top: 0; } /* a sub-heading opening a section: only the heading's own 24px gap, not 24 + 64 */
 .prose ul { padding-left: 1.2em; margin: 0 0 1.2em; }
 .prose li { margin-bottom: .45em; }
 .prose li::marker { color: var(--text); }
@@ -471,21 +472,21 @@ strong { color: var(--title); font-weight: 600; }
 .case-cover { --r: 1.333; aspect-ratio: 4 / 3; border-radius: var(--radius); overflow: hidden; }
 @media (min-width: 760px) { .case-cover { --r: 1.778; aspect-ratio: 16 / 9; } }
 
-/* Wide screens: two columns. Section headings sit in the left column, level with their first paragraph;
-   text runs in the 640px right column; pictures, galleries and figures span both. Grid items don't collapse
-   margins, so spacing here is top margins only: 1em between text, a section gap before a heading row. */
+/* Wide screens: one text column, offset right. Section headings, sub-headings and paragraphs all start on one
+   line (the 640px right column); the section number hangs just left of its heading (same line, 16px gap),
+   so a one-line section still reads as text under a heading; pictures and galleries span both columns.
+   Grid items don't collapse margins, so spacing here is top margins only. */
 @media (min-width: 1000px) {
   .prose { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, var(--body)); column-gap: var(--s-8); align-items: start; }
   .prose > * { grid-column: 2; margin-top: 0; margin-bottom: 0; }
   .prose > * + * { margin-top: 1em; }
-  .prose > p:first-child { grid-column: 1 / -1; margin-top: var(--s-7); }
-  .prose > h2 { grid-column: 1; }
+  .prose > p:first-child { margin-top: var(--s-7); }
+  .prose > h2 { display: block; position: relative; margin: var(--space-section) 0 0; }
+  .prose > h2::before { position: absolute; right: 100%; margin-right: var(--s-4); }
   .prose > h3 { margin-top: var(--s-8); }
   .prose > h3 + * { margin-top: var(--s-3); }
-  .prose > h2, .prose > h2 + * { margin-top: var(--space-section); } /* after the h3 rules: an h3 opening a section stays level with its h2 */
+  .prose > h2 + *, .prose > h2 + h3 { margin-top: var(--s-5); }
   .prose > .media, .prose > .gallery, .prose > .stats { grid-column: 1 / -1; }
-  /* a picture block keeps the small gap to its neighbours; a heading after it keeps the section gap
-     (:not(h2, h3)), so the heading and its first paragraph always start on the same line */
   .prose > :is(.media, .gallery, .stats), .prose > :is(.media, .gallery, .stats) + :not(h2, h3) { margin-top: var(--s-5); }
 }
 
