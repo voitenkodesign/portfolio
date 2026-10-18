@@ -480,13 +480,13 @@ strong { color: var(--title); font-weight: 600; }
   .prose > * + * { margin-top: 1em; }
   .prose > p:first-child { grid-column: 1 / -1; margin-top: var(--s-7); }
   .prose > h2 { grid-column: 1; }
-  .prose > h2, .prose > h2 + * { margin-top: var(--space-section); }
   .prose > h3 { margin-top: var(--s-8); }
   .prose > h3 + * { margin-top: var(--s-3); }
+  .prose > h2, .prose > h2 + * { margin-top: var(--space-section); } /* after the h3 rules: an h3 opening a section stays level with its h2 */
   .prose > .media, .prose > .gallery, .prose > .stats { grid-column: 1 / -1; }
-  .prose > .media, .prose > .gallery, .prose > .stats,
-  .prose > .media + *, .prose > .gallery + *, .prose > .stats + * { margin-top: var(--s-5); }
-  .prose > h2 + .media, .prose > h2 + .gallery, .prose > h2 + .stats { margin-top: var(--s-5); }
+  /* a picture block keeps the small gap to its neighbours; a heading after it keeps the section gap
+     (:not(h2, h3)), so the heading and its first paragraph always start on the same line */
+  .prose > :is(.media, .gallery, .stats), .prose > :is(.media, .gallery, .stats) + :not(h2, h3) { margin-top: var(--s-5); }
 }
 
 /* Media: same left edge as the title, full content width */
