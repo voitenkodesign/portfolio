@@ -444,7 +444,9 @@ a:hover .arrow--back { transform: scaleX(-1) translateX(3px); }
 /* TEST only left of the split, so its white never bleeds through the anti-aliased corners of the club side */
 .toy .toy__screen .toy__base { clip-path: inset(0 calc(100% - var(--split)) 0 0); }
 .toy .toy__screen.is-test .toy__base { clip-path: none; }
-.toy .toy__shot { opacity: 0; }
+/* Club shots overshoot the screen by 1px: the screen's overflow cuts the edge, so during a wipe the old shot
+   can't peek out as a hairline next to the anti-aliased edge of the new one */
+.toy .toy__screen .toy__shot { inset: -1px; width: calc(100% + 2px); max-width: none; height: calc(100% + 2px); opacity: 0; }
 .toy .toy__shot.is-on { opacity: 1; }
 .toy .toy__shot.is-entering { opacity: 1; z-index: 1; clip-path: inset(0 0 100% 0); }
 .toy .toy__shot.is-entering.is-go { clip-path: inset(0 0 0 0); transition: clip-path var(--dur-slow) var(--ease-out); }
