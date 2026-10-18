@@ -128,12 +128,11 @@
   document.documentElement.classList.add('js');
 })();
 
-// Theme toy on the design-system case: pick a club theme and drag the split to compare it with the base
-// theme. Values are the real club variables from the Figma file. Starts a short demo when it comes into
-// view and stops for good at the first touch, click or key. Reduced motion: no demo, no wipe.
-(function () {
-  var toy = document.querySelector('[data-toy]');
-  if (!toy) return;
+// Theme toy (design-system and white-label cases): pick a club theme and drag the split to compare it with
+// the base theme. The token panel is optional (design-system only); its values are the real club variables
+// from the Figma file. Each toy starts a short demo when it comes into view and stops for good at the first
+// touch, click or key. Reduced motion: no demo, no wipe.
+[].forEach.call(document.querySelectorAll('[data-toy]'), function (toy) {
   var screen = toy.querySelector('[data-toy-screen]'), handle = toy.querySelector('[data-toy-handle]');
   var radios = [].slice.call(toy.querySelectorAll('[data-toy-switch] [role="radio"]'));
   var tokens = toy.querySelector('[data-toy-tokens]'), nameEl = toy.querySelector('[data-toy-name]');
@@ -172,15 +171,17 @@
     radios.forEach(function (r) { var on = r.getAttribute('data-club') === id; r.setAttribute('aria-checked', on); r.tabIndex = on ? 0 : -1; });
     screen.classList.toggle('is-test', id === 'test');
     nameEl.textContent = c.name; tagEl.textContent = c.tag;
-    tokens.style.setProperty('--primary', c.primary);
-    tokens.style.setProperty('--page', c.page);
-    tokens.style.setProperty('--radius-control', c.radius > 999 ? '999px' : c.radius + 'px');
-    var step = 60;
-    setValue('primary', c.primary, 0);
-    setValue('radius', c.radius > 999 ? 'pill' : c.radius + ' px', step);
-    setValue('font', c.font, step * 2);
-    setValue('page', c.page, step * 3);
-    setValue('picture', c.picture, step * 4);
+    if (tokens) {
+      tokens.style.setProperty('--primary', c.primary);
+      tokens.style.setProperty('--page', c.page);
+      tokens.style.setProperty('--radius-control', c.radius > 999 ? '999px' : c.radius + 'px');
+      var step = 60;
+      setValue('primary', c.primary, 0);
+      setValue('radius', c.radius > 999 ? 'pill' : c.radius + ' px', step);
+      setValue('font', c.font, step * 2);
+      setValue('page', c.page, step * 3);
+      setValue('picture', c.picture, step * 4);
+    }
     if (id !== 'test') swapShot(id);
     setSplit(split);
     if (!quiet && status) status.textContent = 'Plugin applied ' + c.tag + ' variables';
@@ -270,4 +271,4 @@
     demo = setTimeout(function () { tween(100, 50, 900, function () { if (!touched) demo = setTimeout(cycle, 1400); }); }, 400);
   }, { threshold: 0.5 });
   io.observe(screen);
-})();
+});

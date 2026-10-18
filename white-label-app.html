@@ -67,7 +67,38 @@
 <div class="media reveal"><figure class="fig"><img src="img/white-label-app/decision-swipe.webp" alt="Confirm transfer and confirm release screens, each with the match, the seat and a slide-to-confirm control" width="2048" height="1153" loading="lazy" decoding="async"><figcaption>Swipe for what can’t be undone</figcaption></figure></div>
 <h2 class="reveal">One base theme, many clubs</h2>
 <p class="reveal">Every feature is designed once, in a neutral base theme. Each club has its own set of Figma variables: colours, fonts and imagery. A plugin applies a club’s set to a batch of screens, so a new club app starts from finished flows, not from a blank page.</p>
-<div class="media reveal"><figure class="fig"><img src="img/white-label-app/skeleton-to-club.webp" alt="The live-match home screen in the grey base theme next to the same screen with FC Midtjylland variables" width="2048" height="1152" loading="lazy" decoding="async"><figcaption>The base theme and the same screen with FC&nbsp;Midtjylland variables</figcaption></figure></div>
+<div class="media reveal"><figure class="fig toy" data-toy>
+<div class="toy__card">
+  <div class="toy__stage">
+    <div class="phone toy__phone">
+      <div class="toy__screen" data-toy-screen style="--split: 50%">
+        <img class="toy__base" src="img/white-label-app/live-base.webp" alt="" width="786" height="1704" loading="lazy" decoding="async">
+        <div class="toy__club" data-toy-layer>
+          <img class="toy__shot is-on" data-shot="fck" src="img/white-label-app/live-fck.webp" alt="" width="786" height="1704" loading="lazy" decoding="async">
+          <img class="toy__shot" data-shot="fcm" src="img/white-label-app/live-fcm.webp" alt="" width="786" height="1704" loading="lazy" decoding="async">
+          <img class="toy__shot" data-shot="dbu" src="img/white-label-app/live-dbu.webp" alt="" width="786" height="1704" loading="lazy" decoding="async">
+          <span class="toy__scan" aria-hidden="true"></span>
+        </div>
+        <span class="toy__tag toy__tag--left" aria-hidden="true">Base</span>
+        <span class="toy__tag toy__tag--right" aria-hidden="true" data-toy-tag>FCK</span>
+        <span class="toy__handle" data-toy-handle tabindex="0" role="slider" aria-label="Compare the base theme with the club theme" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="Half base theme, half FC Copenhagen"><svg class="toy__grip" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 7 4 12l5 5M15 7l5 5-5 5"/></svg></span>
+      </div>
+    </div>
+  </div>
+  <div class="toy__panel">
+    <p class="toy__name" data-toy-name>FC&nbsp;Copenhagen</p>
+    <div class="toy__switch" role="radiogroup" aria-label="Club theme" data-toy-switch>
+      <button type="button" role="radio" aria-checked="false" data-club="test" tabindex="-1"><span class="toy__dot" style="--c: #7C3AED"></span>Base</button>
+      <button type="button" role="radio" aria-checked="true" data-club="fck"><span class="toy__dot" style="--c: #0F2DB9"></span>FCK</button>
+      <button type="button" role="radio" aria-checked="false" data-club="fcm" tabindex="-1"><span class="toy__dot" style="--c: #DE2807"></span>FCM</button>
+      <button type="button" role="radio" aria-checked="false" data-club="dbu" tabindex="-1"><span class="toy__dot" style="--c: #C90B0E"></span>DBU</button>
+    </div>
+    <p class="toy__hint">Pick a club, then drag across the screen to compare it with the base theme.</p>
+    <p class="sr-only" role="status" data-toy-status></p>
+  </div>
+</div>
+<figcaption>One home screen in four clubs: same layout, new brand</figcaption>
+</figure></div>
 <p class="reveal">The system itself is a separate case: <a href="design-system.html">Design system for multi-brand club apps</a>.</p>
 <h2 class="reveal">A home screen that follows the match</h2>
 <p class="reveal">The first screen changes with the match. Before kick-off it sells tickets and asks for a score prediction. During the match it leads with the live score. After the final whistle it moves to highlights.</p>
