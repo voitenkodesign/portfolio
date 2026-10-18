@@ -4,17 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Design system for multi-brand club apps — Voitenko Design</title>
-<meta name="description" content="A shared UI system for a white-label product. The same components had to work for many football clubs, each with its own brand, colors, and content.">
+<meta name="description" content="How we rebuilt a white-label design system on Figma variables: one TEST skeleton, 10+ club themes and a plugin that applies them.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Design system for multi-brand club apps — Voitenko Design">
-<meta property="og:description" content="A shared UI system for a white-label product. The same components had to work for many football clubs, each with its own brand, colors, and content.">
+<meta property="og:description" content="How we rebuilt a white-label design system on Figma variables: one TEST skeleton, 10+ club themes and a plugin that applies them.">
 <link rel="canonical" href="https://voitenkodesign.com/design-system.html">
 <meta property="og:url" content="https://voitenkodesign.com/design-system.html">
 <meta property="og:site_name" content="Voitenko Design">
-<meta property="og:image" content="https://voitenkodesign.com/og.jpg">
+<meta property="og:image" content="https://voitenkodesign.com/img/design-system/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Igor Voitenko, UI/UX &amp; Product Designer">
+<meta property="og:image:alt" content="The same onboarding screen in the TEST skeleton and three club themes">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#101010">
@@ -42,46 +42,51 @@
   <header class="case-hero wrap">
     <h1>Design system for multi-brand club apps</h1>
     <dl class="case-facts"><div><dt>Role</dt><dd>UI/UX &amp; Product Designer</dd></div><div><dt>Platform</dt><dd>iOS, Android</dd></div><div><dt>Domain</dt><dd class="seplist"><span class="seplist__items"><span>SportTech</span><span>Design systems</span></span></dd></div><div><dt>Team</dt><dd>2&nbsp;designers, project manager, developers, QA</dd></div></dl>
-    <dl class="case-summary" aria-label="Case at a glance"><div><dt>Problem</dt><dd>Every new club app took too long: screens were designed from scratch, the UI drifted, and development slowed down.</dd></div><div><dt>What I did</dt><dd>A Figma component library with real states, a theming approach for club brands, and basic rules for daily use — co-owned with a second designer.</dd></div><div><dt>Result</dt><dd>10+&nbsp;club apps launched and maintained on one system. New screens stopped starting from a blank page.</dd></div></dl>
-    
+    <dl class="case-summary" aria-label="Case at a glance"><div><dt>Problem</dt><dd>The white-label product had to add clubs fast, but each club app was still styled by hand on a half-tokenised library.</dd></div><div><dt>What I did</dt><dd>With a second designer, moved the system to Figma variables: a semantic layer, a theme per club and a plugin that applies it.</dd></div><div><dt>Result</dt><dd>10+&nbsp;club apps on one skeleton. A new club gets a theme — colours, fonts, radii, pictures — not new screens.</dd></div></dl>
   </header>
   <div class="prose wrap">
-<p class="reveal">A shared UI system for a white-label product. The same components had to work for many football clubs, each with its own brand, colors, and content.</p>
-<h2 class="reveal">My role</h2>
-<p class="reveal">I co-owned the design system in Figma with a second designer: the core components, states, and rules that kept the apps consistent. I worked with product and developers so the system was useful not only for design, but also for delivery.</p>
-<h2 class="reveal">The problem</h2>
-<p class="reveal">Every new club app took too much time. Too many screens were designed from scratch, the UI started to drift, and development slowed down. We needed one system that could support many brands without making each app feel generic.</p>
-<h2 class="reveal">The constraints</h2>
-<ul class="reveal"><li>One system had to serve many club identities</li><li>The components needed to stay simple enough for daily product work</li><li>The system had to help both design and development, not become a separate layer of work</li><li>New club apps needed to launch faster without losing consistency</li></ul>
-<h2 class="reveal">The process</h2>
-<p class="reveal">I started from the screens we reused most often: home, content cards, buttons, navigation, and match-day entry points. Then I looked at what changed from club to club, and what had to stay the same.</p>
-<p class="reveal">The main question was: what should be a shared component, and what should stay flexible for brand and content?</p>
-<h2 class="reveal">What I designed</h2>
-<ul class="reveal"><li>A component library in Figma</li><li>Reusable patterns for buttons, cards, navigation, and content blocks</li><li>A theming approach for different club brands</li><li>Basic rules so the team could use the system without guessing</li></ul>
-<h3 class="reveal">Variables and styles theme library</h3>
-<p class="reveal">The core pieces used across the product: variables, colors, text styles, buttons, cards, inputs, and navigation. The image shows the library tested on a real club theme.</p>
-<div class="media reveal"><figure class="fig"><img src="img/design-system/theme-library.webp" alt="Theme library: variables and styles" width="2048" height="1388" loading="lazy" decoding="async"></figure></div>
-<h3 class="reveal">One component, several states</h3>
-<p class="reveal">Default, hover/pressed, disabled, and loading. The system had to cover real use, not only the happy path.</p>
-<div class="media reveal"><figure class="fig"><img src="img/design-system/one-component-several-states.webp" alt="One component in several states, example 1 of 2" width="2048" height="1388" loading="lazy" decoding="async"></figure></div>
-<div class="media reveal"><figure class="fig"><img src="img/design-system/one-component-several-states-2.webp" alt="One component in several states, example 2 of 2" width="2048" height="1388" loading="lazy" decoding="async"></figure></div>
-<h3 class="reveal">Same layout, different club brand</h3>
-<p class="reveal">The structure stays the same. Color, logo, and content change. This was the main white-label problem.</p>
-<div class="media reveal"><figure class="fig"><img src="img/design-system/same-layout-different-club-brand.webp" alt="Same layout, different club brand" width="2048" height="1388" loading="lazy" decoding="async"></figure></div>
-<h3 class="reveal">Content card in the system</h3>
-<p class="reveal">A reusable block for news, videos, offers, or match content. One pattern, many uses.</p>
-<div class="media reveal"><figure class="fig"><img src="img/design-system/content-card-in-the-system-1.webp" alt="Content card in the system, example 1 of 2" width="2048" height="1388" loading="lazy" decoding="async"></figure></div>
-<div class="media reveal"><figure class="fig"><img src="img/design-system/content-card-in-the-system-2.webp" alt="Content card in the system, example 2 of 2" width="2048" height="1388" loading="lazy" decoding="async"></figure></div>
-<h3 class="reveal">Before / after</h3>
-<p class="reveal">How a new club screen was assembled from the system instead of being designed from scratch.</p>
-<div class="media reveal"><figure class="fig"><img src="img/design-system/before-after-01.webp" alt="Before and after, example 1 of 2" width="2048" height="1388" loading="lazy" decoding="async"></figure></div>
-<div class="media reveal"><figure class="fig"><img src="img/design-system/before-after-02.webp" alt="Before and after, example 2 of 2" width="2048" height="1388" loading="lazy" decoding="async"></figure></div>
-<p class="reveal">The goal was not to make a large library for its own sake. The goal was to make the next club app faster to design and easier to keep consistent.</p>
+<p class="reveal">One TEST skeleton, 10+&nbsp;club themes. The same screen becomes FC&nbsp;Copenhagen, FC&nbsp;Midtjylland or ForDanmark when the plugin applies a club’s variables.</p>
+<div class="media reveal"><figure class="fig"><img src="img/design-system/hero.webp" alt="The same onboarding screen four times: the grey TEST skeleton, then FC Copenhagen, FC Midtjylland and the Danish national team app ForDanmark, each with its own colours, font and photo" width="2048" height="1152" loading="eager" decoding="async"><figcaption>One skeleton, three club themes</figcaption></figure></div>
+<h2 class="reveal">Context</h2>
+<p class="reveal">I joined the white-label team when the product had been live for about two years. Components were built on Figma styles and only about half of the values were tokens, so every new club still meant styling screens by hand.</p>
+<p class="reveal">Over the next two years the second designer and I co-owned the system. We moved it to Figma variables, added a semantic layer and a theme for each club. He built the plugin that applies a theme to a batch of screens; we tested and improved it together. On top of the system I designed club apps and features, and we both added components, marked old ones as legacy and answered developers’ questions.</p>
+<h2 class="reveal">Constraints</h2>
+<ul class="reveal"><li>10+&nbsp;club brands on one skeleton, each with its own colours, fonts, corner radii and pictures</li><li>Some clubs may want a dark theme, so a theme needs room for more than one set of colours</li><li>New clubs join while other club apps are live, so a component can’t simply be deleted</li><li>Developers build from Dev Mode, so names and values in Figma are the handoff</li></ul>
+<h2 class="reveal">Process</h2>
+<p class="reveal">We based the colour layer on the Reshaped color system. Names describe a role — bg-primary, fg-neutral, on-bg-primary — and every club fills in the same table. Alpha, beta and gamma are variants a club can use for a dark theme.</p>
+<div class="media reveal"><figure class="fig"><img src="img/design-system/process-semantic-colors.webp" alt="Semantic colour table: token names in rows, club themes TEST, AAB, AB, ACH, B93, BIF, DBU, EFB, FCK, FCM, FTC, KVM, LBK and VFF in columns, with alpha, beta and gamma variants" width="2048" height="1152" loading="lazy" decoding="async"><figcaption>One token name, a value per club</figcaption></figure></div>
+<p class="reveal">Type follows the same rule. Every club has the same text styles, from display to textLinkSmall, in its own font.</p>
+<div class="media reveal"><figure class="fig"><img src="img/design-system/process-text-styles.webp" alt="Text styles of TEST, DBU, FC Copenhagen and FC Midtjylland side by side: the same style names in four club fonts" width="2048" height="1152" loading="lazy" decoding="async"><figcaption>Same style names, four club fonts</figcaption></figure></div>
+<h2 class="reveal">Key decisions</h2>
+<h3 class="reveal">Where does a club’s brand live?</h3>
+<p class="reveal">Options: a copy of the library for each club, club colours set by hand on each screen, or one skeleton that asks for semantic tokens. We chose tokens: a component never knows a club’s colour, it asks for bgPrimary or radius/control and the club theme answers. Cost: strict naming, and a new club fills in the whole set before its first screen.</p>
+<div class="media reveal"><figure class="fig"><img src="img/design-system/decision-semantic-layer.webp" alt="Three options labelled A, B and C, with C, one skeleton with semantic tokens per club, marked as chosen. Next to them a button, its tokens bgPrimary, onBgPrimary and radius/control, and their values in TEST, FC Copenhagen, FC Midtjylland and DBU" width="2048" height="1152" loading="lazy" decoding="async"><figcaption>A component asks for a role, the theme answers</figcaption></figure></div>
+<h3 class="reveal">What happens to a component we replace?</h3>
+<p class="reveal">Options: delete it, or keep it under a _LEGACY name that points to the new one. We kept it: club apps were live, and a deleted component breaks screens nobody is looking at. The name tells the next designer what to use instead. Cost: we didn’t always find time to swap every instance, so some legacy parts stayed in the file.</p>
+<div class="media reveal"><figure class="fig"><img src="img/design-system/decision-legacy.webp" alt="Before: three states of the old match header, named _MatchHeaderLEGACY (Use MatchCard component). After: four variants of the new MatchCard" width="2048" height="1152" loading="lazy" decoding="async"><figcaption>The old header names its replacement</figcaption></figure></div>
+<h2 class="reveal">One skeleton, a theme per club</h2>
+<p class="reveal">Every feature is designed once, in the neutral TEST theme. A club theme is a group of variables and styles with the same names: colours, corner radii, fonts, shadows and pictures. The plugin swaps the TEST group for the club’s group across a batch of screens.</p>
+<p class="reveal">Pictures were our own find. Logos, onboarding photos, stories and article images are named per club too, so the plugin changes them along with the colours.</p>
+<div class="media reveal"><figure class="fig"><img src="img/design-system/skeleton-pictures.webp" alt="TEST onboarding screen next to the FC Midtjylland one, with the colour, corner radius, text style and picture names that the plugin swaps listed between them" width="2048" height="1152" loading="lazy" decoding="async"><figcaption>Four names change, the layout stays</figcaption></figure></div>
+<h2 class="reveal">Components that hold up in every club</h2>
+<p class="reveal">The file holds around 1,000 components and variants. They use tokens only, so each one looks right in any club theme.</p>
+<div class="media reveal"><figure class="fig"><img src="img/design-system/components-buttons.webp" alt="The full button set in the TEST theme, and the same buttons in four club themes: purple, red, navy and yellow on navy" width="2048" height="1152" loading="lazy" decoding="async"><figcaption>Every button style, then four club themes</figcaption></figure></div>
+<p class="reveal">Figma had no real slots, so a section is a reusable block with a slot inside. Content changes without detaching anything.</p>
+<div class="media reveal"><figure class="fig"><img src="img/design-system/component-slot.webp" alt="Section component with a header, an empty slot and a button, next to the same section filled with video cards and a sponsored story card" width="2048" height="1152" loading="lazy" decoding="async"><figcaption>A section with a slot, and what fills it</figcaption></figure></div>
+<p class="reveal">Screens are assembled from these parts, not drawn.</p>
+<div class="media reveal"><figure class="fig"><img src="img/design-system/screen-anatomy.webp" alt="Account screen next to the same screen with its components outlined: user initials, three menu boxes and the tab bar" width="2048" height="1152" loading="lazy" decoding="async"><figcaption>One screen, five components</figcaption></figure></div>
+<h2 class="reveal">States and edge cases</h2>
+<p class="reveal">Inputs carry every state, so a form never needs a one-off: empty, filled, typing, locked and an error that says what is missing.</p>
+<div class="media reveal"><figure class="fig"><img src="img/design-system/states-inputs.webp" alt="Email and phone inputs in every state, from empty to locked and three error states with messages such as Email is empty, and the same input in FC Copenhagen, Brøndby IF, FC Midtjylland and Viborg themes" width="2048" height="1152" loading="lazy" decoding="async"><figcaption>Every input state, then four club themes</figcaption></figure></div>
+<h2 class="reveal">Rules live in the file</h2>
+<p class="reveal">Most support work was small rules that are easy to forget. We wrote them next to the assets in Figma, where the next designer would see them.</p>
+<div class="media reveal"><figure class="fig"><img src="img/design-system/support-notes.webp" alt="Notes from the Figma file: add each club logo to Figma Styles, use fake black #010101 because React Native does not read “black” in SVGs, Android notification logos must be white, and the sponsor logo requirements" width="2048" height="1152" loading="lazy" decoding="async"><figcaption>Notes from the file, word for word</figcaption></figure></div>
+<p class="reveal">Changes reached developers through a changelog, calls and Slack. They built from Dev Mode and asked us when something was unclear.</p>
 <h2 class="reveal">Result</h2>
-<p class="reveal">The system helped launch and maintain 10+&nbsp;club apps with a more consistent UI and less repeated design work.</p>
-<p class="reveal">I do not have a single hard number for time saved. What I can say is this: new screens stopped starting from a blank page, and the product became easier to scale.</p>
+<div class="stats reveal"><p class="stats__kicker"><strong>Platform results.</strong> Product numbers, not personal ones.</p><div class="stats__grid"><div class="stat"><p class="stat__value">10+</p><p class="stat__label">club apps on one skeleton</p></div><div class="stat"><p class="stat__value">~1,000</p><p class="stat__label">components and variants in the system</p></div><div class="stat"><p class="stat__value">+50%</p><p class="stat__label">more active fans</p></div><div class="stat"><p class="stat__value">1.2M</p><p class="stat__label">app sessions a month</p></div></div></div>
+<p class="reveal">Source: <a href="https://www.sportsinnovation.dk/" target="_blank" rel="noopener">Sports Innovation</a>. My part was the system these apps run on, co-owned with the second designer.</p>
 <h2 class="reveal">What I learned</h2>
-<p class="reveal">A design system works when it reduces decisions. If the team still has to invent a new pattern for every screen, the system is not doing its job.</p>
+<ul class="reveal"><li>Name tokens by role, not by colour. A new club then fills in a table instead of redrawing screens.</li><li>Pictures are part of the brand too. Once logos, stories and article images were named per club, the plugin could switch a whole screen, not just its colours.</li><li>Developers read the system in Dev Mode, so layer and token names are the handoff. A sloppy name is a bug.</li></ul>
   </div>
 </article>
 <nav class="pager wrap" aria-label="Case navigation"><p class="more pager__prev"><span class="more__label">Previous</span><a href="live-quiz.html">Live Quiz for match-day engagement</a></p><p class="more pager__next"><span class="more__label">Next</span><a href="keel-ai-financial-management.html">Keel — AI Financial Management</a></p></nav>
