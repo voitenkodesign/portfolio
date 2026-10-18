@@ -144,7 +144,7 @@ Export: `cwebp` settings and folders exactly as in `CLAUDE.md` §6.2.
 - One idea per paragraph, 1–3 sentences. Plain words; no "seamless", "intuitive", "delightful", "leverage".
 - Every constraint must be answered later. If it isn’t, cut the constraint.
 - Lessons are specific: "Provider rules decide the UX — Eventii forced an email path", not "Simplicity matters".
-- The neutral theme every feature is designed in is the **base theme** on the site (it is the `TEST` group in Figma). Never "TEST skeleton" or "skeleton" in site copy; token names like `_TEST/alpha/color/bgPrimary` and Figma page names stay as they are.
+- The neutral theme every feature is designed in is the **base theme** on the site (the `TEST` group in Figma). The reader never sees TEST: not in copy, alts or images — images show BASE (e.g. `BASE/alpha/color/bgPrimary`). Never "skeleton" either. Pass on the idea, not the file’s internal names.
 
 ---
 
