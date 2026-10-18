@@ -144,6 +144,7 @@ Export: `cwebp` settings and folders exactly as in `CLAUDE.md` §6.2.
 - One idea per paragraph, 1–3 sentences. Plain words; no "seamless", "intuitive", "delightful", "leverage".
 - Every constraint must be answered later. If it isn’t, cut the constraint.
 - Lessons are specific: "Provider rules decide the UX — Eventii forced an email path", not "Simplicity matters".
+- The neutral theme every feature is designed in is the **base theme** on the site (it is the `TEST` group in Figma). Never "TEST skeleton" or "skeleton" in site copy; token names like `_TEST/alpha/color/bgPrimary` and Figma page names stay as they are.
 
 ---
 
@@ -214,7 +215,7 @@ Figma file `hML2htcfzwCFXafq3E0sh9`. Work page for exports: **White label case**
 | 5 | Constraints | Many club brands on one codebase · home and crowded stadium · two ticket providers with different rules · two ways to log in per club: the club profile or LigaLogin (an external league-wide login) · up to 40% of season-card holders need to release or transfer a ticket for each match | Sticky note in TEST › Wallet (`17844:178181`); TEST › Login `17844:179120` |
 | 6 | Process | (a) FCK UX board levels: business → journeys → content → wireframes; (b) Brøndby benchmark of buy-ticket journeys (Juventus, Barcelona, Man City, Inter); (c) wallet shaped by fan type: season card / ticket subscription / has tickets / no ticket — **one** clean crop of the Shaping board replaces `ticket-share-flow` and `transfer-ticket-to-a-friend` | FigJam `KSFzlijPDMJtDc035Ua41p`, `VNt8cCz6baXuH8rKVNbcli`, `ZZtOCbpzpy4a9sbOsMvJp9` — crops only |
 | 7 | Key decisions | (1) Confirm a transfer or release with a swipe, not a button. (2) Optional: match header style 1 vs 2. Login is **not** a decision — both options ship; it stays a constraint | TEST › Wallet confirm screens; TEST › Match center `17986:297228` |
-| 8a | Solution: **One skeleton, many clubs** | TEST screen → same screen with FCM variables; one line on variables (TEST group → club group, ~14 club sets) and the switching plugin; link to the Design system case | TEST Home `17844:179121` vs FCM Home `37094:56357`; Variables page `91:4447` |
+| 8a | Solution: **One base theme, many clubs** | Base theme screen → same screen with FCM variables; one line on variables (base group → club group, ~14 club sets) and the switching plugin; link to the Design system case | TEST Home `17844:179121` vs FCM Home `37094:56357`; Variables page `91:4447` |
 | 8b | Solution: **A home that changes with the match** | Pre-match / live / post-match home in one club (FCM) | FCM › Home section |
 | 8c | Solution: **Ticketing: two providers, many states** | Wallet (missing connection → tickets → season card) · Transfer strip (allow contacts → pick → confirm → done) · **Release (confirm → released) — new** · Eventii path (email → account notice) | Existing images + Release `17979:141449`, `17979:140905` (export from FCK page, not TEST) |
 | 9 | States | Transfer error toast, inbox empty, first-time QR hint, error screen | Existing `error-transferring.webp`; TEST › Inbox `17998:532074`; Wallet first-time hint `37627:162987`; TEST › Error |

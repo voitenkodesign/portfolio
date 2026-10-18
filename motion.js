@@ -128,8 +128,8 @@
   document.documentElement.classList.add('js');
 })();
 
-// Theme toy on the design-system case: pick a club theme and drag the split to compare it with the TEST
-// skeleton. Values are the real club variables from the Figma file. Starts a short demo when it comes into
+// Theme toy on the design-system case: pick a club theme and drag the split to compare it with the base
+// theme. Values are the real club variables from the Figma file. Starts a short demo when it comes into
 // view and stops for good at the first touch, click or key. Reduced motion: no demo, no wipe.
 (function () {
   var toy = document.querySelector('[data-toy]');
@@ -141,7 +141,7 @@
   var scan = toy.querySelector('.toy__scan');
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var CLUBS = {
-    test: { name: 'TEST skeleton', tag: 'TEST', primary: '#7C3AED', radius: 9999, font: 'Inter Black', page: '#FFFFFF', picture: 'Grey placeholder' },
+    test: { name: 'Base theme', tag: 'Base', primary: '#7C3AED', radius: 9999, font: 'Inter Black', page: '#FFFFFF', picture: 'Grey placeholder' },
     fck:  { name: 'FC Copenhagen', tag: 'FCK', primary: '#0F2DB9', radius: 4, font: 'FCK Sans Bold', page: '#FCFCFD', picture: 'Club photo' },
     fcm:  { name: 'FC Midtjylland', tag: 'FCM', primary: '#DE2807', radius: 9999, font: 'FCM Rialta Bold', page: '#000000', picture: 'Club photo' },
     dbu:  { name: 'DBU · ForDanmark', tag: 'DBU', primary: '#C90B0E', radius: 6, font: 'DBU Bold', page: '#FFFFFF', picture: 'Club photo' }
@@ -156,7 +156,7 @@
     screen.classList.toggle('is-edge', split < 1.5 || split > 98.5);
     var c = CLUBS[current], t = Math.round(split);
     handle.setAttribute('aria-valuenow', t);
-    handle.setAttribute('aria-valuetext', t + '% TEST, ' + (100 - t) + '% ' + c.name.replace(' ', ' '));
+    handle.setAttribute('aria-valuetext', t + '% base theme, ' + (100 - t) + '% ' + c.name.replace(' ', ' '));
   }
 
   function setValue(key, text, delay) {

@@ -4,17 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Design system for multi-brand club apps — Voitenko Design</title>
-<meta name="description" content="How we rebuilt a white-label design system on Figma variables: one TEST skeleton, 10+ club themes and a plugin that applies them.">
+<meta name="description" content="How we rebuilt a white-label design system on Figma variables: one base theme, 10+ club themes and a plugin that applies them.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Design system for multi-brand club apps — Voitenko Design">
-<meta property="og:description" content="How we rebuilt a white-label design system on Figma variables: one TEST skeleton, 10+ club themes and a plugin that applies them.">
+<meta property="og:description" content="How we rebuilt a white-label design system on Figma variables: one base theme, 10+ club themes and a plugin that applies them.">
 <link rel="canonical" href="https://voitenkodesign.com/design-system.html">
 <meta property="og:url" content="https://voitenkodesign.com/design-system.html">
 <meta property="og:site_name" content="Voitenko Design">
 <meta property="og:image" content="https://voitenkodesign.com/img/design-system/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="The same onboarding screen in the TEST skeleton and three club themes">
+<meta property="og:image:alt" content="The same onboarding screen in the base theme and three club themes">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="color-scheme" content="dark">
 <meta name="theme-color" content="#101010">
@@ -42,10 +42,10 @@
   <header class="case-hero wrap">
     <h1>Design system for multi-brand club apps</h1>
     <dl class="case-facts"><div><dt>Role</dt><dd>UI/UX &amp; Product Designer</dd></div><div><dt>Platform</dt><dd>iOS, Android</dd></div><div><dt>Domain</dt><dd class="seplist"><span class="seplist__items"><span>SportTech</span><span>Design systems</span></span></dd></div><div><dt>Team</dt><dd>2&nbsp;designers, project manager, developers, QA</dd></div></dl>
-    <dl class="case-summary" aria-label="Case at a glance"><div><dt>Problem</dt><dd>The white-label product had to add clubs fast, but each club app was still styled by hand on a half-tokenised library.</dd></div><div><dt>What I did</dt><dd>With a second designer, moved the system to Figma variables: a semantic layer, a theme per club and a plugin that applies it.</dd></div><div><dt>Result</dt><dd>10+&nbsp;club apps on one skeleton. A new club gets a theme — colours, fonts, radii, pictures — not new screens.</dd></div></dl>
+    <dl class="case-summary" aria-label="Case at a glance"><div><dt>Problem</dt><dd>The white-label product had to add clubs fast, but each club app was still styled by hand on a half-tokenised library.</dd></div><div><dt>What I did</dt><dd>With a second designer, moved the system to Figma variables: a semantic layer, a theme per club and a plugin that applies it.</dd></div><div><dt>Result</dt><dd>10+&nbsp;club apps on one base theme. A new club gets a theme — colours, fonts, radii, pictures — not new screens.</dd></div></dl>
   </header>
   <div class="prose wrap">
-<p class="reveal">One TEST skeleton, 10+&nbsp;club themes. The same screen becomes FC&nbsp;Copenhagen, FC&nbsp;Midtjylland or ForDanmark when the plugin applies a club’s variables.</p>
+<p class="reveal">One base theme, 10+&nbsp;club themes. The same screen becomes FC&nbsp;Copenhagen, FC&nbsp;Midtjylland or ForDanmark when the plugin applies a club’s variables.</p>
 <div class="media reveal"><figure class="fig toy" data-toy>
 <div class="toy__card">
   <div class="toy__stage">
@@ -58,16 +58,16 @@
           <img class="toy__shot" data-shot="dbu" src="img/design-system/theme-dbu.webp" alt="" width="786" height="1704" loading="lazy" decoding="async">
           <span class="toy__scan" aria-hidden="true"></span>
         </div>
-        <span class="toy__tag toy__tag--left" aria-hidden="true">TEST</span>
+        <span class="toy__tag toy__tag--left" aria-hidden="true">Base</span>
         <span class="toy__tag toy__tag--right" aria-hidden="true" data-toy-tag>FCK</span>
-        <span class="toy__handle" data-toy-handle tabindex="0" role="slider" aria-label="Compare the TEST skeleton with the club theme" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="Half TEST, half FC Copenhagen"><svg class="toy__grip" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 7 4 12l5 5M15 7l5 5-5 5"/></svg></span>
+        <span class="toy__handle" data-toy-handle tabindex="0" role="slider" aria-label="Compare the base theme with the club theme" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="Half base theme, half FC Copenhagen"><svg class="toy__grip" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 7 4 12l5 5M15 7l5 5-5 5"/></svg></span>
       </div>
     </div>
   </div>
   <div class="toy__panel">
     <p class="toy__name" data-toy-name>FC&nbsp;Copenhagen</p>
     <div class="toy__switch" role="radiogroup" aria-label="Club theme" data-toy-switch>
-      <button type="button" role="radio" aria-checked="false" data-club="test" tabindex="-1"><span class="toy__dot" style="--c: #7C3AED"></span>TEST</button>
+      <button type="button" role="radio" aria-checked="false" data-club="test" tabindex="-1"><span class="toy__dot" style="--c: #7C3AED"></span>Base</button>
       <button type="button" role="radio" aria-checked="true" data-club="fck"><span class="toy__dot" style="--c: #0F2DB9"></span>FCK</button>
       <button type="button" role="radio" aria-checked="false" data-club="fcm" tabindex="-1"><span class="toy__dot" style="--c: #DE2807"></span>FCM</button>
       <button type="button" role="radio" aria-checked="false" data-club="dbu" tabindex="-1"><span class="toy__dot" style="--c: #C90B0E"></span>DBU</button>
@@ -79,7 +79,7 @@
       <div><dt>bgPage</dt><dd><span class="toy__swatch toy__swatch--page" aria-hidden="true"></span><span data-v="page">#FCFCFD</span></dd></div>
       <div><dt>Welcome picture</dt><dd><span data-v="picture">Club photo</span></dd></div>
     </dl>
-    <p class="toy__hint">Pick a club, then drag across the screen to compare it with the TEST skeleton.</p>
+    <p class="toy__hint">Pick a club, then drag across the screen to compare it with the base theme.</p>
     <p class="sr-only" role="status" data-toy-status></p>
   </div>
 </div>
@@ -89,26 +89,26 @@
 <p class="reveal">I joined the white-label team when the product had been live for about two years. Components were built on Figma styles and only about half of the values were tokens, so every new club still meant styling screens by hand.</p>
 <p class="reveal">Over the next two years the second designer and I co-owned the system. We moved it to Figma variables, added a semantic layer and a theme for each club. He built the plugin that applies a theme to a batch of screens; we tested and improved it together. On top of the system I designed club apps and features, and we both added components, marked old ones as legacy and answered developers’ questions.</p>
 <h2 class="reveal">Constraints</h2>
-<ul class="reveal"><li>10+&nbsp;club brands on one skeleton, each with its own colours, fonts, corner radii and pictures</li><li>Some clubs may want a dark theme, so a theme needs room for more than one set of colours</li><li>New clubs join while other club apps are live, so a component can’t simply be deleted</li><li>Developers build from Dev Mode, so names and values in Figma are the handoff</li></ul>
+<ul class="reveal"><li>10+&nbsp;club brands on one base theme, each with its own colours, fonts, corner radii and pictures</li><li>Some clubs may want a dark theme, so a theme needs room for more than one set of colours</li><li>New clubs join while other club apps are live, so a component can’t simply be deleted</li><li>Developers build from Dev Mode, so names and values in Figma are the handoff</li></ul>
 <h2 class="reveal">Process</h2>
 <p class="reveal">We based the colour layer on the Reshaped color system. Names describe a role — bg-primary, fg-neutral, on-bg-primary — and every club fills in the same table. Alpha, beta and gamma are variants a club can use for a dark theme.</p>
-<div class="media reveal"><figure class="fig"><img src="img/design-system/process-semantic-colors.webp" alt="Semantic colour table: token names in rows, club themes TEST, AAB, AB, ACH, B93, BIF, DBU, EFB, FCK, FCM, FTC, KVM, LBK and VFF in columns, with alpha, beta and gamma variants" width="2048" height="1152" loading="lazy" decoding="async"><figcaption>One token name, a value per club</figcaption></figure></div>
+<div class="media reveal"><figure class="fig"><img src="img/design-system/process-semantic-colors.webp" alt="Semantic colour table: token names in rows, club themes TEST (the base theme), AAB, AB, ACH, B93, BIF, DBU, EFB, FCK, FCM, FTC, KVM, LBK and VFF in columns, with alpha, beta and gamma variants" width="2048" height="1152" loading="lazy" decoding="async"><figcaption>One token name, a value per club</figcaption></figure></div>
 <p class="reveal">Type follows the same rule. Every club has the same text styles, from display to textLinkSmall, in its own font.</p>
-<div class="media reveal"><figure class="fig"><img src="img/design-system/process-text-styles.webp" alt="Text styles of TEST, DBU, FC Copenhagen and FC Midtjylland side by side: the same style names in four club fonts" width="2048" height="1152" loading="lazy" decoding="async"><figcaption>Same style names, four club fonts</figcaption></figure></div>
+<div class="media reveal"><figure class="fig"><img src="img/design-system/process-text-styles.webp" alt="Text styles of the base theme, DBU, FC Copenhagen and FC Midtjylland side by side: the same style names in four club fonts" width="2048" height="1152" loading="lazy" decoding="async"><figcaption>Same style names, four club fonts</figcaption></figure></div>
 <h2 class="reveal">Key decisions</h2>
 <h3 class="reveal">Where does a club’s brand live?</h3>
-<p class="reveal">Options: a copy of the library for each club, club colours set by hand on each screen, or one skeleton that asks for semantic tokens. We chose tokens: a component never knows a club’s colour, it asks for bgPrimary or radius/control and the club theme answers. Cost: more time up front on tokens and variables. In return, a new club is a new set of variables, not a recolour of every screen.</p>
-<div class="media reveal"><figure class="fig"><img src="img/design-system/decision-semantic-layer.webp" alt="Three options labelled A, B and C, with C, one skeleton with semantic tokens per club, marked as chosen. Next to them a button, its tokens bgPrimary, onBgPrimary and radius/control, and their values in TEST, FC Copenhagen, FC Midtjylland and DBU" width="2048" height="1152" loading="lazy" decoding="async"><figcaption>A component asks for a role, the theme answers</figcaption></figure></div>
+<p class="reveal">Options: a copy of the library for each club, club colours set by hand on each screen, or one base theme that asks for semantic tokens. We chose tokens: a component never knows a club’s colour, it asks for bgPrimary or radius/control and the club theme answers. Cost: more time up front on tokens and variables. In return, a new club is a new set of variables, not a recolour of every screen.</p>
+<div class="media reveal"><figure class="fig"><img src="img/design-system/decision-semantic-layer.webp" alt="Three options labelled A, B and C, with C, one base theme with semantic tokens per club, marked as chosen. Next to them a button, its tokens bgPrimary, onBgPrimary and radius/control, and their values in the base theme, FC Copenhagen, FC Midtjylland and DBU" width="2048" height="1152" loading="lazy" decoding="async"><figcaption>A component asks for a role, the theme answers</figcaption></figure></div>
 <h3 class="reveal">What happens to a component we replace?</h3>
 <p class="reveal">Options: delete it, or keep it under a _LEGACY name that points to the new one. We kept it: club apps were live, and a deleted component breaks screens nobody is looking at. The name tells the next designer what to use instead. Cost: we didn’t always find time to swap every instance, so some legacy parts stayed in the file.</p>
 <div class="media reveal"><figure class="fig"><img src="img/design-system/decision-legacy.webp" alt="Before: three states of the old match header, named _MatchHeaderLEGACY (Use MatchCard component). After: four variants of the new MatchCard" width="2048" height="1152" loading="lazy" decoding="async"><figcaption>The old header names its replacement</figcaption></figure></div>
-<h2 class="reveal">One skeleton, a theme per club</h2>
-<p class="reveal">Every feature is designed once, in the neutral TEST theme. A club theme is a group of variables and styles with the same names: colours, corner radii, fonts, shadows and pictures. The plugin swaps the TEST group for the club’s group across a batch of screens.</p>
+<h2 class="reveal">One base theme, a theme per club</h2>
+<p class="reveal">Every feature is designed once, in the neutral base theme, named TEST in the file. A club theme is a group of variables and styles with the same names: colours, corner radii, fonts, shadows and pictures. The plugin swaps the base group for the club’s group across a batch of screens.</p>
 <p class="reveal">Pictures were our own find. Logos, onboarding photos, stories and article images are named per club too, so the plugin changes them along with the colours.</p>
-<div class="media reveal"><figure class="fig"><img src="img/design-system/skeleton-pictures.webp" alt="TEST onboarding screen next to the FC Midtjylland one, with the colour, corner radius, text style and picture names that the plugin swaps listed between them" width="2048" height="1152" loading="lazy" decoding="async"><figcaption>Four names change, the layout stays</figcaption></figure></div>
+<div class="media reveal"><figure class="fig"><img src="img/design-system/skeleton-pictures.webp" alt="Base theme onboarding screen next to the FC Midtjylland one, with the colour, corner radius, text style and picture names that the plugin swaps listed between them" width="2048" height="1152" loading="lazy" decoding="async"><figcaption>Four names change, the layout stays</figcaption></figure></div>
 <h2 class="reveal">Components that hold up in every club</h2>
 <p class="reveal">The file holds around 1,000 components and variants. They use tokens only, so each one looks right in any club theme.</p>
-<div class="media reveal"><figure class="fig"><img src="img/design-system/components-buttons.webp" alt="The full button set in the TEST theme, and the same buttons in four club themes: purple, red, navy and yellow on navy" width="2048" height="1152" loading="lazy" decoding="async"><figcaption>Every button style, then four club themes</figcaption></figure></div>
+<div class="media reveal"><figure class="fig"><img src="img/design-system/components-buttons.webp" alt="The full button set in the base theme, and the same buttons in four club themes: purple, red, navy and yellow on navy" width="2048" height="1152" loading="lazy" decoding="async"><figcaption>Every button style, then four club themes</figcaption></figure></div>
 <p class="reveal">Figma had no real slots, so a section is a reusable block with a slot inside. Content changes without detaching anything.</p>
 <div class="media reveal"><figure class="fig"><img src="img/design-system/component-slot.webp" alt="Section component with a header, an empty slot and a button, next to the same section filled with video cards and a sponsored story card" width="2048" height="1152" loading="lazy" decoding="async"><figcaption>A section with a slot, and what fills it</figcaption></figure></div>
 <p class="reveal">Screens are assembled from these parts, not drawn.</p>
@@ -121,7 +121,7 @@
 <div class="media reveal"><figure class="fig"><img src="img/design-system/support-notes.webp" alt="Notes from the Figma file: add each club logo to Figma Styles, use fake black #010101 because React Native does not read “black” in SVGs, Android notification logos must be white, and the sponsor logo requirements" width="2048" height="1152" loading="lazy" decoding="async"><figcaption>Notes from the file, word for word</figcaption></figure></div>
 <p class="reveal">Changes reached developers through a changelog, calls and Slack. They built from Dev Mode and asked us when something was unclear.</p>
 <h2 class="reveal">Result</h2>
-<div class="stats reveal"><p class="stats__kicker"><strong>Platform results.</strong> Product numbers, not personal ones.</p><div class="stats__grid"><div class="stat"><p class="stat__value">10+</p><p class="stat__label">club apps on one skeleton</p></div><div class="stat"><p class="stat__value">~1,000</p><p class="stat__label">components and variants in the system</p></div><div class="stat"><p class="stat__value">+50%</p><p class="stat__label">more active fans</p></div><div class="stat"><p class="stat__value">1.2M</p><p class="stat__label">app sessions a month</p></div></div></div>
+<div class="stats reveal"><p class="stats__kicker"><strong>Platform results.</strong> Product numbers, not personal ones.</p><div class="stats__grid"><div class="stat"><p class="stat__value">10+</p><p class="stat__label">club apps on one base theme</p></div><div class="stat"><p class="stat__value">~1,000</p><p class="stat__label">components and variants in the system</p></div><div class="stat"><p class="stat__value">+50%</p><p class="stat__label">more active fans</p></div><div class="stat"><p class="stat__value">1.2M</p><p class="stat__label">app sessions a month</p></div></div></div>
 <p class="reveal">Source: <a href="https://www.sportsinnovation.dk/" target="_blank" rel="noopener">Sports Innovation</a>. My part was the system these apps run on, co-owned with the second designer.</p>
 <h2 class="reveal">What I learned</h2>
 <ul class="reveal"><li>Name tokens by role, not by colour. A new club then fills in a table instead of redrawing screens.</li><li>Pictures are part of the brand too. Once logos, stories and article images were named per club, the plugin could switch a whole screen, not just its colours.</li><li>Developers read the system in Dev Mode, so layer and token names are the handoff. A sloppy name is a bug.</li></ul>
