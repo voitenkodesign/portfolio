@@ -98,6 +98,11 @@ Rule: the paragraph always has the three parts — **options**, **choice + reaso
 ```
 
 - A flow (happy path) = one gallery, screens left to right in order, `--cols` = number of screens (max 4 per row).
+- Leftover phone: on desktop a gallery shows 3 cards per row. If one card would sit alone on the last row
+  (4, 7, 10 screens), CSS moves it up as a 4th card that runs past the content edge. Nothing to add in HTML;
+  just don't pad a gallery with a filler screen to avoid the gap.
+- Phone screenshots carry the status bar only. No home indicator and no Dynamic Island in the image:
+  the `.phone` frame draws both, and a baked-in one doubles up.
 - States = a separate gallery after the flow, captions name the state *and* what the user can do.
 - Brand comparison = one `.media` composition with the same screen in 2–3 brands (made in Figma, exported as one image).
 

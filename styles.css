@@ -420,6 +420,13 @@ strong { color: var(--title); font-weight: 600; }
 .phone::before { top: 2.63%; width: 30.22%; aspect-ratio: 126 / 37; background: var(--device); }
 .phone::after { bottom: 2.28%; width: 32.13%; aspect-ratio: 134 / 5; background: var(--title); mix-blend-mode: difference; }
 .gallery--phones .fig figcaption { width: 100%; max-width: 280px; margin-top: var(--s-3); }
+/* Leftover phone: when a 3-per-row gallery would leave one card alone on the last row (4, 7, 10 cards),
+   that card joins the row above as a 4th one and runs past the content edge. A teaser instead of a hole.
+   Card width stays the same as in a 3-card row; .case clips the overflow, so the page never scrolls sideways. */
+@media (min-width: 1000px) {
+  .gallery--phones:has(> .fig:last-child:nth-child(3n+1)) { grid-template-columns: repeat(4, calc((100% - 2 * var(--s-4)) / 3)); }
+}
+.case { overflow-x: clip; }
 /* Tablet: two phone cards per row so screens stay readable */
 @media (min-width: 700px) and (max-width: 999px) {
   .gallery--phones { grid-template-columns: repeat(2, 1fr); }
