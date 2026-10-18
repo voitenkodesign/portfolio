@@ -472,24 +472,6 @@ strong { color: var(--title); font-weight: 600; }
 .case-cover { --r: 1.333; aspect-ratio: 4 / 3; border-radius: var(--radius); overflow: hidden; }
 @media (min-width: 760px) { .case-cover { --r: 1.778; aspect-ratio: 16 / 9; } }
 
-/* Wide screens: one text column, offset right. Section headings, sub-headings and paragraphs all start on one
-   line (the 640px right column); the section number hangs just left of its heading (same line, 16px gap),
-   so a one-line section still reads as text under a heading; pictures and galleries span both columns.
-   Grid items don't collapse margins, so spacing here is top margins only. */
-@media (min-width: 1000px) {
-  .prose { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, var(--body)); column-gap: var(--s-8); align-items: start; }
-  .prose > * { grid-column: 2; margin-top: 0; margin-bottom: 0; }
-  .prose > * + * { margin-top: 1em; }
-  .prose > p:first-child { margin-top: var(--s-7); }
-  .prose > h2 { display: block; position: relative; margin: var(--space-section) 0 0; }
-  .prose > h2::before { position: absolute; right: 100%; margin-right: var(--s-4); }
-  .prose > h3 { margin-top: var(--s-8); }
-  .prose > h3 + * { margin-top: var(--s-3); }
-  .prose > h2 + *, .prose > h2 + h3 { margin-top: var(--s-5); }
-  .prose > .media, .prose > .gallery, .prose > .stats { grid-column: 1 / -1; }
-  .prose > :is(.media, .gallery, .stats), .prose > :is(.media, .gallery, .stats) + :not(h2, h3) { margin-top: var(--s-5); }
-}
-
 /* Media: same left edge as the title, full content width */
 .media, .gallery { margin: var(--s-5) 0; width: 100%; }
 .fig { margin: 0; }

@@ -12,7 +12,7 @@ content rules, the workflow with the owner, and mistakes that already happened o
   He often reviews on his phone (Remote Control) — send phone screenshots of results with SendUserFile.
 - He loves **systems**: one rule for many elements. Never add a one-off value when a token or an existing rule fits.
 - Case pages: the main picture sits in the header between the facts and the summary (`.case-hero__media`; no picture
-  yet = a `.cover cover--<slug> case-cover` composition). From 1000px all text runs in one right column; section numbers hang left of the headings.
+  yet = a `.cover cover--<slug> case-cover` composition).
 - CV: every "CV" link points to `/cv`, which `_redirects` sends to the current file (now a Google Drive link). Dropping a
   `cv.pdf` into the repo root is enough: `motion.js` checks for it and sends the links there instead.
 - Home hero is a layered scene (`.scene` in `styles.css`, `img/home/hero/`): Figma components of the club app as
