@@ -224,6 +224,8 @@ strong { color: var(--title); font-weight: 600; }
 .scene .phone { max-width: none; }
 .scene .phone img { border-radius: 13.99% / 6.46%; }
 @keyframes scene-in { from { opacity: 0; transform: translate(var(--fx, 0), var(--fy, 0)) scale(.96); } }
+/* motion.js holds the entrance until the pictures are decoded (max 2.5 s), so cards never arrive empty */
+.scene.is-loading .scene__layer > * { animation-play-state: paused; }
 /* position, entrance direction and delay, depth (pointer), scroll drift */
 .scene__layer--product      { --x: 76.26%; --y: 0;      --w: 21.5%;  --rad: 6.2% / 3.3%;  --fx: 16px;  --fy: 0;     --delay: .36s; --drift: -70px; }
 .scene__layer--quiz         { --x: 0;      --y: 34.81%; --w: 40.43%; --rad: 2.6% / 3.2%;  --fx: -16px; --fy: 0;     --delay: .42s; --drift: -50px; }
@@ -273,14 +275,13 @@ strong { color: var(--title); font-weight: 600; }
 
 /* Home: the header "Email me" stays hidden while the hero buttons are on screen (motion.js toggles
    .hero-cta-visible on <html>), so there is only ever one "Email me" in view. No JS = always shown.
-   Hidden, it also gives back its width (and the gap before it), so the nav links sit at the right edge. */
-.site-nav .btn {
-  max-width: 160px; overflow: hidden;
-  transition: opacity var(--dur-fast) ease, visibility var(--dur), max-width var(--dur) var(--ease-out), padding var(--dur) var(--ease-out), margin var(--dur) var(--ease-out);
-}
-.hero-cta-visible .site-nav .btn {
-  opacity: 0; visibility: hidden; max-width: 0; padding-left: 0; padding-right: 0; margin-left: calc(-1 * var(--nav-gap));
-}
+   Hidden, it fades out in place and the nav links slide right into its space by its width (--nav-shift,
+   measured by motion.js), so they sit at the right edge. Transform and opacity only, no layout animation;
+   .nav-ready switches the transitions on after the first state is set, so nothing slides on load. */
+.hero-cta-visible .site-nav .btn { opacity: 0; visibility: hidden; transform: translateX(var(--s-2)); }
+.hero-cta-visible .site-nav a:not(.btn) { transform: translateX(var(--nav-shift, 0px)); }
+.nav-ready .site-nav .btn { transition: background-color var(--dur-fast) ease, opacity var(--dur-fast) ease, visibility var(--dur-fast), transform var(--dur) var(--ease-out); }
+.nav-ready .site-nav a:not(.btn) { transition: transform var(--dur) var(--ease-out); }
 
 .section { padding-top: var(--space-section); }
 .section--clubs { padding-top: var(--s-8); }
@@ -389,30 +390,32 @@ strong { color: var(--title); font-weight: 600; }
   .stat__label { font-size: var(--fs-caption); }
 }
 
-/* Home: About — a card grid (text, portrait, facts, contacts), one 16px gap everywhere like a bento */
+/* About: one text card (lead line, two short paragraphs, the two facts at the bottom) next to a square
+   portrait; contact cards below. The facts sit at the card's foot, so the card fills the portrait's height
+   with a deliberate gap instead of empty space above the text. */
 .about { font-size: var(--fs-body); }
 .about__row { display: grid; gap: var(--s-4); margin-top: var(--s-4); }
 .about__row:first-child { margin-top: 0; }
-.about__intro, .about__facts, .about__contacts { grid-template-columns: 1fr; }
 .about__text, .about__card { background: var(--surface); border-radius: var(--radius-lg); padding: var(--s-6); }
-.about__text { display: flex; flex-direction: column; justify-content: center; }
-.about__text p:last-child { margin-bottom: 0; }
-.about__portrait { border-radius: var(--radius-lg); overflow: hidden; background: var(--surface); min-height: 280px; }
+.about__text { display: flex; flex-direction: column; }
+.about__text p { margin: 0 0 1em; color: var(--text); }
+.about__text .about__lead { font-size: var(--fs-h3); line-height: var(--lh-heading); color: var(--title); }
+.about__facts { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-5); margin: auto 0 0; padding-top: var(--s-5); border-top: 1px solid var(--line); }
+.about__facts dd { margin: 0; }
+.about__portrait { border-radius: var(--radius-lg); overflow: hidden; background: var(--surface); aspect-ratio: 1 / 1; }
 .about__portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
-.about__value { font-size: var(--fs-h2); font-weight: 500; color: var(--title); letter-spacing: var(--ls-display); line-height: var(--lh-tight); margin: 0 0 var(--s-2); }
+.about__value { font-size: var(--fs-h3); font-weight: 500; color: var(--title); letter-spacing: var(--ls-heading); line-height: var(--lh-heading); margin: 0 0 var(--s-1); }
 .about__label { color: var(--text); margin: 0; font-size: var(--fs-small); line-height: var(--lh-ui); }
 .about__card--link { display: flex; align-items: center; gap: var(--s-3); padding: var(--s-5) var(--s-6); color: var(--title); text-decoration: none; font-weight: 500; transition: background-color var(--dur-fast) ease; }
 @media (hover: hover) and (pointer: fine) { .about__card--link:hover { color: var(--title); text-decoration: none; background: var(--surface-hover); } }
 @media (hover: hover) and (pointer: fine) { .about__card--link:hover span { text-decoration: underline; text-underline-offset: .2em; } }
 .about__card--link img { width: 28px; height: 28px; flex: none; }
 @media (min-width: 760px) {
-  .about__intro { grid-template-columns: 1fr 1fr; align-items: stretch; max-height: 630px; }
-  .about__intro > .about__text, .about__intro > .about__portrait { max-height: 630px; min-height: 0; }
-  .about__facts, .about__contacts { grid-template-columns: 1fr 1fr; }
+  .about__intro { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); align-items: stretch; }
+  .about__contacts { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 759px) {
   .about .about__text, .about .about__card { padding: var(--s-5); }
-  .about__portrait { aspect-ratio: 1 / 1; min-height: 0; }
 }
 
 /* Case pages — left-aligned in a 1120px content column: title, facts, summary, then numbered section rows;
@@ -461,6 +464,29 @@ strong { color: var(--title); font-weight: 600; }
 .prose > blockquote { max-width: var(--body); margin: var(--s-5) 0; padding-left: var(--s-5); border-left: 2px solid var(--stroke); color: var(--title); }
 .prose blockquote p { margin: 0; }
 .prose blockquote cite { display: block; margin-top: var(--s-2); font-size: var(--fs-small); font-style: normal; color: var(--text); }
+/* Case hero picture: right under the facts, so the first screen shows the product, not only text.
+   Cases without a ready picture use the home card cover (brand colour + two screens) in a wide frame. */
+.case-hero > .case-hero__media { margin: var(--s-7) 0 0; }
+.case-cover { --r: 1.333; aspect-ratio: 4 / 3; border-radius: var(--radius); overflow: hidden; }
+@media (min-width: 760px) { .case-cover { --r: 1.778; aspect-ratio: 16 / 9; } }
+
+/* Wide screens: two columns. Section headings sit in the left column, level with their first paragraph;
+   text runs in the 640px right column; pictures, galleries and figures span both. Grid items don't collapse
+   margins, so spacing here is top margins only: 1em between text, a section gap before a heading row. */
+@media (min-width: 1000px) {
+  .prose { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, var(--body)); column-gap: var(--s-8); align-items: start; }
+  .prose > * { grid-column: 2; margin-top: 0; margin-bottom: 0; }
+  .prose > * + * { margin-top: 1em; }
+  .prose > p:first-child { grid-column: 1 / -1; margin-top: var(--s-7); }
+  .prose > h2 { grid-column: 1; }
+  .prose > h2, .prose > h2 + * { margin-top: var(--space-section); }
+  .prose > h3 { margin-top: var(--s-8); }
+  .prose > h3 + * { margin-top: var(--s-3); }
+  .prose > .media, .prose > .gallery, .prose > .stats { grid-column: 1 / -1; }
+  .prose > .media, .prose > .gallery, .prose > .stats,
+  .prose > .media + *, .prose > .gallery + *, .prose > .stats + * { margin-top: var(--s-5); }
+  .prose > h2 + .media, .prose > h2 + .gallery, .prose > h2 + .stats { margin-top: var(--s-5); }
+}
 
 /* Media: same left edge as the title, full content width */
 .media, .gallery { margin: var(--s-5) 0; width: 100%; }
@@ -611,9 +637,15 @@ strong { color: var(--title); font-weight: 600; }
 .js .case-media { transition: opacity var(--dur-slow) ease, transform var(--dur-slow) var(--ease-out); }
 .js .case-media:not(.is-in) { opacity: 0; transform: translateY(var(--s-3)); }
 
+/* Reduced motion: gentler, not zero. Things still fade in (opacity only), nothing travels, nothing loops,
+   no scroll drift or hover shifts; pages still cross-fade. */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  *, *::before, *::after { transition: none !important; animation: none !important; }
-  .js .case-media, .js .case-media:not(.is-in) { opacity: 1; transform: none; }
-  @view-transition { navigation: none; }
+  @keyframes rise { from { opacity: 0; } }
+  @keyframes scene-in { from { opacity: 0; } }
+  .scene__layer, .status__dot, .status__dot::after, .local-time .colon { animation: none !important; }
+  .js .case-media:not(.is-in) { transform: none; }
+  .card:hover .cover > *, a:hover .arrow--end, .card:hover .card__cta::after { transform: none; }
+  a:hover .arrow--back { transform: scaleX(-1); }
+  .nav-ready .site-nav a:not(.btn) { transition: none; }
 }

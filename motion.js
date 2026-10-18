@@ -1,6 +1,6 @@
 // Case image blocks and home sections fade in (styles.css: .case-media) as they enter the viewport.
-// Progressive enhancement: nothing is hidden unless this script runs, IntersectionObserver exists
-// and the visitor has not asked for reduced motion. Blocks already in view are shown immediately.
+// Progressive enhancement: nothing is hidden unless this script runs and IntersectionObserver exists.
+// With reduced motion they only fade (styles.css). Blocks already in view are shown immediately.
 // Footer: current time in Kyiv ("Kyiv 14:32"), updated on the minute. Hidden if the browser can't do it.
 (function () {
   var slot = document.querySelector('.local-time');
@@ -94,18 +94,50 @@
 })();
 
 // Home: hide the header "Email me" while the hero buttons are visible, show it once they scroll away.
+// The nav links slide into its place by --nav-shift (its width + the nav gap), measured here.
 (function () {
-  var cta = document.querySelector('.hero__cta');
-  if (!cta || !('IntersectionObserver' in window)) return;
+  var cta = document.querySelector('.hero__cta'), btn = document.querySelector('.site-nav .btn');
+  if (!cta || !btn || !('IntersectionObserver' in window)) return;
   var root = document.documentElement;
+  function measure() {
+    var gap = parseFloat(getComputedStyle(btn.parentNode).columnGap) || 0;
+    root.style.setProperty('--nav-shift', (btn.offsetWidth + gap) + 'px');
+  }
+  measure();
+  window.addEventListener('resize', measure);
+  var first = true;
   new IntersectionObserver(function (entries) {
     root.classList.toggle('hero-cta-visible', entries[0].isIntersecting);
+    if (first) { first = false; requestAnimationFrame(function () { requestAnimationFrame(function () { root.classList.add('nav-ready'); }); }); }
   }, { rootMargin: '-64px 0px 0px 0px' }).observe(cta);
+})();
+
+// CV links point to /cv (_redirects sends it to the current file). If a cv.pdf sits in the site root,
+// the links go straight to it instead, so a new CV only needs the file dropped into the repo.
+(function () {
+  var links = document.querySelectorAll('a[data-cv]');
+  if (!links.length || !window.fetch) return;
+  fetch('/cv.pdf', { method: 'HEAD' }).then(function (r) {
+    if (!r.ok || !/pdf/i.test(r.headers.get('content-type') || '')) return;
+    for (var i = 0; i < links.length; i++) links[i].href = '/cv.pdf';
+  }).catch(function () {});
+})();
+
+// Home hero scene: hold the entrance until the pictures are decoded, so cards never fly in empty.
+// Waits at most 2.5 s; without this script the scene simply plays as soon as the page renders.
+(function () {
+  var scene = document.querySelector('.scene');
+  if (!scene) return;
+  var imgs = scene.querySelectorAll('img'), waits = [];
+  scene.classList.add('is-loading');
+  for (var i = 0; i < imgs.length; i++) waits.push(imgs[i].decode ? imgs[i].decode().catch(function () {}) : Promise.resolve());
+  var go = function () { scene.classList.remove('is-loading'); };
+  Promise.all(waits).then(go);
+  setTimeout(go, 2500);
 })();
 
 (function () {
   if (!('IntersectionObserver' in window)) return;
-  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   var blocks = document.querySelectorAll('.case .prose > .media, .case .prose > .gallery, .cards > .card, .clubs, .stats, .about__row, .cta');
   if (!blocks.length) return;
   var io = new IntersectionObserver(function (entries) {
