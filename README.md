@@ -19,7 +19,7 @@ Static portfolio site: plain HTML + one shared `styles.css`. No framework, no np
 
 ## Images
 
-Site images live in `img/<case>/` as WebP with ASCII kebab-case names (home card covers are 1200px wide, case images at most 2048px). `og.jpg` (1200×630) is the share image.
+Site images live in `img/<case>/` as WebP with ASCII kebab-case names (home card covers are CSS compositions of screens in `img/covers/`, 600px wide; case images at most 2048px). `og.jpg` (1200×630) is the share image.
 
 ## Source
 

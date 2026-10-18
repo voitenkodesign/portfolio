@@ -46,10 +46,10 @@ Never write raw values in new CSS. Pick tokens:
 
 | Area | Tokens / rule |
 |---|---|
-| Colour | `--bg #101010`, `--surface #1d1d1f` (**every** card/panel), `--surface-hover`, `--bg-glass`, `--title`, `--text` (62% white), `--line`, `--fill`, `--stroke`, `--underline`, `--accent #4ade80` + `--accent-soft` |
+| Colour | `--bg #101010`, `--surface #1c1c1b` (**every** card/panel), `--surface-hover`, `--bg-glass`, `--title`, `--text` (72% white), `--line`, `--fill`, `--stroke`, `--underline`, `--accent #5ce08f` + `--accent-soft` |
 | Accent | Green only where it means something: "Open to work", Kyiv clock, result figures, case summary labels |
 | Spacing | `--s-1..--s-8` = 4 8 12 16 24 32 48 64; `--space-section` between sections. **Inside a group < between groups.** Card grids (bento) use one 16px gap |
-| Type size | `--fs-display` 34–52, `--fs-h1` 28–40, `--fs-h2` 24–32, `--fs-h3` 20, `--fs-body` 17, `--fs-small` 15, `--fs-caption` 13. Exactly 7 sizes on the site |
+| Type size | `--fs-display` 34–62, `--fs-h1` 28–40, `--fs-h2` 24–32, `--fs-h3` 20, `--fs-body` 17, `--fs-small` 15, `--fs-caption` 13. Exactly 7 sizes on the site |
 | Leading | `--lh-tight` 1.1, `--lh-heading` 1.2, `--lh-ui` 1.4, `--lh-body` 1.6 |
 | Tracking | `--ls-display` -.03em, `--ls-heading` -.02em, text 0 |
 | Font | Mona Sans only (variable). Headings + big figures `font-stretch: 112%`, text 100%. Weights 400/500/600, one italic accent ("actually use.") |
@@ -88,13 +88,15 @@ Case structure: see CASE-TEMPLATE.md (block order, HTML patterns, image and writ
 2. **Images**: put source PNG/JPG into `Voitenko Design — Portfolio/<NN Case name>/` (kept in git, not deployed);
    export WebP into `img/<slug>/<kebab-name>.webp`:
    `cwebp -q 82 -m 6 -sharp_yuv -metadata none [-resize 2048 0] in.png -o out.webp` (case images ≤ 2048px wide).
-   Home card cover: `img/home/cover-<slug>.webp`, 1200px wide, 2048×1388 source ratio (`width="1200" height="813"`).
+   Home card cover (a CSS composition, no baked cover image): two single phone screens cropped/exported to
+   `img/covers/<slug>-<screen>.webp` at 600px wide (a web case: one browser screenshot, 1200px), placed in
+   `.card__media.cover.cover--<slug>`; add the product brand colour as `.cover--<slug> { --brand: … }` in `styles.css`.
    Every `<img>` gets real `width`/`height`, `loading="lazy" decoding="async"`, and a readable `alt`
    ("Live Quiz entry point, screen 1 of 3"), not a file name.
 3. **Page** from the template below: head meta (title, description, canonical, og:url, og:*), case facts, case summary
    written **only from the case's own text**, numbered sections (`h2` get numbers automatically), galleries/media/stats,
    pager, CTA, footer with the Kyiv clock.
-4. **Home** (`index.html`): add a card in `.cards` — cover, `card__meta` ("Domain<span class="sep">·</span>Platform"),
+4. **Home** (`index.html`): add a card in `.cards` (client work) or the second `.cards` under "Concepts" — cover, `card__meta` ("Domain<span class="sep">·</span>Platform"),
    title link, one-line description, "View case".
 5. **Pager chain**: update Previous/Next on the neighbouring case pages so the order stays continuous; last case links to
    `other-work.html`.

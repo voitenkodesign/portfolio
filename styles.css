@@ -4,7 +4,7 @@
    Colour      --bg, --surface, --surface-hover, --bg-glass | --title, --text | --line, --fill, --stroke, --underline
                | --accent, --accent-soft (accent only where it means something: availability and results)
    Spacing     --s-1..--s-8: 4 8 12 16 24 32 48 64; --space-section between sections. Inside a group < between groups.
-   Type size   --fs-display / h1 / h2 / h3 / body / small / caption: 34-52, 28-40, 24-32, 20, 17, 15, 13 px
+   Type size   --fs-display / h1 / h2 / h3 / body / small / caption: 34-62, 28-40, 24-32, 20, 17, 15, 13 px
    Leading     --lh-tight 1.1 (display, big figures), --lh-heading 1.2, --lh-ui 1.4 (UI, captions), --lh-body 1.6
    Tracking    --ls-display -.03em, --ls-heading -.02em, body 0
    Weight      400 text, 500 headings and UI, 600 buttons and strong; one italic accent
@@ -17,19 +17,19 @@
   /* Colour */
   --bg: #101010;
   --bg-glass: rgba(16, 16, 16, .82);
-  --surface: #1d1d1f;
-  --surface-hover: #27272a;
-  --title: #f4f4f5;
-  --text: rgba(255, 255, 255, .62);
+  --surface: #1c1c1b;
+  --surface-hover: #262624;
+  --title: #f5f5f2;
+  --text: rgba(255, 255, 255, .72);
   --link: var(--title);
   --line: rgba(255, 255, 255, .08);
   --fill: rgba(255, 255, 255, .08);
   --stroke: rgba(255, 255, 255, .24);
   --device: #000;
   --underline: rgba(255, 255, 255, .3);
-  --btn-hover: #d4d4d8;
-  --accent: #4ade80;
-  --accent-soft: rgba(74, 222, 128, .12);
+  --btn-hover: #dcdcd6;
+  --accent: #5ce08f;
+  --accent-soft: rgba(92, 224, 143, .12);
 
   /* Layout */
   --font: "Mona Sans", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -43,7 +43,7 @@
   --space-section: clamp(64px, 10vw, 120px);
 
   /* Type */
-  --fs-display: clamp(2.125rem, 4.6vw, 3.25rem); /* 34-52: hero title */
+  --fs-display: clamp(2.125rem, 5.6vw, 3.875rem); /* 34-62: hero title */
   --fs-h1: clamp(1.75rem, 3.2vw, 2.5rem);        /* 28-40: case title, section titles, closing CTA */
   --fs-h2: clamp(1.5rem, 2.6vw, 2rem);           /* 24-32: case sections, big figures */
   --fs-h3: 1.25rem;                              /* 20: card titles, sub-sections, case intro (lead) */
@@ -180,8 +180,7 @@ strong { color: var(--title); font-weight: 600; }
 
 /* Separator dot: one rule for every ' . ' on the site (skills, card meta, case facts, footer, clock bubble).
    Space around the dot is .6em per side, about 2.5x a word space (.23em): items are further apart than words inside them. */
-.sep, .tags li + li::before { display: inline-block; margin: 0 .6em; opacity: .6; }
-.tags li + li::before { content: "·"; }
+.sep { display: inline-block; margin: 0 .6em; opacity: .6; }
 /* Wrapping lists with separators (case facts): every item carries its dot in front; the row is shifted left by one
    separator width (dot .206em + 2 x .6em = 1.406em) and clipped, so a dot that would end a line hides at the start of the
    next one instead of dangling. */
@@ -212,17 +211,18 @@ strong { color: var(--title); font-weight: 600; }
 .hero__media { margin-top: var(--s-7); border-radius: var(--radius-lg); overflow: hidden; background: var(--surface); }
 .hero__media img { width: 100%; }
 @media (min-width: 1000px) {
-  .hero { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: var(--s-8); align-items: center; padding-top: 88px; }
+  .hero { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: var(--s-8); align-items: center; padding-top: 88px; }
   .hero__media { margin-top: 0; }
-  .hero__title { font-size: clamp(2.5rem, 3.6vw, 3.25rem); }
+  /* as large as the column allows while "systems that people" stays on one line (3 lines in total) */
+  .hero__title { max-width: none; font-size: min(var(--fs-display), calc((100vw - 112px) * .056)); }
 }
 /* The title sits in equal space: same gap to the role line above and to the lead below */
 .hero__sub { margin: 0 0 var(--hero-gap); font-size: var(--fs-body); color: var(--text); }
+/* .seplist clips its edges; 8px of room on the left keeps the dot's pulse ring visible */
+.hero__sub.seplist { margin-left: calc(-1 * var(--s-2)); padding-left: var(--s-2); }
 .hero__intro { margin-top: var(--hero-gap); max-width: 46ch; }
 .hero__lead { margin: 0; max-width: 46ch; font-size: var(--fs-body); color: var(--text); }
 .hero__cta { display: flex; flex-wrap: wrap; gap: var(--s-3); margin: var(--s-6) 0 0; }
-/* Skills: a quiet text line under the buttons, not pills that look tappable */
-.tags { list-style: none; padding: 0; margin: var(--s-4) 0 0; display: flex; flex-wrap: wrap; gap: var(--s-1) 0; font-size: var(--fs-caption); color: var(--text); }
 /* Entrance: text and visual rise in once, staggered (disabled by the reduced-motion rule at the end) */
 .hero__text > *, .hero__media { animation: rise var(--dur-slow) var(--ease-out) both; }
 .hero__text > :nth-child(2) { animation-delay: var(--stagger); }
@@ -232,12 +232,10 @@ strong { color: var(--title); font-weight: 600; }
 @keyframes rise { from { opacity: 0; transform: translateY(var(--s-3)); } }
 
 /* Availability status: the accent's main job */
-.status {
-  display: inline-flex; align-items: center; gap: var(--s-2); margin: 0 0 var(--s-5); padding: 6px var(--s-3) 6px 10px;
-  font-size: var(--fs-caption); font-weight: 600; color: var(--accent); background: var(--accent-soft); border-radius: var(--radius-pill);
-}
+/* Plain text on the role line (no pill): green dot + "Open to work", then the role */
+.status { display: inline-flex; align-items: center; gap: var(--s-2); font-weight: 500; color: var(--accent); }
 .status__dot { position: relative; width: var(--s-2); height: var(--s-2); border-radius: 50%; background: var(--accent); }
-.status__dot::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: var(--accent); animation: pulse 2.4s ease-out infinite; }
+.status__dot::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: var(--accent); animation: pulse 2.4s ease-out 3; /* three rings on arrival, then rest */ }
 @keyframes pulse { from { transform: scale(1); opacity: .6; } 70%, to { transform: scale(2.6); opacity: 0; } }
 /* Easter egg: the dot winks once on hover (tap on touch: motion.js adds .is-winking); the pulse ring rests meanwhile */
 .status.is-winking .status__dot { animation: wink var(--dur) ease-in-out 1; }
@@ -277,11 +275,51 @@ strong { color: var(--title); font-weight: 600; }
 .card__link:focus-visible { outline: none; }
 .card:has(.card__link:focus-visible) { outline: 2px solid var(--title); outline-offset: 3px; }
 .card__media { position: relative; aspect-ratio: 5 / 4; overflow: hidden; background: var(--surface); }
-.card__media img { width: 100%; height: 100%; object-fit: cover; transition: filter var(--dur-fast) ease, transform var(--dur-slow) var(--ease-out); }
-.card:has(.card__link:focus-visible) .card__media img { transform: scale(1.02); filter: brightness(.82); }
-@media (hover: hover) and (pointer: fine) { .card:hover .card__media img { transform: scale(1.02); filter: brightness(.82); } }
+.card__media img { width: 100%; height: 100%; object-fit: cover; }
 .card:has(.card__link:focus-visible) .card__title { text-decoration: underline; text-underline-offset: .15em; text-decoration-thickness: 1px; }
-@media (hover: hover) and (pointer: fine) { .card:hover .card__title { text-decoration: underline; text-underline-offset: .15em; text-decoration-thickness: 1px; } }
+@media (hover: hover) and (pointer: fine) {
+  .card:hover .card__title { text-decoration: underline; text-underline-offset: .15em; text-decoration-thickness: 1px; }
+}
+
+/* Case covers: one rule for every card. The field is the product's own brand colour; on it, two real
+   screens in the same iPhone frame (a web case: one browser window), same size and place, rising from
+   the bottom edge. Sizes are "% of the cover height", written as % of the width divided by the cover's
+   width/height ratio --r (padding and margins in % follow the width), so the composition holds in any
+   card shape. Brand colours are taken from each product's UI. */
+.cover--white-label   { --brand: #d4321c; } /* FC Midtjylland red */
+.cover--live-quiz     { --brand: #ffd500; } /* Live Quiz yellow */
+.cover--design-system { --brand: #7a45ee; } /* base theme purple */
+.cover--offers        { --brand: #0b5e47; } /* voucher green */
+.cover--superliga     { --brand: #c9f31d; } /* 3F Superliga lime */
+.cover--keel          { --brand: #a5e87a; } /* Keel green */
+.cover--kvit          { --brand: #2b47dc; } /* Kvit blue */
+.cover {
+  --r: 1.25; /* = .card__media aspect ratio */
+  display: flex; justify-content: center; align-items: flex-start; gap: calc(7% / var(--r));
+  padding-top: calc(12% / var(--r)); background: var(--brand, var(--surface));
+}
+.cover > * { flex: none; transition: transform var(--dur) var(--ease-out); }
+.cover .phone { width: calc(46% / var(--r)); max-width: none; padding: calc(1.324% / var(--r)); box-shadow: none; }
+.cover .phone + .phone { margin-top: calc(10% / var(--r)); }
+.cover .phone img { height: auto; border-radius: 13.99% / 6.46%; }
+.cover:has(.browser) { justify-content: flex-start; }
+.cover .browser { width: calc(150% / var(--r)); margin-left: calc(18% / var(--r)); border-radius: var(--radius-sm) var(--radius-sm) 0 0; overflow: hidden; }
+.cover .browser img { height: auto; }
+@media (hover: hover) and (pointer: fine) {
+  .card:hover .cover > * { transform: translateY(-3%); }
+}
+
+/* The lead case spans the row: cover left, text right (one column on phones) */
+@media (min-width: 760px) {
+  .card--feature { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); }
+  .card--feature .card__media { aspect-ratio: 16 / 10; --r: 1.6; }
+  .card--feature .card__body { justify-content: flex-end; padding: var(--s-6); }
+  .card--feature .card__title { font-size: var(--fs-h2); }
+  .card--feature .card__desc { font-size: var(--fs-body); }
+}
+
+/* Self-initiated concepts: a second, smaller group under the client work */
+.work__group { font-size: var(--fs-h3); margin: var(--s-7) 0 var(--s-4); }
 .card__body { display: flex; flex-direction: column; flex: 1; padding: var(--s-5); }
 .card__meta { margin: 0 0 var(--s-2); font-size: var(--fs-caption); font-weight: 500; color: var(--text); }
 .card__title { font-size: var(--fs-h3); margin-bottom: var(--s-2); }
