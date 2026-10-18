@@ -153,6 +153,7 @@
     screen.style.setProperty('--split', split + '%');
     screen.classList.toggle('is-left-small', split < 18);
     screen.classList.toggle('is-right-small', split > 82);
+    screen.classList.toggle('is-edge', split < 1.5 || split > 98.5);
     var c = CLUBS[current], t = Math.round(split);
     handle.setAttribute('aria-valuenow', t);
     handle.setAttribute('aria-valuetext', t + '% TEST, ' + (100 - t) + '% ' + c.name.replace(' ', ' '));
