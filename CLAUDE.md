@@ -11,6 +11,8 @@ content rules, the workflow with the owner, and mistakes that already happened o
 - The owner is a designer, **not a developer**. Talk to him in **Russian**, plain words, no jargon without explanation.
   He often reviews on his phone (Remote Control) — send phone screenshots of results with SendUserFile.
 - He loves **systems**: one rule for many elements. Never add a one-off value when a token or an existing rule fits.
+- Home hero is a layered scene (`.scene` in `styles.css`, `img/home/hero/`): Figma components of the club app as
+  separate layers with entrance, scroll drift and mouse lean (`motion.js`). To change a card, re-export that node.
 - Football appears only as **work context** (club apps at Sports Innovation). He is not a football fan: no football in
   personal touches (statuses, easter eggs, About copy).
 

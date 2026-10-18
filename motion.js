@@ -272,3 +272,34 @@
   }, { threshold: 0.5 });
   io.observe(screen);
 });
+
+// Home hero scene: with a mouse, each layer leans toward the pointer by its depth (front cards more,
+// the phone least), eased toward the target every frame so it never jumps and can change direction
+// mid-move. Uses the `translate` property, so it adds to the CSS entrance and scroll drift.
+(function () {
+  var scene = document.querySelector('.scene');
+  if (!scene || !window.matchMedia) return;
+  if (!matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var depth = { phone: .25, quiz: .6, product: .7, notification: .9, ticket: 1, result: 1.2 };
+  var layers = [];
+  scene.querySelectorAll('.scene__layer').forEach(function (layer) {
+    var name = layer.className.split('scene__layer--')[1];
+    layers.push({ el: layer.firstElementChild, d: depth[name] || .5 });
+  });
+  var tx = 0, ty = 0, x = 0, y = 0, frame = 0;
+  function step() {
+    x += (tx - x) * .08; y += (ty - y) * .08;
+    for (var i = 0; i < layers.length; i++) {
+      layers[i].el.style.translate = (x * layers[i].d * 16).toFixed(2) + 'px ' + (y * layers[i].d * 12).toFixed(2) + 'px';
+    }
+    frame = Math.abs(tx - x) > .001 || Math.abs(ty - y) > .001 ? requestAnimationFrame(step) : 0;
+  }
+  function aim(nx, ny) { tx = nx; ty = ny; if (!frame) frame = requestAnimationFrame(step); }
+  // -1..1 from the centre of the viewport
+  window.addEventListener('pointermove', function (e) {
+    if (e.pointerType !== 'mouse') return;
+    aim(e.clientX / innerWidth * 2 - 1, e.clientY / innerHeight * 2 - 1);
+  }, { passive: true });
+  document.documentElement.addEventListener('pointerleave', function () { aim(0, 0); });
+})();
