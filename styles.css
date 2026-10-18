@@ -392,6 +392,10 @@ strong { color: var(--title); font-weight: 600; }
 .prose ul { padding-left: 1.2em; margin: 0 0 1.2em; }
 .prose li { margin-bottom: .45em; }
 .prose li::marker { color: var(--text); }
+/* Quote from research: the words in title colour, who said it below in text colour. A 2px rule marks it as someone else's voice. */
+.prose > blockquote { max-width: var(--body); margin: var(--s-5) 0; padding-left: var(--s-5); border-left: 2px solid var(--stroke); color: var(--title); }
+.prose blockquote p { margin: 0; }
+.prose blockquote cite { display: block; margin-top: var(--s-2); font-size: var(--fs-small); font-style: normal; color: var(--text); }
 
 /* Media: same left edge as the title, full content width */
 .media, .gallery { margin: var(--s-5) 0; width: 100%; }
