@@ -188,13 +188,12 @@ strong { color: var(--title); font-weight: 600; }
 .seplist__items { display: flex; flex-wrap: wrap; margin-left: -1.406em; }
 .seplist__items > span::before { content: "·"; display: inline-block; margin: 0 .6em; opacity: .6; }
 
-/* Arrows: one shape for the whole site, sized in em so it follows the text.
+/* Arrows: one shape for the whole site (Lucide arrow-right, viewBox cropped to the glyph), sized in em so it follows the text.
    .arrow / .stat__arrow: centred on the cap height (between figures, e.g. 40% → 15%).
    .arrow--x and the "View case" arrow: sized to and centred on the x-height (after lowercase words). */
-.stat__arrow, .arrow { display: inline-block; width: .8em; height: .58em; margin: 0 .2em; vertical-align: .085em; }
-.stat__arrow svg, .arrow svg { display: block; width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 2.3; stroke-linecap: round; stroke-linejoin: round; }
-.arrow { width: .95em; height: .66em; vertical-align: .045em; }
-.arrow--x { width: .81em; height: .5em; vertical-align: .015em; }
+.stat__arrow, .arrow { display: inline-block; width: .68em; height: .68em; margin: 0 .25em; vertical-align: .01em; }
+.stat__arrow svg, .arrow svg { display: block; width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.arrow--x { width: .5em; height: .5em; vertical-align: .01em; }
 .arrow--end { margin-right: 0; margin-left: .3em; transition: transform var(--dur) var(--ease-out); }
 .arrow--back { margin: 0 .3em 0 0; transform: scaleX(-1); transition: transform var(--dur) var(--ease-out); }
 @media (hover: hover) and (pointer: fine) { a:hover .arrow--end { transform: translateX(3px); } }
@@ -250,6 +249,8 @@ strong { color: var(--title); font-weight: 600; }
 .hero__sub.seplist { margin-left: calc(-1 * var(--s-2)); padding-left: var(--s-2); }
 .hero__intro { margin-top: var(--hero-gap); max-width: 46ch; }
 .hero__lead { margin: 0; max-width: 46ch; font-size: var(--fs-body); color: var(--text); }
+/* Experience right under the lead, in title colour: the first fact a recruiter looks for */
+.hero__years { margin: var(--s-3) 0 0; font-size: var(--fs-body); font-weight: 500; color: var(--title); }
 .hero__cta { display: flex; flex-wrap: wrap; gap: var(--s-3); margin: var(--s-6) 0 0; }
 /* Entrance: text and visual rise in once, staggered (disabled by the reduced-motion rule at the end) */
 .hero__text > * { animation: rise var(--dur-slow) var(--ease-out) both; }
@@ -353,9 +354,9 @@ strong { color: var(--title); font-weight: 600; }
 .card__cta { margin-top: auto; color: var(--link); font-size: var(--fs-small); font-weight: 500; }
 /* Same arrow as .arrow--x, drawn with a mask so it stays CSS-only and takes the text colour */
 .card__cta::after {
-  content: ""; display: inline-block; width: .81em; height: .5em; margin-left: .3em; vertical-align: .015em; background: currentColor;
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 16'%3E%3Cpath d='M2 8h21.5M18.5 3 23.5 8 18.5 13' fill='none' stroke='black' stroke-width='2.3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
-  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 16'%3E%3Cpath d='M2 8h21.5M18.5 3 23.5 8 18.5 13' fill='none' stroke='black' stroke-width='2.3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+  content: ""; display: inline-block; width: .5em; height: .5em; margin-left: .3em; vertical-align: .01em; background: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='4 4 16 16'%3E%3Cpath d='M5 12h14M12 5l7 7-7 7' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='4 4 16 16'%3E%3Cpath d='M5 12h14M12 5l7 7-7 7' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
   transition: transform var(--dur) var(--ease-out);
 }
 .card:has(.card__link:focus-visible) .card__cta::after { transform: translateX(var(--s-1)); }

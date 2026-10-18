@@ -17,6 +17,8 @@ content rules, the workflow with the owner, and mistakes that already happened o
   `cv.pdf` into the repo root is enough: `motion.js` checks for it and sends the links there instead.
 - Home hero is a layered scene (`.scene` in `styles.css`, `img/home/hero/`): Figma components of the club app as
   separate layers with entrance, scroll drift and mouse lean (`motion.js`). To change a card, re-export that node.
+- Icons are Lucide (mail, linkedin, file-text, arrow-right, chevrons-left-right), stroke 2, as SVG files or inline; new
+  icons come from Lucide too.
 - Football appears only as **work context** (club apps at Sports Innovation). He is not a football fan: no football in
   personal touches (statuses, easter eggs, About copy).
 
@@ -133,7 +135,7 @@ Case structure: see CASE-TEMPLATE.md (block order, HTML patterns, image and writ
 <div class="gallery gallery--phones reveal" style="--cols:3"><figure class="fig"><img src="img/slug/screen-01.webp" alt="…, screen 1 of 3" width="858" height="1776" loading="lazy" decoding="async"></figure>…</div>
 <div class="media reveal"><figure class="fig"><img src="img/slug/flow.webp" alt="…" width="2048" height="1152" loading="lazy" decoding="async"><figcaption>…</figcaption></figure></div>
 <h2 class="reveal">Result</h2>
-<div class="stats reveal"><p class="stats__kicker"><strong>Platform results.</strong> Product numbers, not personal ones.</p><div class="stats__grid"><div class="stat"><p class="stat__value">40%<span class="stat__arrow"><svg viewBox="0 0 22 16" aria-hidden="true" focusable="false"><path d="M2 8h17.5M14.5 3 19.5 8 14.5 13"/></svg><span class="sr-only"> to </span></span>15%</p><p class="stat__label">…</p></div></div></div>
+<div class="stats reveal"><p class="stats__kicker"><strong>Platform results.</strong> Product numbers, not personal ones.</p><div class="stats__grid"><div class="stat"><p class="stat__value">40%<span class="stat__arrow"><svg viewBox="4 4 16 16" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span class="sr-only"> to </span></span>15%</p><p class="stat__label">…</p></div></div></div>
 <h2 class="reveal">What I learned</h2>
 <p class="reveal">…</p>
   </div>
