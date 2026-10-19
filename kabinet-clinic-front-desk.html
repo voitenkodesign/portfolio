@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kabinet — a front desk that works by the day — Voitenko Design</title>
+<meta name="description" content="Kabinet is a web workspace for the front desk of private clinics. I redesigned it around how admins spend a shift: a Today workspace, a guided reschedule queue for sick days and a load heatmap for managers.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kabinet — a front desk that works by the day — Voitenko Design">
+<meta property="og:description" content="Kabinet is a web workspace for the front desk of private clinics. I redesigned it around how admins spend a shift: a Today workspace, a guided reschedule queue for sick days and a load heatmap for managers.">
+<link rel="canonical" href="https://voitenkodesign.com/kabinet-clinic-front-desk.html">
+<meta property="og:url" content="https://voitenkodesign.com/kabinet-clinic-front-desk.html">
+<meta property="og:site_name" content="Voitenko Design">
+<meta property="og:image" content="https://voitenkodesign.com/img/kabinet-clinic-front-desk/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Kabinet: the front-desk Today workspace and the managers’ load dashboard">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#101010">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wdth,wght@0,100..125,400..600;1,100..125,400..600&display=swap">
+<link rel="stylesheet" href="styles.css">
+<script src="motion.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="/"><img src="logo.svg" alt="Voitenko Design" width="140" height="20" fetchpriority="high" decoding="async"></a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="/#work" aria-current="page">Work</a>
+      <a class="site-nav__about" href="/#about">About</a>
+      <a class="btn btn--sm" href="mailto:voitenko.design@pm.me">Email me</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<article class="case">
+  <header class="case-hero wrap">
+    <h1>Kabinet — a front desk that works by the day</h1>
+    <dl class="case-facts"><div><dt>Role</dt><dd>UI/UX &amp; Product Designer</dd></div><div><dt>Platform</dt><dd>Web, desktop</dd></div><div><dt>Domain</dt><dd class="seplist"><span class="seplist__items"><span>HealthTech</span><span>B2B SaaS</span></span></dd></div><div><dt>Team</dt><dd>Solo concept</dd></div></dl>
+    <div class="media case-hero__media"><figure class="fig"><img src="img/kabinet-clinic-front-desk/01-hero.webp" alt="The front-desk Today screen in front of the managers’ load and cancellations dashboard, with an orange now line at 10:42" width="2048" height="1280" loading="eager" decoding="async"><figcaption>Today for the desk, load for the manager</figcaption></figure></div>
+    <dl class="case-summary" aria-label="Case at a glance"><div><dt>Problem</dt><dd>Admins rebuilt the day from five modules and a paper notebook: 23&nbsp;screen switches an hour, and a sick doctor cost 50&nbsp;minutes of calls.</dd></div><div><dt>What I did</dt><dd>Shadowed six admins, rebuilt the navigation around roles, and designed a Today workspace, a guided reschedule queue and a load heatmap.</dd></div><div><dt>Result</dt><dd>In a six-week pilot, phone booking fell from 2:10 to 1:25 and a sick day took 21&nbsp;minutes, not 48. Utilisation barely moved.</dd></div></dl>
+  </header>
+  <div class="prose wrap">
+<p class="reveal">Kabinet runs scheduling for 140 private clinics in Ukraine. I redesigned it for the people who use it most: the front desk.</p>
+<p class="reveal"><em>Concept. Product, users and data are fictional.</em></p>
+<h2 class="reveal">Context</h2>
+<p class="reveal">Kabinet grew around the doctor’s calendar, one module at a time: Schedule, Patients, Doctors, Reports, Settings. Front-desk admins make up 70% of daily users, but nobody had designed for their work. The PM’s brief: “Admins complain the system is slow. Make the front desk faster without breaking what clinics already know.” Owners added a goal of their own: doctor utilisation up 3&nbsp;points, no-shows down 1.5.</p>
+<p class="reveal">This is a solo concept, written the way it would run in a team: a PM, four engineers, QA and me. I ran the research, the information architecture, the flows and screens, the tokens and the pilot plan. Nine weeks of design, six weeks of pilot.</p>
+<h2 class="reveal">Constraints</h2>
+<ul class="reveal"><li>The calendar grid is a 2019 component. Engineering can restyle it, not rewrite it this quarter.</li><li>Billing lives in a separate system, so there is no revenue data.</li><li>Admins must not see clinical data: visit type yes, diagnosis and notes no.</li><li>Clinics pay per SMS, so every SMS feature is opt-in.</li></ul>
+<h2 class="reveal">Process</h2>
+<p class="reveal">Admins can’t describe their own screen-switching: it’s invisible to them. So observation led. We shadowed 6&nbsp;admins in 3&nbsp;clinics for 31&nbsp;hours and logged 612 actions (never patient data), then interviewed them, 3&nbsp;managers and an owner, and checked 30&nbsp;days of navigation across all clinics.</p>
+<p class="reveal"><strong>The unit of work is the day, not the module.</strong> Admins rebuilt “today” 23&nbsp;times an hour; 62% of navigation was a jump between Schedule and Patients. 5 of 6 kept callbacks on paper.</p>
+<blockquote class="reveal"><p>“I have the schedule on the left screen, the patient on the right, and the notebook under the keyboard. The notebook never crashes.”</p><cite>Oksana, senior admin</cite></blockquote>
+<p class="reveal"><strong>Rare days define trust.</strong> A sick doctor happens about twice a month per clinic. We watched one: 17&nbsp;appointments, 52&nbsp;minutes of calls, 4&nbsp;patients never reached, some texted from a personal phone.</p>
+<blockquote class="reveal"><p>“When Dr Kovalenko called in sick I just started from the top of the list. By ten I’d reached half of them, the rest I texted from my own phone.”</p><cite>Daryna, admin</cite></blockquote>
+<p class="reveal"><strong>Managers want gaps, not charts.</strong> All three rebuilt the same Excel every Monday: which doctor is under-booked next week, and why people cancel.</p>
+<p class="reveal">A task map of 41 front-desk tasks decided what earns the home screen. A card sort with 18&nbsp;people split the audience: admins grouped by time, managers by object. A tree test checked the new structure before any screens: 68% task success in round&nbsp;1, 84% in round&nbsp;2.</p>
+<div class="media reveal"><figure class="fig"><img src="img/kabinet-clinic-front-desk/02-task-map.webp" alt="Task map: find patient, book by phone, check in and reschedule are frequent and costly; doctor out sick is rare but costly" width="2048" height="1320" loading="lazy" decoding="async"><figcaption>Frequent and costly tasks earn the home screen</figcaption></figure></div>
+<div class="media reveal"><figure class="fig"><img src="img/kabinet-clinic-front-desk/03-ia.webp" alt="Navigation before and after: five modules for everyone became a Front desk workspace with Today as home and a Manage workspace" width="2048" height="1283" loading="lazy" decoding="async"><figcaption>One flat menu became two workspaces</figcaption></figure></div>
+<h2 class="reveal">Key decisions</h2>
+<h3 class="reveal">Where does the admin’s day live?</h3>
+<p class="reveal">Options: keep the modules and add tabs, a Today workspace per role, or one super-calendar. Chose Today: it fixes the switching without the calendar rewrite the third option needed. Cost: two navigation models to maintain, and Settings and Reports moved one level deeper for admins.</p>
+<div class="media reveal"><figure class="fig"><img src="img/kabinet-clinic-front-desk/04-options-today.webp" alt="Wireframes of three options: modules with tabs, a Today workspace per role, and one super-calendar" width="2048" height="973" loading="lazy" decoding="async"><figcaption>Three ways to hold the day. I picked Today.</figcaption></figure></div>
+<h3 class="reveal">A doctor calls in sick: who moves the 15 patients?</h3>
+<p class="reveal">Options: a bulk “Move to” in the table, a guided reschedule queue, or an SMS link where patients pick a time themselves. Chose the queue: a bulk move changes the book, but someone still calls 15&nbsp;people. The SMS link stayed only for patients who don’t answer, in clinics that pay for SMS. Cost: v1 proposes slots only within the same specialty and branch, a backend limit.</p>
+<div class="media reveal"><figure class="fig"><img src="img/kabinet-clinic-front-desk/06-options-doctor-out.webp" alt="Wireframes of three options for a sick doctor’s day: bulk move, a guided queue and a patient SMS link" width="2048" height="973" loading="lazy" decoding="async"><figcaption>The call stays human; the system does the matching</figcaption></figure></div>
+<h3 class="reveal">What replaces the Monday Excel?</h3>
+<p class="reveal">Options: KPI tiles and trend charts, a heatmap of load by doctor and day, or a plain list of fillable gaps. Chose the heatmap with the gaps beside it: it points at a doctor and a day, so at something to do. Cost: no revenue on it. Kabinet has no billing data, and a made-up number would cost more trust than an empty space.</p>
+<div class="media reveal"><figure class="fig"><img src="img/kabinet-clinic-front-desk/10-options-dashboard.webp" alt="Wireframes of three manager views: KPI tiles, a load heatmap, and a list of gaps" width="2048" height="973" loading="lazy" decoding="async"><figcaption>The pattern shows; a gap opens the waitlist</figcaption></figure></div>
+<h2 class="reveal">A shift on one screen</h2>
+<p class="reveal">Today holds the queue by time, the day grid for all doctors, callbacks that used to live on paper, and tomorrow’s confirmations. Search takes a surname or the last four digits of a phone, because that’s what a caller says first.</p>
+<p class="reveal">The now line is the product’s one memorable element: a thin orange line with the time, the only use of that colour. Past rows go grey, the next patient is highlighted. Everything else stays quiet: cool greys, one teal for actions, Atkinson Hyperlegible for text and its mono cut for times and phone numbers, which admins read aloud.</p>
+<div class="media reveal"><figure class="fig"><img src="img/kabinet-clinic-front-desk/05-today.webp" alt="Today: a banner about a doctor who is out, the queue with the now line at 10:42, the day grid, callbacks and tomorrow’s confirmations" width="2048" height="1280" loading="lazy" decoding="async"><figcaption>Queue, grid and callbacks in one view</figcaption></figure></div>
+<h2 class="reveal">A sick day in 21 minutes</h2>
+<p class="reveal">The appointments table is built for the phone: team views as tabs, filters as removable chips, a bulk bar for reminders and confirmations, and a failed SMS shown in its row.</p>
+<div class="media reveal"><figure class="fig"><img src="img/kabinet-clinic-front-desk/07-appointments.webp" alt="Appointments table filtered to tomorrow’s unconfirmed visits, three rows selected and a bulk action bar" width="2048" height="1280" loading="lazy" decoding="async"><figcaption>Tomorrow’s unconfirmed, ready to call</figcaption></figure></div>
+<p class="reveal">The reschedule queue keeps the original order, shows the current patient’s full number, a line to say and three proposed slots. One key per outcome, because the admin is on a headset. Progress is shared, so another admin can take over mid-list.</p>
+<div class="media reveal"><figure class="fig"><img src="img/kabinet-clinic-front-desk/08-reschedule-queue.webp" alt="Reschedule queue: call list on the left, the current patient with three proposed slots on the right" width="2048" height="1280" loading="lazy" decoding="async"><figcaption>Talk, pick a slot, press Enter</figcaption></figure></div>
+<div class="media reveal"><figure class="fig"><img src="img/kabinet-clinic-front-desk/09-queue-done.webp" alt="Queue summary: 11 moved, 2 cancelled, 1 callback, 1 not reached, with an SMS delivery error and its fixes" width="2048" height="1280" loading="lazy" decoding="async"><figcaption>Every patient ends with an outcome</figcaption></figure></div>
+<h2 class="reveal">Gaps a manager can fill</h2>
+<p class="reveal">Numbers sit in every heatmap cell, so colour is secondary. A gap (under 40% booked, 2+ hours free, 2+ days ahead) opens the matching waitlist, and the manager sends one offer: the first patient to pick a time gets it.</p>
+<div class="media reveal"><figure class="fig"><img src="img/kabinet-clinic-front-desk/11-dashboard.webp" alt="Load and cancellations: three totals, a heatmap of doctors by day with dashed fillable gaps, cancellation reasons and a list of gaps" width="2048" height="1280" loading="lazy" decoding="async"><figcaption>Three totals for the owner, gaps for the manager</figcaption></figure></div>
+<div class="media reveal"><figure class="fig"><img src="img/kabinet-clinic-front-desk/12-fill-gap.webp" alt="Fill the gap panel: six free slots and four waitlist patients, three selected for an SMS offer" width="2048" height="1280" loading="lazy" decoding="async"><figcaption>One offer, first to pick wins</figcaption></figure></div>
+<h2 class="reveal">Access by role, not by checkbox</h2>
+<p class="reveal">Five role templates replace a matrix of 60&nbsp;checkboxes, scoped by branch, with one exception switch for small branches. Diagnoses and doctor’s notes are never visible to the front desk.</p>
+<div class="media reveal"><figure class="fig"><img src="img/kabinet-clinic-front-desk/13-team-access.webp" alt="Team and access: a list of staff and the access panel for a new front-desk admin limited to one branch" width="2048" height="1280" loading="lazy" decoding="async"><figcaption>Role templates, scoped by branch</figcaption></figure></div>
+<p class="reveal">Row height, cell padding and text size are tokens with two modes: Comfortable for admins on a laptop, Compact for managers reviewing a week on a big screen. Every text pair passes WCAG&nbsp;AA, checked by a script.</p>
+<div class="media reveal"><figure class="fig"><img src="img/kabinet-clinic-front-desk/15-density.webp" alt="The same table in Comfortable and Compact density, with the token values for each" width="2048" height="800" loading="lazy" decoding="async"><figcaption>Two densities from one set of tokens</figcaption></figure></div>
+<h2 class="reveal">States and edge cases</h2>
+<div class="media reveal"><figure class="fig"><img src="img/kabinet-clinic-front-desk/14-states.webp" alt="Four states: a new branch with no doctors, a slot just taken at another desk, an SMS not delivered, and doctors-only fields" width="2048" height="1440" loading="lazy" decoding="async"><figcaption>Each state names the cause and the next step</figcaption></figure></div>
+<h2 class="reveal">Result</h2>
+<p class="reveal">Two clinics ran the new workspace for six weeks; two similar clinics were the control. Small sample, so we read direction, not significance.</p>
+<div class="media reveal"><figure class="fig"><img src="img/kabinet-clinic-front-desk/16-results.webp" alt="Front-desk metrics before and in the pilot against targets, and the business goal against control clinics" width="2048" height="872" loading="lazy" decoding="async"><figcaption>The desk got faster; the business barely moved</figcaption></figure></div>
+<ul class="reveal"><li><strong>Front desk.</strong> Screen switches fell from 23 to 14 an hour, phone booking from 2:10 to 1:25. A sick doctor’s day took 21&nbsp;minutes instead of 48, and patients not reached that day fell from 22% to 9%. Scheduling tickets fell 18%.</li><li><strong>Business goal, missed.</strong> Net of the control clinics, utilisation rose about half a point and no-shows fell about half a point, against +3 and −1.5.</li><li><strong>One hypothesis failed.</strong> Only 2 of 16&nbsp;admins saved their own table view, against a 40% target. “I don’t make lists. Andrii makes them, I call from them.” Saving views moved to managers, who publish them for the team.</li></ul>
+<p class="reveal">Today and the queue shipped to all 140 clinics; the dashboard stayed a beta for 30, without revenue.</p>
+<h2 class="reveal">What I learned</h2>
+<ul class="reveal"><li>Watch before you believe. The “my own list” idea came from interviews; the shadowing had already shown nobody used filters.</li><li>Design for the rare day. Sick days are twice a month, but they decide whether admins trust the system.</li><li>A dashboard can show a gap, not fill it. The small clinic had nobody on its waitlist to offer slots to.</li></ul>
+  </div>
+</article>
+<nav class="pager wrap" aria-label="Case navigation"><p class="more pager__prev"><span class="more__label">Previous</span><a href="kvit-business-banking-freelancers.html">Kvit — business banking for Ukrainian freelancers</a></p><p class="more pager__next"><span class="more__label">Next</span><a href="keel-ai-financial-management.html">Keel — AI Financial Management</a></p></nav>
+<section class="cta wrap" aria-labelledby="cta-h">
+  <h2 class="cta__title" id="cta-h">Have a product that needs design?</h2>
+  <p class="cta__actions"><a class="btn" href="mailto:voitenko.design@pm.me">Email me</a><a class="btn btn--ghost" href="https://www.linkedin.com/in/voitenkodesign" target="_blank" rel="noopener">LinkedIn</a></p>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <p>© 2026 Igor Voitenko<span class="local-time" hidden><span class="sep">·</span><span class="local-time__clock" tabindex="0"><span class="local-time__city">Kyiv</span> <time></time></span><span class="local-time__note" role="status"></span></span></p>
+    <p class="contact"><a href="mailto:voitenko.design@pm.me"><img src="mail-01.svg" alt="" width="16" height="16" decoding="async">Email</a><span class="sep">·</span><a href="https://www.linkedin.com/in/voitenkodesign" target="_blank" rel="noopener"><img src="linkedin-01.svg" alt="" width="16" height="16" decoding="async">LinkedIn</a><span class="sep">·</span><a href="/cv" target="_blank" rel="noopener" data-cv><img src="cv-01.svg" alt="" width="16" height="16" decoding="async">CV</a></p>
+  </div>
+</footer>
+</body>
+</html>
