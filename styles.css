@@ -337,13 +337,17 @@ strong { color: var(--title); font-weight: 600; }
   .card:hover .cover > * { transform: translateY(-3%); }
 }
 
-/* The lead case spans the row: cover left, text right (one column on phones) */
+/* The lead case spans the row: cover left, text right (one column on phones).
+   Same rule for a card left alone on the last row: an odd count never leaves an empty half
+   (with a lead card the pairs start from the 2nd card, so the lonely one is even). */
 @media (min-width: 760px) {
-  .card--feature { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); }
-  .card--feature .card__media { aspect-ratio: 16 / 10; --r: 1.6; }
-  .card--feature .card__body { justify-content: flex-end; padding: var(--s-6); }
-  .card--feature .card__title { font-size: var(--fs-h2); }
-  .card--feature .card__desc { font-size: var(--fs-body); }
+  .card--feature,
+  .cards:not(:has(.card--feature)) > .card:last-child:nth-child(odd),
+  .cards:has(.card--feature) > .card:last-child:nth-child(even) { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); }
+  :is(.card--feature, .cards:not(:has(.card--feature)) > .card:last-child:nth-child(odd), .cards:has(.card--feature) > .card:last-child:nth-child(even)) .card__media { aspect-ratio: 16 / 10; --r: 1.6; }
+  :is(.card--feature, .cards:not(:has(.card--feature)) > .card:last-child:nth-child(odd), .cards:has(.card--feature) > .card:last-child:nth-child(even)) .card__body { justify-content: flex-end; padding: var(--s-6); }
+  :is(.card--feature, .cards:not(:has(.card--feature)) > .card:last-child:nth-child(odd), .cards:has(.card--feature) > .card:last-child:nth-child(even)) .card__title { font-size: var(--fs-h2); }
+  :is(.card--feature, .cards:not(:has(.card--feature)) > .card:last-child:nth-child(odd), .cards:has(.card--feature) > .card:last-child:nth-child(even)) .card__desc { font-size: var(--fs-body); }
 }
 
 /* Self-initiated concepts: a second, smaller group under the client work */
