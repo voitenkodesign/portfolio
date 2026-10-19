@@ -1,4 +1,4 @@
 / /index.html 200
-# CV: every "CV" link on the site points to /cv. To change the file, replace the address below.
-# Or drop a new cv.pdf into the repo root: motion.js then sends the links to /cv.pdf instead.
-/cv https://drive.google.com/file/d/1eQPovYTWmzU71MFohQwnz2CzZh1wcT8L/view?usp=sharing 302
+# CV: every "CV" link on the site points to /cv, which opens cv.pdf from the repo root.
+# New CV: replace cv.pdf with the new file (same name) and push to main.
+/cv /cv.pdf 302

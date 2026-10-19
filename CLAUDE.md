@@ -13,8 +13,8 @@ content rules, the workflow with the owner, and mistakes that already happened o
 - He loves **systems**: one rule for many elements. Never add a one-off value when a token or an existing rule fits.
 - Case pages: the main picture sits in the header between the facts and the summary (`.case-hero__media`; no picture
   yet = a `.cover cover--<slug> case-cover` composition).
-- CV: every "CV" link points to `/cv`, which `_redirects` sends to the current file (now a Google Drive link). Dropping a
-  `cv.pdf` into the repo root is enough: `motion.js` checks for it and sends the links there instead.
+- CV: every "CV" link points to `/cv`, which `_redirects` sends to `cv.pdf` in the repo root. A new CV = replace
+  `cv.pdf` with the new file under the same name and push (motion.js also points the links straight at it).
 - Home hero is a layered scene (`.scene` in `styles.css`, `img/home/hero/`): Figma components of the club app as
   separate layers with entrance, scroll drift and mouse lean (`motion.js`). To change a card, re-export that node.
 - Icons are Lucide (mail, linkedin, file-text, arrow-right, chevrons-left-right), stroke 1.5 for the contact icons (SVG files), 2 for inline arrows; new
