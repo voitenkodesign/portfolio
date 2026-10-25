@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Torba — a checkout with no surprise at the end — Voitenko Design</title>
+<meta name="description" content="Torba is a meal-kit subscription. I redesigned its mobile-web checkout from five steps to three, tested it in a moderated study and a two-week A/B test: +2.1 points of conversion and fewer early cancellations.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Torba — a checkout with no surprise at the end — Voitenko Design">
+<meta property="og:description" content="Torba is a meal-kit subscription. I redesigned its mobile-web checkout from five steps to three, tested it in a moderated study and a two-week A/B test: +2.1 points of conversion and fewer early cancellations.">
+<link rel="canonical" href="https://voitenkodesign.com/torba-meal-kit-checkout.html">
+<meta property="og:url" content="https://voitenkodesign.com/torba-meal-kit-checkout.html">
+<meta property="og:site_name" content="Voitenko Design">
+<meta property="og:image" content="https://voitenkodesign.com/img/torba-meal-kit-checkout/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Torba checkout: the plan with both prices, payment, and the week strip after paying">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#101010">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wdth,wght@0,100..125,400..600;1,100..125,400..600&display=swap">
+<link rel="stylesheet" href="styles.css">
+<script src="motion.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="/"><img src="logo.svg" alt="Voitenko Design" width="140" height="20" fetchpriority="high" decoding="async"></a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="/#work" aria-current="page">Work</a>
+      <a class="site-nav__about" href="/#about">About</a>
+      <a class="btn btn--sm" href="mailto:voitenko.design@pm.me">Email me</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<article class="case">
+  <header class="case-hero wrap">
+    <h1>Torba — a checkout with no surprise at the end</h1>
+    <dl class="case-facts"><div><dt>Role</dt><dd>UI/UX &amp; Product Designer</dd></div><div><dt>Platform</dt><dd>Mobile web</dd></div><div><dt>Domain</dt><dd class="seplist"><span class="seplist__items"><span>Food delivery</span><span>Subscriptions</span></span></dd></div><div><dt>Team</dt><dd>Solo concept</dd></div></dl>
+    <div class="media case-hero__media"><figure class="fig"><img src="img/torba-meal-kit-checkout/01-hero.webp" alt="Three Torba checkout screens: the plan with both prices, payment with the next charge date, and the confirmation with the week strip" width="2048" height="1120" loading="eager" decoding="async"><figcaption>Plan, payment and the week after paying</figcaption></figure></div>
+    <dl class="case-summary" aria-label="Case at a glance"><div><dt>Problem</dt><dd>Only 31.4% of people who started checkout paid for a first box. Most left at payment, where the weekly price first appeared.</dd></div><div><dt>What I did</dt><dd>Analysed the funnel, audited the flow, ranked four hypotheses, cut checkout from five steps to three and ran a usability test and an A/B&nbsp;test.</dd></div><div><dt>Result</dt><dd>Checkout conversion rose from 31.4% to 33.5% (+2.1&nbsp;points). Early cancellations fell. The address hypothesis failed.</dd></div></dl>
+  </header>
+  <div class="prose wrap">
+<p class="reveal">Torba delivers weekly meal kits in Kyiv, Lviv and Dnipro. I redesigned the checkout new customers go through on their phones.</p>
+<p class="reveal"><em>Concept. Product, users and data are fictional.</em></p>
+<h2 class="reveal">Context</h2>
+<p class="reveal">78% of checkouts start in a phone browser: people arrive from ads and search, and install the app only after the first order. So the funnel lives on the web. The old checkout had five steps: plan, account, address, delivery day, payment. The growth lead’s brief: “More paid first boxes, without buying them with cancellations in week two.”</p>
+<p class="reveal">This is a solo concept, written the way it would run in a team: a growth PM, an analyst, two engineers and me. I ran the analysis with the analyst, the audit, the hypotheses, the design, the usability test and the A/B plan. Six weeks, including the test.</p>
+<h2 class="reveal">Constraints</h2>
+<ul class="reveal"><li><strong>Cards only this quarter.</strong> The payment provider adds Apple Pay and Google Pay next quarter.</li><li><strong>The “−40% first box” ads keep running.</strong> Marketing owns the offer; checkout has to carry it.</li><li><strong>One A/B slot, two weeks.</strong> About 1,250 checkout starts a day on mobile web.</li><li><strong>The delivery-zone check runs on the server</strong> after the address is submitted.</li></ul>
+<h2 class="reveal">Process</h2>
+<p class="reveal">The funnel showed where people leave; replays and a survey showed why. We took 28&nbsp;days of mobile-web data: 35,000 checkout starts, 31.4% paid. Payment lost the most, 28.6&nbsp;points; the account step lost&nbsp;22.</p>
+<div class="media reveal"><figure class="fig"><img src="img/torba-meal-kit-checkout/02-funnel-before.webp" alt="Funnel of the old checkout: 100% chose a plan, 78% created an account, 63% entered an address, 60% picked a day, 31.4% paid" width="2048" height="940" loading="lazy" decoding="async"><figcaption>Payment loses the most, the account step is second</figcaption></figure></div>
+<p class="reveal"><strong>People leave over money and commitment, not the form.</strong> In 60&nbsp;session replays, 21&nbsp;people went back from payment to the plan step to re-check the price, then left. A one-question exit survey got 640&nbsp;answers: 36% said the total was higher than expected, 23% didn’t know how to skip or cancel, 18% didn’t want an account.</p>
+<blockquote class="reveal"><p>“749 on the banner, 828 at the end, and then it says 1,249 every week? I closed it.”</p><cite>Survey comment</cite></blockquote>
+<p class="reveal"><strong>The audit found 14&nbsp;issues, 5&nbsp;severe.</strong> Four of the five sat on account and payment: the weekly price first shown at the end, a password before anything useful, renewal terms behind a link to a 9-screen page, a card form the browser couldn’t fill. The fifth was a generic “Check your address” error.</p>
+<p class="reveal"><strong>Hypotheses, ranked by ICE.</strong> Price upfront, a concrete skip-and-cancel promise, guest checkout and a one-screen address with autocomplete went into one test. Wallets wait for the provider. A countdown on the discount was rejected: a dark pattern that would hurt the retention guardrail.</p>
+<div class="media reveal"><figure class="fig"><img src="img/torba-meal-kit-checkout/03-hypotheses-ice.webp" alt="Six hypotheses ranked by ICE score: four went into the A/B test, wallet payments wait in the backlog, a countdown timer was rejected" width="2048" height="1220" loading="lazy" decoding="async"><figcaption>Four ideas went into one test</figcaption></figure></div>
+<h2 class="reveal">Key decisions</h2>
+<h3 class="reveal">How do we show the price?</h3>
+<p class="reveal">Options: the promo price alone, as today; the promo price with the weekly price in small print; or both prices at the same size from the first step. Chose both: small print fails the same way, just later. Cost: “−40%” loses its punch, and promo-ad traffic might convert worse.</p>
+<div class="media reveal"><figure class="fig"><img src="img/torba-meal-kit-checkout/04-options-price.webp" alt="Wireframes of three price displays: promo only, promo with small print, and the first-box and weekly prices at the same size" width="2048" height="882" loading="lazy" decoding="async"><figcaption>Three ways to show the price. I picked C</figcaption></figure></div>
+<h3 class="reveal">Where do we ask for an account?</h3>
+<p class="reveal">Options: account first, as today; social login first; or guest checkout with the email on the payment step and a password after the order. Chose guest checkout: no gate before people see days and prices. Cost: we get the email later, so fewer abandoned-checkout emails can go out.</p>
+<div class="media reveal"><figure class="fig"><img src="img/torba-meal-kit-checkout/05-options-account.webp" alt="Three checkout orders: account first, social login first, and guest checkout with the email on the payment step" width="2048" height="882" loading="lazy" decoding="async"><figcaption>No gate before value</figcaption></figure></div>
+<h3 class="reveal">One change at a time, or the whole flow?</h3>
+<p class="reveal">Options: four single tests, about 16&nbsp;weeks at this traffic; a multivariate test, which needs several times the traffic; or one bundled treatment with a step metric per hypothesis. Chose the bundle. Cost: no clean credit for each change. The step metrics turned out to matter most: they caught the hypothesis that failed.</p>
+<h2 class="reveal">Three steps, one price from start to end</h2>
+<p class="reveal">The plan step shows the first box and every week after it at the same size, delivery included, and the total due today. Delivery puts the address, flat details and day on one screen. Payment asks for an email and a card, and shows the next charge date and the skip deadline above the button. The password comes after the order, or never: a login link works too.</p>
+<div class="gallery gallery--phones reveal" style="--cols:3"><figure class="fig"><span class="phone"><img src="img/torba-meal-kit-checkout/06-plan.webp" alt="Plan step: people and meals, the first box at ₴749 and every week at ₴1,249, delivery shown in both, ₴828 due today" width="1179" height="2556" loading="lazy" decoding="async"></span><figcaption>Both prices before any form</figcaption></figure><figure class="fig"><span class="phone"><img src="img/torba-meal-kit-checkout/07-delivery.webp" alt="Delivery step: address with autocomplete, flat, entrance and floor, a week strip with Thursday picked, and a time slot" width="1179" height="2556" loading="lazy" decoding="async"></span><figcaption>Address and day on one screen</figcaption></figure><figure class="fig"><span class="phone"><img src="img/torba-meal-kit-checkout/08-pay.webp" alt="Payment step: email, card, and a summary with the next charge on Monday 2 November and the skip deadline" width="1179" height="2556" loading="lazy" decoding="async"></span><figcaption>Next charge and skip deadline above Pay</figcaption></figure><figure class="fig"><span class="phone"><img src="img/torba-meal-kit-checkout/09-confirmation.webp" alt="Confirmation: the box arrives Thursday, a week strip marks Sunday as the last day to skip and Monday as the charge" width="1179" height="2556" loading="lazy" decoding="async"></span><figcaption>Your week, with the deadline marked</figcaption></figure></div>
+<div class="media reveal"><figure class="fig"><img src="img/torba-meal-kit-checkout/10-before-after.webp" alt="The old payment step with renewal terms in small grey text next to the new one with the next charge and skip deadline above the button" width="2048" height="1380" loading="lazy" decoding="async"><figcaption>The same order, without the surprise at the end</figcaption></figure></div>
+<h2 class="reveal">The week strip: when you get it, when you pay</h2>
+<p class="reveal">The one memorable element is the week strip: seven days on one row. On the delivery step it picks the day. After payment it shows the week ahead: the box on Thursday, the last day to skip on Sunday, the charge on Monday. Each state has a word, not just a colour. Everything around it stays quiet: white, aubergine ink, one tomato colour for actions. Bricolage Grotesque sets headings and prices; Onest sets the rest. Every text pair passes WCAG&nbsp;AA, checked by a script.</p>
+<div class="media reveal"><figure class="fig"><img src="img/torba-meal-kit-checkout/11-design-system.webp" alt="Design system: six colours with contrast ratios, the two typefaces, buttons, and the week strip in its pick-a-day and your-week states" width="2048" height="1200" loading="lazy" decoding="async"><figcaption>One tomato action, four week-strip states</figcaption></figure></div>
+<h2 class="reveal">States and edge cases</h2>
+<div class="gallery gallery--phones reveal" style="--cols:3"><figure class="fig"><span class="phone"><img src="img/torba-meal-kit-checkout/12-out-of-zone.webp" alt="An address in Brovary is outside the delivery zone; the error names the cities served and offers an email when Torba arrives" width="1179" height="2556" loading="lazy" decoding="async"></span><figcaption>Says where we deliver and offers a heads-up</figcaption></figure><figure class="fig"><span class="phone"><img src="img/torba-meal-kit-checkout/13-card-declined.webp" alt="Card declined: nothing was charged, the plan and delivery day are saved, try another card" width="1179" height="2556" loading="lazy" decoding="async"></span><figcaption>Nothing charged, plan and day kept</figcaption></figure><figure class="fig"><span class="phone"><img src="img/torba-meal-kit-checkout/14-skip-a-week.webp" alt="Skip sheet over the confirmation: skipping the 5 November box removes the Monday charge and moves the next one" width="1179" height="2556" loading="lazy" decoding="async"></span><figcaption>Skipping shows which charge disappears</figcaption></figure></div>
+<h2 class="reveal">Result</h2>
+<p class="reveal"><strong>In the lab, the redesign won both tasks.</strong> Twelve people tried both versions on their own phones, half starting with each. Ordering for Thursday went from 9 of 12 to 11 of 12, in 2:35 instead of 4:10. Finding next week’s price and how to skip it went from 4 of 12 to 10 of 12. Errors fell from 31 to 12. Four people read “Skip or cancel” as one action, so it became two buttons before the A/B.</p>
+<div class="media reveal"><figure class="fig"><img src="img/torba-meal-kit-checkout/15-usability-test.webp" alt="Usability test, current versus redesign: ordering success 75% to 92%, finding next week’s price 33% to 83%, median time 4:10 to 2:35, errors 31 to 12" width="2048" height="1280" loading="lazy" decoding="async"><figcaption>The biggest gap: what happens next week</figcaption></figure></div>
+<p class="reveal"><strong>In the A/B, the lift was real and small.</strong> We pre-registered one metric, checkout conversion, with a minimum detectable effect of +2&nbsp;points: 8,592 visitors per arm, 14&nbsp;days fixed, no peeking, sample ratio checked daily. Results: 31.4% to 33.5%, +2.1&nbsp;points, 95% interval +0.7 to +3.5. Search and direct traffic carried it: +3.1&nbsp;points.</p>
+<p class="reveal"><strong>The surprise was in a guardrail.</strong> Promo-ad traffic barely converted better (+0.7, not significant). But it skipped or cancelled before the second box much less: 24.1% to 17.6%. Across the week-1 cohort that guardrail fell from 18.9% to 15.2%. The weekly price shown upfront filtered out people who came only for −40%. Refunds, first order value and errors stayed flat. We shipped to everyone with a 5% holdout to watch the third box.</p>
+<div class="media reveal"><figure class="fig"><img src="img/torba-meal-kit-checkout/16-ab-result.webp" alt="A/B results with 95% intervals: conversion +2.1 points overall, +3.1 for search, +0.7 not significant for promo ads; early cancellations −3.7 points overall and −6.4 for promo ads" width="2048" height="1660" loading="lazy" decoding="async"><figcaption>More paid, fewer cancelled early</figcaption></figure></div>
+<p class="reveal"><strong>One hypothesis failed.</strong> The one-screen address with autocomplete looked fixed in the lab: address errors fell from 9 to 2. In the A/B the delivery step didn’t move: 80.8% of people finished it before, 80.4% after. The new form was the first to log the zone check, and it showed why: 61% of people leaving that step had typed an address outside the delivery zone. They weren’t lost to the form. They were never going to get a box. Our twelve testers all lived inside the zone, so the lab could not see it. The next iteration checks delivery on the landing page, before checkout, and the ads exclude places we don’t serve.</p>
+<div class="gallery gallery--phones reveal" style="--cols:3"><figure class="fig"><span class="phone"><img src="img/torba-meal-kit-checkout/17-landing-delivery-check.webp" alt="Landing page with a Do we deliver to you check: a Lviv address is confirmed with its delivery days before the plan step" width="1179" height="2556" loading="lazy" decoding="async"></span><figcaption>Delivery is checked before checkout starts</figcaption></figure></div>
+<h2 class="reveal">What I learned</h2>
+<ul class="reveal"><li>Split a drop by cause before you design for it. The address step lost 15&nbsp;points, but most of those people lived where we don’t deliver. No form fixes that.</li><li>A lab test picks the version; only traffic sizes the effect. Ordering errors fell by more than half in the lab; conversion rose by 2.1&nbsp;points.</li><li>Guardrails can carry the good news. The segment that didn’t convert better cancelled less, and that’s the argument I would take to marketing about the −40% ads.</li></ul>
+  </div>
+</article>
+<nav class="pager wrap" aria-label="Case navigation"><p class="more pager__prev"><span class="more__label">Previous</span><a href="kabinet-clinic-front-desk.html">Kabinet — a front desk that works by the day</a></p><p class="more pager__next"><span class="more__label">Next</span><a href="keel-ai-financial-management.html">Keel — AI Financial Management</a></p></nav>
+<section class="cta wrap" aria-labelledby="cta-h">
+  <h2 class="cta__title" id="cta-h">Have a product that needs design?</h2>
+  <p class="cta__actions"><a class="btn" href="mailto:voitenko.design@pm.me">Email me</a><a class="btn btn--ghost" href="https://www.linkedin.com/in/voitenkodesign" target="_blank" rel="noopener">LinkedIn</a></p>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <p>© 2026 Igor Voitenko<span class="local-time" hidden><span class="sep">·</span><span class="local-time__clock" tabindex="0"><span class="local-time__city">Kyiv</span> <time></time></span><span class="local-time__note" role="status"></span></span></p>
+    <p class="contact"><a href="mailto:voitenko.design@pm.me"><img src="mail-01.svg" alt="" width="16" height="16" decoding="async">Email</a><span class="sep">·</span><a href="https://www.linkedin.com/in/voitenkodesign" target="_blank" rel="noopener"><img src="linkedin-01.svg" alt="" width="16" height="16" decoding="async">LinkedIn</a><span class="sep">·</span><a href="/cv" target="_blank" rel="noopener" data-cv><img src="cv-01.svg" alt="" width="16" height="16" decoding="async">CV</a></p>
+  </div>
+</footer>
+</body>
+</html>
