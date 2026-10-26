@@ -161,7 +161,7 @@ strong { color: var(--title); font-weight: 600; }
 .site-footer__inner { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: var(--s-2) var(--s-5); }
 .site-footer p { margin: 0; }
 .site-footer .contact a { display: inline-flex; align-items: center; gap: var(--s-2); min-height: var(--tap); vertical-align: middle; }
-.site-footer .contact a img { width: 16px; height: 16px; display: block; }
+.site-footer .contact a img { width: 18px; height: 18px; display: block; }
 /* Kyiv time: green like "Open to work" (same meaning: when I'm reachable); the colon breathes once a second */
 .local-time .local-time__city, .local-time time { color: var(--accent); }
 .local-time time { font-variant-numeric: tabular-nums; }
@@ -415,7 +415,7 @@ strong { color: var(--title); font-weight: 600; }
 .about__card--link { display: flex; align-items: center; gap: var(--s-3); padding: var(--s-5) var(--s-6); color: var(--title); text-decoration: none; font-weight: 500; transition: background-color var(--dur-fast) ease; }
 @media (hover: hover) and (pointer: fine) { .about__card--link:hover { color: var(--title); text-decoration: none; background: var(--surface-hover); } }
 @media (hover: hover) and (pointer: fine) { .about__card--link:hover span { text-decoration: underline; text-underline-offset: .2em; } }
-.about__card--link img { width: 28px; height: 28px; flex: none; }
+.about__card--link img { width: 26px; height: 26px; flex: none; }
 @media (min-width: 760px) {
   .about__intro { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); align-items: stretch; }
   .about__contacts { grid-template-columns: repeat(3, 1fr); }
