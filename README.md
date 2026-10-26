@@ -8,14 +8,14 @@ Static portfolio site: plain HTML + one shared `styles.css`. No framework, no np
 | --- | --- |
 | `index.html` | Home: intro, selected work, club apps, results, about |
 | `white-label-app.html` | 01. White-label mobile app for football clubs |
-| `live-quiz.html` | 02. Live Quiz for match-day engagement |
-| `design-system.html` | 03. Design system for multi-brand club apps |
-| `keel-ai-financial-management.html` | 04. Keel — AI Financial Management (concept, not shipped) |
+| `design-system.html` | 02. Design system for multi-brand club apps |
+| `kabinet-clinic-front-desk.html` | 03. Kabinet — a front desk that works by the day (concept, not shipped) |
+| `torba-meal-kit-checkout.html` | 04. Torba — a checkout with no surprise at the end (concept, not shipped) |
 | `kvit-business-banking-freelancers.html` | 05. Kvit — business banking for Ukrainian freelancers (concept, not shipped) |
-| `kabinet-clinic-front-desk.html` | 08. Kabinet — a front desk that works by the day (concept, not shipped) |
-| `torba-meal-kit-checkout.html` | 09. Torba — a checkout with no surprise at the end (concept, not shipped) |
-| `personalized-offers.html` | 06. Personalized offers and voucher flows |
-| `3f-superliga.html` | 07. 3F Superliga website |
+| `live-quiz.html` | 06. Live Quiz for match-day engagement |
+| `personalized-offers.html` | 07. Personalized offers and voucher flows |
+| `keel-ai-financial-management.html` | 08. Keel — AI Financial Management (concept, not shipped) |
+| `3f-superliga.html` | 09. 3F Superliga website |
 | `other-work.html` | Other work (visual and marketing work) |
 | `404.html` | Not-found page |
 
