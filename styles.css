@@ -188,7 +188,7 @@ strong { color: var(--title); font-weight: 600; }
 .seplist__items { display: flex; flex-wrap: wrap; margin-left: -1.406em; }
 .seplist__items > span::before { content: "·"; display: inline-block; margin: 0 .6em; opacity: .6; }
 
-/* Arrows: one shape for the whole site (Lucide arrow-right, viewBox cropped to the glyph), sized in em so it follows the text.
+/* Arrows: one shape for the whole site (Tabler arrow-right, viewBox cropped to the glyph), sized in em so it follows the text.
    .arrow / .stat__arrow: centred on the cap height (between figures, e.g. 40% → 15%).
    .arrow--x and the "View case" arrow: sized to and centred on the x-height (after lowercase words). */
 .stat__arrow, .arrow { display: inline-block; width: .68em; height: .68em; margin: 0 .25em; vertical-align: .01em; }
@@ -360,8 +360,8 @@ strong { color: var(--title); font-weight: 600; }
 /* Same arrow as .arrow--x, drawn with a mask so it stays CSS-only and takes the text colour */
 .card__cta::after {
   content: ""; display: inline-block; width: .5em; height: .5em; margin-left: .3em; vertical-align: .01em; background: currentColor;
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='4 4 16 16'%3E%3Cpath d='M5 12h14M12 5l7 7-7 7' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
-  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='4 4 16 16'%3E%3Cpath d='M5 12h14M12 5l7 7-7 7' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='4 4 16 16'%3E%3Cpath d='M5 12h14M13 18l6-6M13 6l6 6' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='4 4 16 16'%3E%3Cpath d='M5 12h14M13 18l6-6M13 6l6 6' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
   transition: transform var(--dur) var(--ease-out);
 }
 .card:has(.card__link:focus-visible) .card__cta::after { transform: translateX(var(--s-1)); }

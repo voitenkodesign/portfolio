@@ -17,8 +17,8 @@ content rules, the workflow with the owner, and mistakes that already happened o
   `cv.pdf` with the new file under the same name and push (motion.js also points the links straight at it).
 - Home hero is a layered scene (`.scene` in `styles.css`, `img/home/hero/`): Figma components of the club app as
   separate layers with entrance, scroll drift and mouse lean (`motion.js`). To change a card, re-export that node.
-- Icons are Lucide (mail, linkedin, file-text, arrow-right, chevrons-left-right), stroke 1.5 for the contact icons (SVG files), 2 for inline arrows; new
-  icons come from Lucide too.
+- Icons are Tabler (mail, brand-linkedin, file-text, arrow-right, arrows-move-horizontal), stroke 1.5 for the contact icons (SVG files), 2 for inline arrows; new
+  icons come from Tabler too (MIT, tabler.io/icons).
 - Football appears only as **work context** (club apps at Sports Innovation). He is not a football fan: no football in
   personal touches (statuses, easter eggs, About copy).
 
