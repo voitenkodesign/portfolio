@@ -143,7 +143,7 @@ Case structure: see CASE-TEMPLATE.md (block order, HTML patterns, image and writ
 <nav class="pager wrap" aria-label="Case navigation"><p class="more pager__prev"><span class="more__label">Previous</span><a href="prev.html">Prev title</a></p><p class="more pager__next"><span class="more__label">Next</span><a href="next.html">Next title</a></p></nav>
 <section class="cta wrap" aria-labelledby="cta-h">
   <h2 class="cta__title" id="cta-h">Have a product that needs design?</h2>
-  <p class="cta__actions"><a class="btn" href="mailto:voitenko.design@pm.me">Email me</a><a class="btn btn--ghost" href="https://www.linkedin.com/in/voitenkodesign" target="_blank" rel="noopener">LinkedIn</a></p>
+  <p class="cta__actions"><a class="btn" href="mailto:igor@voitenkodesign.com">Email me</a><a class="btn btn--ghost" href="https://www.linkedin.com/in/voitenkodesign" target="_blank" rel="noopener">LinkedIn</a></p>
 </section>
 </main>
 ```
