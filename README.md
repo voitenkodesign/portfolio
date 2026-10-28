@@ -12,10 +12,11 @@ Static portfolio site: plain HTML + one shared `styles.css`. No framework, no np
 | `kabinet-clinic-front-desk.html` | 03. Kabinet — a front desk that works by the day (concept, not shipped) |
 | `torba-meal-kit-checkout.html` | 04. Torba — a checkout with no surprise at the end (concept, not shipped) |
 | `kvit-business-banking-freelancers.html` | 05. Kvit — business banking for Ukrainian freelancers (concept, not shipped) |
-| `live-quiz.html` | 06. Live Quiz for match-day engagement |
-| `personalized-offers.html` | 07. Personalized offers and voucher flows |
-| `keel-ai-financial-management.html` | 08. Keel — AI Financial Management (concept, not shipped) |
-| `3f-superliga.html` | 09. 3F Superliga website |
+| `shtamp-kyc-review-console.html` | 06. Shtamp — a review console that checks before it decides (concept, not shipped) |
+| `live-quiz.html` | 07. Live Quiz for match-day engagement |
+| `personalized-offers.html` | 08. Personalized offers and voucher flows |
+| `keel-ai-financial-management.html` | 09. Keel — AI Financial Management (concept, not shipped) |
+| `3f-superliga.html` | 10. 3F Superliga website |
 | `other-work.html` | Other work (visual and marketing work) |
 | `404.html` | Not-found page |
 
