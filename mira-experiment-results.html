@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mira — experiment results that say when to decide — Voitenko Design</title>
+<meta name="description" content="Mira is a product analytics tool. A concept redesign of how it shows A/B test results: correct decisions 59% to 72% in a comprehension test, fewer early stops, and a hypothesis about p-values that failed.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mira — experiment results that say when to decide — Voitenko Design">
+<meta property="og:description" content="Mira is a product analytics tool. A concept redesign of how it shows A/B test results: correct decisions 59% to 72% in a comprehension test, fewer early stops, and a hypothesis about p-values that failed.">
+<link rel="canonical" href="https://voitenkodesign.com/mira-experiment-results.html">
+<meta property="og:url" content="https://voitenkodesign.com/mira-experiment-results.html">
+<meta property="og:site_name" content="Voitenko Design">
+<meta property="og:image" content="https://voitenkodesign.com/img/mira-experiment-results/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mira result screen: a Ship verdict and the plausible range on a ruler">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#101010">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wdth,wght@0,100..125,400..600;1,100..125,400..600&display=swap">
+<link rel="stylesheet" href="styles.css">
+<script src="motion.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="/"><img src="logo.svg" alt="Voitenko Design" width="140" height="20" fetchpriority="high" decoding="async"></a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="/#work" aria-current="page">Work</a>
+      <a class="site-nav__about" href="/#about">About</a>
+      <a class="btn btn--sm" href="mailto:igor@voitenkodesign.com">Email me</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<article class="case">
+  <header class="case-hero wrap">
+    <h1>Mira — experiment results that say when to decide</h1>
+    <dl class="case-facts"><div><dt>Role</dt><dd>UI/UX &amp; Product Designer</dd></div><div><dt>Platform</dt><dd>Web, desktop</dd></div><div><dt>Domain</dt><dd class="seplist"><span class="seplist__items"><span>SaaS</span><span>Analytics</span></span></dd></div><div><dt>Team</dt><dd>Solo concept</dd></div></dl>
+    <div class="media case-hero__media"><figure class="fig"><img src="img/mira-experiment-results/01-hero.webp" alt="Mira result screen for One-tap rebooking: a Ship verdict, the sentence “likely raises 7-day repeat bookings by +0.9 to +3.3 points” and a ruler with zero, the worth-it line and the range, enlarged" width="2048" height="1182" loading="eager" decoding="async"><figcaption>The verdict, one sentence and the plausible range on a ruler</figcaption></figure></div>
+    <dl class="case-summary" aria-label="Case at a glance"><div><dt>Problem</dt><dd>Teams using Mira shipped A/B&nbsp;“wins” off a green badge. 41% of shipped winners were stopped before the planned sample, and 9 of 24 rechecked later showed no effect.</dd></div><div><dt>What I did</dt><dd>Ran JTBD interviews, a retro of 86 past decisions and a test of four ways to show the same result. Then I redesigned results, test setup, segments, funnels and retention.</dd></div><div><dt>Result</dt><dd>Correct decisions in the test rose from 59% to 72%, and early stops in the pilot fell from 36% to 19%. Showing p-values openly failed, and analysts didn’t improve.</dd></div></dl>
+  </header>
+  <div class="prose wrap">
+<p class="reveal">Mira is a product analytics and experiments tool for teams of 20 to 300&nbsp;people. I redesigned how it shows experiment results to the product managers, growth marketers and analysts who decide what ships.</p>
+<p class="reveal"><em>Concept. Product, users and data are fictional. Every interval on the screens is computed by a script.</em></p>
+<h2 class="reveal">Context</h2>
+<p class="reveal">Every screen shows Mira’s demo workspace, Rozklad, a class-booking app for gyms: 182,000 visits in 30&nbsp;days, 1,690 paid plans. The old results page put the lift in big type next to a green “Significant” badge, with the p-value in small grey text. Results appeared from the first hour of a test.</p>
+<p class="reveal">Page logs showed how it was read. 72% of visits to a result lasted under 40&nbsp;seconds, only 9% scrolled down to the interval, and 58% of views came before the planned sample was in.</p>
+<p class="reveal">This is a solo concept, written the way it would run in a team: a product lead, an analyst, two front-end engineers and me. I ran the research, the design and the test. Six weeks of design, then an eight-week pilot.</p>
+<div class="media reveal"><figure class="fig"><img src="img/mira-experiment-results/02-before.webp" alt="The old results page: +18% in big type with a green Significant badge on day 3 of 14, and the p-value in small grey text" width="2048" height="1182" loading="lazy" decoding="async"><figcaption>Before: lift in big type, a green badge on day 3, the p-value in small print</figcaption></figure></div>
+<h2 class="reveal">Constraints</h2>
+<ul class="reveal"><li><strong>The statistics engine stays.</strong> Fixed-sample tests, as the teams already plan them. I could change how a result reads, not the maths behind it.</li><li><strong>Analysts still need p-values.</strong> They sign results off, and someone asks them “is this significant?” six times a week.</li><li><strong>The screen can’t invent a threshold.</strong> What counts as worth shipping is the team’s call, so it has to be set before the test starts.</li><li><strong>The page itself can’t be A/B tested.</strong> Whether a decision was right shows up months later, in a holdout.</li></ul>
+<h2 class="reveal">Process</h2>
+<p class="reveal">I started with jobs, not features. JTBD interviews with 6 product managers, 4 growth marketers and 4 analysts asked what decision they open a result for, and who they explain it to afterwards.</p>
+<blockquote class="reveal"><p>“I don’t need statistics. I need something I can defend at Friday’s review.”</p><cite>Marta, product manager</cite></blockquote>
+<p class="reveal">Then a retro of decisions rather than clicks: 86 experiments from 3 workspaces over 12&nbsp;months, and what happened to each.</p>
+<ul class="reveal"><li><strong>31 of 86 tests were stopped before the planned sample.</strong> Of 41 shipped as winners, 17 were stopped early.</li><li><strong>9 of 24 winners rechecked with a holdout showed no effect.</strong> Shipped noise, at 38%.</li><li><strong>10 of 29 flat tests shipped anyway</strong> after someone found a “significant” segment.</li><li><strong>Funnels and cohorts had no test markers,</strong> so a seasonal rise was credited to whichever test had just shipped.</li></ul>
+<p class="reveal">I ranked six hypotheses by ICE. Showing p-values, confidence intervals and power openly came first: analysts asked for it, and it was cheap.</p>
+<p class="reveal">To compare ideas on the same data, I ran a comprehension test, between subjects: 4 versions of the results page, 48&nbsp;people each, half product and growth, half analysts. Each person made 8 decisions with a known right answer: 3 real effects, 3 tests with no effect and 2 stopped too early. The rule for a correct decision was agreed with two analysts before the test. I measured correct decisions, time and confidence from 1 to 5.</p>
+<div class="media reveal"><figure class="fig"><img src="img/mira-experiment-results/03-test-variants.webp" alt="Four versions of the same early result tested: lift with a badge, statistics shown, verdict only, and verdict with range and sample readiness" width="2048" height="973" loading="lazy" decoding="async"><figcaption>Four ways to show the same result, tested on 192&nbsp;people</figcaption></figure></div>
+<h2 class="reveal">Key decisions</h2>
+<h3 class="reveal">How do we show uncertainty without statistics words?</h3>
+<p class="reveal">Options: a lift bar with error whiskers; “probability that B is better: 94%”; a plausible range on a ruler with zero and a worth-it line. I chose the ruler: it shows at once whether the range crosses zero, whether it clears the line, and how wide it is. “94%” was read as a sure win. The cost: the p-value moves to Details, and growth gets an extra step at launch to set the line.</p>
+<div class="media reveal"><figure class="fig"><img src="img/mira-experiment-results/04-options-uncertainty.webp" alt="Three wireframes for showing uncertainty: a lift bar with whiskers, “94% chance B is better”, and a plausible range on a ruler, which is chosen" width="2048" height="910" loading="lazy" decoding="async"><figcaption>Three ways to show uncertainty. I picked C</figcaption></figure></div>
+<h3 class="reveal">When does the screen give a verdict?</h3>
+<p class="reveal">Options: numbers only; a verdict at any time, even mid-test; a verdict only once the planned sample is in. I chose the third. The verdict has four states, each a word and an icon, never colour alone: Ship, Don’t ship, No clear difference, Too early. The cost: no early signal for stakeholders, and tests run longer.</p>
+<div class="media reveal"><figure class="fig"><img src="img/mira-experiment-results/05-options-verdict.webp" alt="Three wireframes for when a verdict appears: numbers only, a verdict from day 1, and a verdict after the planned sample, which is chosen" width="2048" height="910" loading="lazy" decoding="async"><figcaption>Three answers to when a verdict appears</figcaption></figure></div>
+<h3 class="reveal">Which segments show by default?</h3>
+<p class="reveal">Options: every segment in a table; the overall result only; the overall result plus segments declared at launch. I chose the third: other segments are a click away and marked exploratory. The cost: a real effect in an undeclared segment is found later.</p>
+<div class="media reveal"><figure class="fig"><img src="img/mira-experiment-results/06-options-segments.webp" alt="Three wireframes for segments: every segment in a table, the overall result only, and declared segments with others on request, which is chosen" width="2048" height="910" loading="lazy" decoding="async"><figcaption>Three defaults for segments</figcaption></figure></div>
+<h2 class="reveal">A sentence first, then the range</h2>
+<p class="reveal">The result opens with a sentence a product manager can repeat at review, with the range in it: “likely raises 7-day repeat bookings by +0.9 to +3.3&nbsp;points.” Under it, the ruler shows zero, the worth-it line the team set at launch and the plausible range. Mira comes from “міра”, Ukrainian for “measure”, so the ruler is the product’s one memorable element: a dark instrument panel, a graduated rule, a raspberry range. Everything around it stays quiet grey.</p>
+<p class="reveal">A flat test gets the same treatment. The paywall copy moved paid conversion by −0.2 to +0.6&nbsp;points, so the sentence says it’s no different from zero.</p>
+<div class="media reveal"><figure class="fig"><img src="img/mira-experiment-results/07-flat.webp" alt="Paywall copy result: No clear difference, the range −0.2 to +0.6 points crossing zero, enlarged" width="2048" height="1182" loading="lazy" decoding="async"><figcaption>No clear difference: the range crosses zero</figcaption></figure></div>
+<p class="reveal">Analysts keep everything they had, one click away: p-value, z, relative interval, power and the sample ratio check.</p>
+<div class="media reveal"><figure class="fig"><img src="img/mira-experiment-results/08-details.webp" alt="The Details drawer over a result: p-value, z, relative interval, power and the sample ratio check" width="2048" height="1182" loading="lazy" decoding="async"><figcaption>The statistics are still there, in Details</figcaption></figure></div>
+<h2 class="reveal">Too early is a state, not a missing number</h2>
+<p class="reveal">Until the planned sample is in, there is no lift and no range. The panel says how much of the sample is collected and when the verdict comes. The guardrail metrics are checked meanwhile, because harm can stop a test early. Benefit can’t.</p>
+<div class="media reveal"><figure class="fig"><img src="img/mira-experiment-results/09-too-early.webp" alt="Evening class reminder on day 5 of 14: Too early, no range yet, 38% of the planned sample and a verdict date of 6 Nov, enlarged" width="2048" height="1182" loading="lazy" decoding="async"><figcaption>On day 5 of 14: no verdict, a date for one</figcaption></figure></div>
+<p class="reveal">The worth-it line is set when the test is created. Mira turns it into a planned sample, 14,366&nbsp;members per group, and a verdict date.</p>
+<div class="media reveal"><figure class="fig"><img src="img/mira-experiment-results/10-setup.webp" alt="New experiment form: the worth-it line set to +1.5 points and the plan it needs, 14,366 members per group and a verdict on 6 Nov" width="2048" height="1182" loading="lazy" decoding="async"><figcaption>The line is set before anyone sees a result</figcaption></figure></div>
+<h2 class="reveal">Segments can’t rescue a flat test</h2>
+<p class="reveal">Exploratory segments come with a warning and a correction for multiple comparisons. With 12 segments, a win can show up by chance alone. In the paywall test, “iOS, evening” looked like a win at +0.1 to +2.7&nbsp;points. Corrected, it is −0.5 to +3.3: no different from zero.</p>
+<div class="media reveal"><figure class="fig"><img src="img/mira-experiment-results/11-segments.webp" alt="Exploratory segments of the paywall test, corrected for 12 looks: iOS, evening runs from −0.5 to +3.3 points after adjusting" width="2048" height="1182" loading="lazy" decoding="async"><figcaption>Twelve segments, corrected for chance</figcaption></figure></div>
+<h2 class="reveal">Context on every chart</h2>
+<p class="reveal">The funnel marks when each test ran and when the season started, so a rise isn’t credited to the wrong change. Cohorts mark the rollout the same way.</p>
+<div class="media reveal"><figure class="fig"><img src="img/mira-experiment-results/12-funnel.webp" alt="Visit-to-paid funnel with the weekly trend, test spans and the start of the season marked on the chart" width="2048" height="1182" loading="lazy" decoding="async"><figcaption>Test spans and the season on the funnel</figcaption></figure></div>
+<div class="media reveal"><figure class="fig"><img src="img/mira-experiment-results/13-cohorts.webp" alt="Retention by weekly cohort as a raspberry heatmap, with the rebooking rollout marked" width="2048" height="1316" loading="lazy" decoding="async"><figcaption>Retention cohorts with the rollout marked</figcaption></figure></div>
+<p class="reveal">The experiments list keeps running and closed tests apart. A running test shows how much sample is in, in grey; only a finished test shows a range.</p>
+<div class="media reveal"><figure class="fig"><img src="img/mira-experiment-results/14-list.webp" alt="Experiments list split into running tests with a grey sample meter and closed tests with ranges on a shared scale" width="2048" height="1182" loading="lazy" decoding="async"><figcaption>Progress and results never share a column</figcaption></figure></div>
+<h2 class="reveal">Result</h2>
+<p class="reveal"><strong>The hypothesis that failed.</strong> Showing p-values, intervals and power openly changed nothing that mattered. Correct decisions stayed at 59%, and decisions took 74&nbsp;seconds instead of 52. Worse, people shipped more on early data, 44% instead of 38%, and were more sure of it: confidence on those wrong calls was 4.1 out of 5. They found the small p-value of an early peek and read it as a verdict. More truth didn’t mean more understanding: people turned any number into “win” or “lose” on their own.</p>
+<div class="media reveal"><figure class="fig"><img src="img/mira-experiment-results/15-p-values.webp" alt="Bar charts: correct decisions 59% on both the old page and with statistics shown; shipping on early data 38% against 44%; confidence on those wrong ships 3.4 against 4.1" width="2048" height="910" loading="lazy" decoding="async"><figcaption>Same accuracy, more confident early ships</figcaption></figure></div>
+<p class="reveal">So the product gives the verdict itself, right and on time, and keeps the statistics in Details for those who want them.</p>
+<p class="reveal">The final version, with the verdict, the range and sample readiness, against the old page:</p>
+<ul class="reveal"><li><strong>Correct decisions</strong> rose from 59% to 72%, +13&nbsp;points (+6 to +20 across people). Decisions took 43&nbsp;seconds instead of 52.</li><li><strong>Shipping on early data</strong> fell from 38% to 14%. People now doubt themselves when they’re wrong: confidence 3.9 on right calls, 3.0 on wrong ones.</li><li><strong>In the pilot</strong>, 3 workspaces over 8&nbsp;weeks, tests stopped before the planned sample fell from 36% to 19%, 5 of 26. The cost: the median test now runs 14&nbsp;days instead of 12.</li></ul>
+<p class="reveal"><strong>The surprise in one segment.</strong> Product and growth people gained the most, from 46% to 71%. Analysts didn’t move: 72% to 73%. On tests with no effect they even did worse, 81% to 72%, though with 24&nbsp;people per group that range runs from −26 to +8&nbsp;points, so it’s a signal, not a finding. They opened segments, found one that looked significant and shipped. The exploratory label didn’t stop them. Next step: the correction goes into the segment verdict itself, not a note under it.</p>
+<div class="media reveal"><figure class="fig"><img src="img/mira-experiment-results/16-by-role.webp" alt="Dot plot of correct decisions by role: product and growth 46% to 71%, analysts 72% to 73%, analysts on tests with no effect 81% to 72%" width="2048" height="853" loading="lazy" decoding="async"><figcaption>Product people gained; analysts didn’t</figcaption></figure></div>
+<div class="media reveal"><figure class="fig"><img src="img/mira-experiment-results/17-results.webp" alt="Results table: correct decisions 59% to 72%, time 52 to 43 seconds, early ships 38% to 14%, early stops 36% to 19%, test length 12 to 14 days" width="2048" height="853" loading="lazy" decoding="async"><figcaption>A modest result with a cost</figcaption></figure></div>
+<h2 class="reveal">What I learned</h2>
+<ul class="reveal"><li><strong>Transparency isn’t understanding.</strong> Given more numbers, people still made up a verdict, so the product should give the right one.</li><li><strong>Timing is part of the design.</strong> The same verdict is harmful on day 3 and right on day 14.</li><li><strong>Experts need a different guard.</strong> Analysts didn’t misread the result; they went looking for another one.</li></ul>
+  </div>
+</article>
+<nav class="pager wrap" aria-label="Case navigation"><p class="more pager__prev"><span class="more__label">Previous</span><a href="personalized-offers.html">Personalized offers and voucher flows</a></p><p class="more pager__next"><span class="more__label">Next</span><a href="keel-ai-financial-management.html">Keel — AI Financial Management</a></p></nav>
+<section class="cta wrap" aria-labelledby="cta-h">
+  <h2 class="cta__title" id="cta-h">Have a product that needs design?</h2>
+  <p class="cta__actions"><a class="btn" href="mailto:igor@voitenkodesign.com">Email me</a><a class="btn btn--ghost" href="https://www.linkedin.com/in/voitenkodesign" target="_blank" rel="noopener">LinkedIn</a></p>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <p>© 2026 Igor Voitenko<span class="local-time" hidden><span class="sep">·</span><span class="local-time__clock" tabindex="0"><span class="local-time__city">Kyiv</span> <time></time></span><span class="local-time__note" role="status"></span></span></p>
+    <p class="contact"><a href="mailto:igor@voitenkodesign.com"><img src="mail-01.svg" alt="" width="18" height="18" decoding="async">Email</a><span class="sep">·</span><a href="https://www.linkedin.com/in/voitenkodesign" target="_blank" rel="noopener"><img src="linkedin-01.svg" alt="" width="18" height="18" decoding="async">LinkedIn</a><span class="sep">·</span><a href="/cv" target="_blank" rel="noopener" data-cv><img src="cv-01.svg" alt="" width="18" height="18" decoding="async">CV</a></p>
+  </div>
+</footer>
+</body>
+</html>

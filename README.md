@@ -15,8 +15,9 @@ Static portfolio site: plain HTML + one shared `styles.css`. No framework, no np
 | `design-system.html` | 06. Design system for multi-brand club apps |
 | `live-quiz.html` | 07. Live Quiz for match-day engagement |
 | `personalized-offers.html` | 08. Personalized offers and voucher flows |
-| `keel-ai-financial-management.html` | 09. Keel — AI Financial Management (concept, not shipped) |
-| `3f-superliga.html` | 10. 3F Superliga website |
+| `mira-experiment-results.html` | 09. Mira — experiment results that say when to decide (concept, not shipped) |
+| `keel-ai-financial-management.html` | 10. Keel — AI Financial Management (concept, not shipped) |
+| `3f-superliga.html` | 11. 3F Superliga website |
 | `other-work.html` | Other work (visual and marketing work) |
 | `404.html` | Not-found page |
 

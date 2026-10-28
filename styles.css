@@ -323,6 +323,7 @@ strong { color: var(--title); font-weight: 600; }
 .cover--kabinet       { --brand: #0b6e68; } /* Kabinet teal */
 .cover--torba         { --brand: #c4391b; } /* Torba tomato */
 .cover--shtamp        { --brand: #5a36c9; } /* Shtamp stamp ink */
+.cover--mira          { --brand: #c8175d; } /* Mira raspberry */
 .cover {
   --r: 1.25; /* = .card__media aspect ratio */
   display: flex; justify-content: center; align-items: flex-start; gap: calc(7% / var(--r));
