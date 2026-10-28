@@ -8,11 +8,11 @@ Static portfolio site: plain HTML + one shared `styles.css`. No framework, no np
 | --- | --- |
 | `index.html` | Home: intro, selected work, club apps, results, about |
 | `white-label-app.html` | 01. White-label mobile app for football clubs |
-| `design-system.html` | 02. Design system for multi-brand club apps |
+| `shtamp-kyc-review-console.html` | 02. Shtamp — a review console that checks before it decides (concept, not shipped) |
 | `kabinet-clinic-front-desk.html` | 03. Kabinet — a front desk that works by the day (concept, not shipped) |
 | `torba-meal-kit-checkout.html` | 04. Torba — a checkout with no surprise at the end (concept, not shipped) |
 | `kvit-business-banking-freelancers.html` | 05. Kvit — business banking for Ukrainian freelancers (concept, not shipped) |
-| `shtamp-kyc-review-console.html` | 06. Shtamp — a review console that checks before it decides (concept, not shipped) |
+| `design-system.html` | 06. Design system for multi-brand club apps |
 | `live-quiz.html` | 07. Live Quiz for match-day engagement |
 | `personalized-offers.html` | 08. Personalized offers and voucher flows |
 | `keel-ai-financial-management.html` | 09. Keel — AI Financial Management (concept, not shipped) |
