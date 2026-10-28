@@ -86,6 +86,8 @@ Until the planned sample is in, there is no lift and no range. The panel says ho
 
 ![Early in a test, the old page named a winner; the new one names a date](images/08-early-before-after.png)
 
+When something goes wrong, the panel says so in the same way: a guardrail breach stops the test and shows how far over the limit it went.
+
 The worth-it line is set when the test is created. Mira turns it into a planned sample, 14,366 members per group, and a verdict date.
 
 ![The line is set before anyone sees a result](images/09-setup.png)
@@ -120,7 +122,7 @@ The final version, with the verdict, the range and sample readiness, against the
 - **Shipping on early data** fell from 38% to 14%. People now doubt themselves when they’re wrong: confidence 3.9 on right calls, 3.0 on wrong ones.
 - **In the pilot**, 3 workspaces over 8 weeks, tests stopped before the planned sample fell from 36% to 19%, 5 of 26. The cost: the median test now runs 14 days instead of 12.
 
-**The surprise in one segment.** Product and growth people gained the most, from 46% to 71%. Analysts didn’t move: 72% to 73%. On tests with no effect they even did worse, 81% to 72%, though with 24 people per group that range runs from −26 to +8 points, so it’s a signal, not a finding. They opened segments, found one that looked significant and shipped. The exploratory label didn’t stop them. Next step: the correction goes into the segment verdict itself, not a note under it.
+**The surprise in one segment.** Product and growth people gained the most, from 46% to 71%. Analysts didn’t move: 72% to 73%. On tests with no effect they even did worse, 81% to 72%, though with 24 people per group that range runs from −26 to +8 points, so it’s a signal, not a finding. They opened segments, found one that looked significant and shipped. The exploratory label didn’t stop them. So the final version puts the correction into the segment view itself: ranges widen for every extra look, and a segment that only wins before correcting says so. That version hasn’t been tested yet.
 
 ![Product people gained; analysts didn’t](images/14-by-role.png)
 
