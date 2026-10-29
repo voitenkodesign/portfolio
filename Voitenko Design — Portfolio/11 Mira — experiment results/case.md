@@ -88,31 +88,39 @@ Until the planned sample is in, there is no lift and no range. The panel says ho
 
 When something goes wrong, the panel says so in the same way: a guardrail breach stops the test and shows how far over the limit it went.
 
+![A guardrail stops the test and says by how much](images/09-breach.png)
+
 The worth-it line is set when the test is created. Mira turns it into a planned sample, 14,366 members per group, and a verdict date.
 
-![The line is set before anyone sees a result](images/09-setup.png)
+![The line is set before anyone sees a result](images/10-setup.png)
 
 ## Segments can’t rescue a flat test
 
 Exploratory segments come with a warning and a correction for multiple comparisons. With 12 segments, a win can show up by chance alone. In the paywall test, “iOS, evening” looked like a win at +0.1 to +2.7 points. Corrected, it is −0.5 to +3.3: no different from zero.
 
-![Twelve segments, corrected for chance](images/10-segments.png)
+![Twelve segments, corrected for chance](images/11-segments.png)
 
 ## Context on every chart
 
 The funnel marks when each test ran and when the season started, so a rise isn’t credited to the wrong change. Cohorts mark the rollout the same way.
 
-![Test spans and the season on the funnel](images/11-funnel.png)
+![Test spans and the season on the funnel](images/12-funnel.png)
 
 The experiments list keeps running and closed tests apart. A running test shows how much sample is in, in grey; only a finished test shows a range.
 
-![Progress and results never share a column](images/12-list.png)
+![Progress and results never share a column](images/13-list.png)
+
+## States and edge cases
+
+A decision screen has to hold up on its worst day too. Every control has hover, pressed, focus and disabled states, with one focus ring that turns light on the dark panel. The ruler has rules for its limits: a range wider than the axis, a range entirely below zero, a very narrow one. Stopping a test asks for a reason, and a broken 50/50 split hides the verdict instead of showing a wrong one.
+
+![The states a developer would otherwise have to guess](images/14-states.png)
 
 ## Result
 
 **The hypothesis that failed.** Showing p-values, intervals and power openly changed nothing that mattered. Correct decisions stayed at 59%, and decisions took 74 seconds instead of 52. Worse, people shipped more on early data, 44% instead of 38%, and were more sure of it: confidence on those wrong calls was 4.1 out of 5. They found the small p-value of an early peek and read it as a verdict. More truth didn’t mean more understanding: people turned any number into “win” or “lose” on their own.
 
-![Same accuracy, more confident early ships](images/13-p-values.png)
+![Same accuracy, more confident early ships](images/15-p-values.png)
 
 So the product gives the verdict itself, right and on time, and keeps the statistics in Details for those who want them.
 
@@ -124,9 +132,9 @@ The final version, with the verdict, the range and sample readiness, against the
 
 **The surprise in one segment.** Product and growth people gained the most, from 46% to 71%. Analysts didn’t move: 72% to 73%. On tests with no effect they even did worse, 81% to 72%, though with 24 people per group that range runs from −26 to +8 points, so it’s a signal, not a finding. They opened segments, found one that looked significant and shipped. The exploratory label didn’t stop them. So the final version puts the correction into the segment view itself: ranges widen for every extra look, and a segment that only wins before correcting says so. That version hasn’t been tested yet.
 
-![Product people gained; analysts didn’t](images/14-by-role.png)
+![Product people gained; analysts didn’t](images/16-by-role.png)
 
-![A modest result with a cost](images/15-results.png)
+![A modest result with a cost](images/17-results.png)
 
 ## What I learned
 
