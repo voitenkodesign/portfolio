@@ -16,8 +16,9 @@ Static portfolio site: plain HTML + one shared `styles.css`. No framework, no np
 | `live-quiz.html` | 07. Live Quiz for match-day engagement |
 | `personalized-offers.html` | 08. Personalized offers and voucher flows |
 | `mira-experiment-results.html` | 09. Mira — experiment results that say when to decide (concept, not shipped) |
-| `keel-ai-financial-management.html` | 10. Keel — AI Financial Management (concept, not shipped) |
-| `3f-superliga.html` | 11. 3F Superliga website |
+| `zgoda-team-onboarding-billing.html` | 10. Zgoda — a team’s first two weeks, from sign-up to a second person (concept, not shipped) |
+| `keel-ai-financial-management.html` | 11. Keel — AI Financial Management (concept, not shipped) |
+| `3f-superliga.html` | 12. 3F Superliga website |
 | `other-work.html` | Other work (visual and marketing work) |
 | `404.html` | Not-found page |
 
