@@ -373,6 +373,7 @@ strong { color: var(--title); font-weight: 600; }
 /* Home: "Other work" and case prev/next — quiet text rows */
 .more { margin: var(--s-5) 0 0; display: flex; flex-wrap: wrap; gap: var(--s-1) var(--s-4); font-size: var(--fs-small); }
 .more__label { color: var(--text); }
+.more + .more { margin-top: var(--s-2); } /* stacked rows read as one group */
 
 /* Home: clubs as a quiet trust strip (small label, dimmed logos) */
 .trust__label { font-size: var(--fs-small); font-weight: 500; font-stretch: 100%; letter-spacing: 0; line-height: var(--lh-ui); color: var(--text); margin: 0 0 var(--s-4); }
