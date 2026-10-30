@@ -1,0 +1,28 @@
+﻿<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="_base.css"><style>
+body { width: 2048px; height: 1152px; position: relative; overflow: hidden; }
+.c { position: absolute; width: 410px; height: 340px; background: #1c1c1b; border-radius: 24px; padding: 40px; display: flex; flex-direction: column; }
+.c.me { box-shadow: inset 0 0 0 3px #5ce08f; }
+.n { font-size: 32px; font-weight: 500; }
+.l { margin-top: 20px; font-size: 50px; line-height: 1.1; font-weight: 500; font-stretch: 112%; letter-spacing: -.02em; color: #f4f4f4; }
+.who { margin-top: auto; align-self: flex-start; font-size: 30px; font-weight: 500; padding: 8px 20px; border-radius: 999px; background: rgba(255,255,255,.08); }
+.me .who { background: #5ce08f; color: #101010; }
+svg { position: absolute; inset: 0; }
+.loop { position: absolute; left: 1080px; top: 588px; font-size: 28px; padding: 0 16px; background: #101010; color: rgba(255,255,255,.72); }
+</style></head><body><div style="position:absolute;inset:0;transform:translateY(36px)">
+<svg width="2048" height="1152" fill="none" stroke="rgba(255,255,255,.45)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+  <defs><marker id="a" viewBox="0 0 12 12" refX="10" refY="6" markerWidth="6" markerHeight="6" orient="auto"><path d="M1 1l10 5-10 5" stroke="rgba(255,255,255,.6)" stroke-width="2"/></marker></defs>
+  <path d="M510 286h60" marker-end="url(#a)"/><path d="M992 286h60" marker-end="url(#a)"/><path d="M1474 286h60" marker-end="url(#a)"/>
+  <path d="M1840 456v86H301v80" marker-end="url(#a)"/>
+  <path d="M510 818h60" marker-end="url(#a)"/><path d="M992 818h60" marker-end="url(#a)"/><path d="M1474 818h60" marker-end="url(#a)"/>
+  <path d="M783 648v-44h857v-140" stroke-dasharray="2 14" marker-end="url(#a)"/>
+</svg>
+<div class="c me" style="left:96px;top:116px"><p class="n">1</p><p class="l">Task</p><p class="who">Me</p></div>
+<div class="c" style="left:578px;top:116px"><p class="n">2</p><p class="l">Options and advice</p><p class="who">Claude Code</p></div>
+<div class="c me" style="left:1060px;top:116px"><p class="n">3</p><p class="l">My choice</p><p class="who">Me</p></div>
+<div class="c" style="left:1542px;top:116px"><p class="n">4</p><p class="l">Branch and code</p><p class="who">Claude Code</p></div>
+<div class="c" style="left:96px;top:648px"><p class="n">5</p><p class="l">Preview and screenshots</p><p class="who">Claude Code</p></div>
+<div class="c me" style="left:578px;top:648px"><p class="n">6</p><p class="l">Check: “ok” or a fix</p><p class="who">Me</p></div>
+<div class="c" style="left:1060px;top:648px"><p class="n">7</p><p class="l">Merge into main</p><p class="who">Claude Code</p></div>
+<div class="c" style="left:1542px;top:648px"><p class="n">8</p><p class="l">Check the live site</p><p class="who">Claude Code</p></div>
+<p class="loop">not ok: back to the code</p>
+</div></body></html>

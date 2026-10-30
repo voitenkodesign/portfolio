@@ -169,6 +169,8 @@ Header and footer: copy them exactly from an existing case page (the footer cont
 8. **Two greys for cards** crept in — every surface is `--surface`.
 9. **Hero title** must stay 3 lines on a 375px phone ("I design apps and / systems that people / actually use.").
 10. Don't claim things on behalf of the owner (reply times, team roles, numbers) without asking him.
+11. **A design critique saw one case out of twelve** and advised two text columns in cases; three iterations later
+    the text went back to the left edge. Run a critique across every page, and check layout advice on a phone before merging.
 
 ## 8. Verify before saying "done"
 

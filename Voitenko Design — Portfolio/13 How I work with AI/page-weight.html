@@ -1,0 +1,17 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="_base.css"><style>
+body { width: 2048px; height: 760px; padding: 72px 96px; }
+.leg { display: flex; gap: 56px; font-size: 32px; margin-bottom: 56px; }
+.leg i { display: inline-block; width: 28px; height: 28px; border-radius: 6px; margin-right: 14px; vertical-align: -4px; }
+.row { display: grid; grid-template-columns: 340px 1fr; align-items: center; column-gap: 32px; margin-bottom: 52px; }
+.name { font-size: 44px; font-weight: 500; font-stretch: 112%; color: #f4f4f4; grid-row: span 2; }
+.bar { height: 52px; border-radius: 8px; display: flex; align-items: center; margin: 6px 0; }
+.bar span { margin-left: calc(100% + 20px); white-space: nowrap; font-size: 34px; font-weight: 500; }
+.was { background: rgba(255,255,255,.18); }
+.now { background: #5ce08f; }
+.now span { color: #5ce08f; }
+</style></head><body>
+<p class="leg"><span><i style="background:rgba(255,255,255,.18)"></i>7 Oct</span><span><i style="background:#5ce08f"></i>29 Oct</span></p>
+<div class="row"><p class="name">Home</p><div class="bar was" style="width:calc(4.14/10.02*1200px)"><span>4.14 MB</span></div><div class="bar now" style="width:calc(1.36/10.02*1200px)"><span>1.36 MB</span></div></div>
+<div class="row"><p class="name">Live Quiz</p><div class="bar was" style="width:calc(7.92/10.02*1200px)"><span>7.92 MB</span></div><div class="bar now" style="width:calc(0.79/10.02*1200px)"><span>0.79 MB</span></div></div>
+<div class="row"><p class="name">White-label</p><div class="bar was" style="width:calc(10.02/10.02*1200px)"><span>10.02 MB</span></div><div class="bar now" style="width:calc(1.68/10.02*1200px)"><span>1.68 MB</span></div></div>
+</body></html>

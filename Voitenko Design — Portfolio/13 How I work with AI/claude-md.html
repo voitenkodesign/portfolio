@@ -1,0 +1,23 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="_base.css"><style>
+body { width: 2048px; height: 880px; padding: 64px; }
+.win { height: 100%; background: #1c1c1b; border-radius: 24px; overflow: hidden; }
+.bar { padding: 28px 48px; font-size: 30px; font-weight: 500; color: #f4f4f4; border-bottom: 2px solid rgba(255,255,255,.08); }
+.bar span { color: rgba(255,255,255,.5); font-weight: 400; }
+pre { padding: 36px 48px; font-family: "IBM Plex Mono", monospace; font-size: 29px; line-height: 1.5; white-space: pre; color: rgba(255,255,255,.72); }
+.h { color: #f4f4f4; font-weight: 500; }
+.k { color: #5ce08f; }
+.d { color: rgba(255,255,255,.35); }
+</style></head><body><div class="win"><p class="bar">CLAUDE.md <span>&nbsp;·&nbsp; read by every session before any change</span></p>
+<pre><span class="h">## 3. Workflow with the owner</span>
+- <span class="k">Bigger or site-wide changes</span>: new branch → push → give the preview URL
+  + phone screenshots → he says "ок" → merge yourself with <span class="k">git merge --ff-only</span>
+- After every push to main: wait for the Cloudflare build, then <span class="k">check the live site</span>.
+- Before a change, <span class="k">propose options with a recommendation; he decides</span>.
+<span class="d">…</span>
+<span class="h">## 7. Mistakes that already happened — do not repeat</span>
+1. <span class="k">Mojibake (twice on the live site).</span> … After every edit scan for U+00C2/U+00C3.
+5. <span class="k">Text arrows "→" sat on the baseline.</span> Always use the SVG arrow classes.
+7. <span class="k">Hidden elements kept their space</span> (header "Email me" left a gap).
+11. <span class="k">A critique saw one case of twelve</span> and advised two text columns;
+    three iterations later the text went back. Critique every page, and
+    check layout advice on a phone before merging.</pre></div></body></html>

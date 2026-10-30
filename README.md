@@ -20,6 +20,7 @@ Static portfolio site: plain HTML + one shared `styles.css`. No framework, no np
 | `keel-ai-financial-management.html` | 11. Keel — AI Financial Management (concept, not shipped) |
 | `3f-superliga.html` | 12. 3F Superliga website |
 | `other-work.html` | Other work (visual and marketing work) |
+| `ai-workflow.html` | How I work with AI — Claude Code builds, I decide and check (not a numbered case: linked from the home hero, not in cards or the pager) |
 | `404.html` | Not-found page |
 
 ## Images

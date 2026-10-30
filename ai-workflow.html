@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How I work with AI — Claude Code builds, I decide and check — Voitenko Design</title>
+<meta name="description" content="How I build and run voitenkodesign.com with Claude Code, GitHub and Cloudflare: where AI works, where I decide, how its mistakes became rules, and what I don’t delegate.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="How I work with AI — Claude Code builds, I decide and check — Voitenko Design">
+<meta property="og:description" content="How I build and run voitenkodesign.com with Claude Code, GitHub and Cloudflare: where AI works, where I decide, how its mistakes became rules, and what I don’t delegate.">
+<link rel="canonical" href="https://voitenkodesign.com/ai-workflow.html">
+<meta property="og:url" content="https://voitenkodesign.com/ai-workflow.html">
+<meta property="og:site_name" content="Voitenko Design">
+<meta property="og:image" content="https://voitenkodesign.com/img/ai-workflow/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The release cycle in eight steps, each marked as mine or Claude Code’s">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#101010">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mona+Sans:ital,wdth,wght@0,100..125,400..600;1,100..125,400..600&display=swap">
+<link rel="stylesheet" href="styles.css">
+<script src="motion.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="/"><img src="logo.svg" alt="Voitenko Design" width="140" height="20" fetchpriority="high" decoding="async"></a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="/#work">Work</a>
+      <a class="site-nav__about" href="/#about">About</a>
+      <a class="btn btn--sm" href="mailto:igor@voitenkodesign.com">Email me</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+<article class="case">
+  <header class="case-hero wrap">
+    <h1>How I work with AI — Claude Code builds, I decide and check</h1>
+    <dl class="case-facts"><div><dt>Role</dt><dd>UI/UX &amp; Product Designer</dd></div><div><dt>Platform</dt><dd>Web</dd></div><div><dt>Domain</dt><dd class="seplist"><span class="seplist__items"><span>Design process</span><span>AI</span></span></dd></div><div><dt>Team</dt><dd>Solo, with Claude&nbsp;Code</dd></div></dl>
+    <div class="media case-hero__media"><figure class="fig"><img src="img/ai-workflow/hero.webp" alt="The release cycle in eight steps: my task, options and advice from Claude Code, my choice, branch and code, preview and screenshots, my check with a loop back to the code, merge into main, and a check of the live site" width="2048" height="1152" loading="eager" decoding="async"><figcaption>AI proposes and builds; I choose and check</figcaption></figure></div>
+    <dl class="case-summary" aria-label="Case at a glance"><div><dt>Problem</dt><dd>I’m a designer, not a developer, and my portfolio needed a rebuild. AI had to write the code without taking the design decisions.</dd></div><div><dt>What I did</dt><dd>Built voitenkodesign.com with Claude Code, GitHub and Cloudflare: AI proposes options and writes code, I choose, review previews on my phone, turn mistakes into rules.</dd></div><div><dt>Result</dt><dd>In 24&nbsp;days: 167&nbsp;commits, 6&nbsp;new case pages, big changes via preview branches. Pages got up to 10× lighter; eleven mistakes became rules.</dd></div></dl>
+  </header>
+  <div class="prose wrap">
+<p class="reveal">This page shows how I build and run my portfolio with Claude Code: where AI works, where I decide, and how I check the result before it goes live.</p>
+<h2 class="reveal">Context</h2>
+<p class="reveal">I’m a product designer, not a developer. The first version of this site came from another AI tool in early October. From 8&nbsp;October I moved the work to Claude Code in the Claude app, with GitHub for the code and Cloudflare Workers for deploys and branch previews.</p>
+<p class="reveal">The split held all month. Claude writes all HTML, CSS and JS, converts images, measures layouts, commits and merges after my “ok”. I set the goals, choose between options, confirm every fact and review most visuals on my phone through Remote Control.</p>
+<p class="reveal">Four concept cases, Torba, Shtamp, Mira and Zgoda, I built from scratch the same way: their screens are HTML made in Claude Code, without opening Figma.</p>
+<h2 class="reveal">Constraints</h2>
+<ul class="reveal"><li><strong>I’m not a developer.</strong> I judge the result by previews and screenshots, not by the code.</li><li><strong>I review on my phone.</strong> Most checks happen on a 375px screen, away from the desk.</li><li><strong>Each session starts fresh.</strong> Several Claude Code sessions worked on the site; none remembers the others.</li><li><strong>Facts must stay true.</strong> Metrics and team details can’t be filled in by a model.</li></ul>
+<h2 class="reveal">Process</h2>
+<p class="reveal"><strong>CLAUDE.md, the project memory.</strong> Every session reads it before a change: workflow, design tokens, content rules, checks before “done” and the mistakes that already happened. Since 15&nbsp;October it has changed in 13&nbsp;commits. Its token section came from an audit that found 22 font sizes and 17 hand-written colours; the site now uses 7&nbsp;sizes.</p>
+<div class="media reveal"><figure class="fig"><img src="img/ai-workflow/claude-md.webp" alt="An excerpt of CLAUDE.md: the workflow with the owner, with branch, preview, “ok” and merge, and four entries from the list of mistakes that already happened" width="2048" height="880" loading="lazy" decoding="async"><figcaption>Rules written after real mistakes, read by every session</figcaption></figure></div>
+<p class="reveal"><strong>The release cycle.</strong> Small fixes go straight to main when I say so. Anything bigger gets a branch, a preview link and phone screenshots, and merges only after my “ok”. Then Claude checks the live site.</p>
+<h2 class="reveal">Key decisions</h2>
+<h3 class="reveal">One typeface or a pair?</h3>
+<p class="reveal">Claude proposed rounds of serif italics, then one family for the whole site, then four grotesques. I suggested a Mona Sans and Geist pair; Claude advised against it, and I agreed. I chose Mona Sans everywhere, with wider headings. The cost: the hero title broke into four lines, so its minimum size dropped to 34px and “actually use.” never wraps.</p>
+<h3 class="reveal">Two “Email me” buttons on one screen?</h3>
+<p class="reveal">Options: show the header button only after scrolling, change the hero button to “See work”, or hide the header button on phones. I chose the first two together. The cost: extra code in motion.js, one more commit when the hidden button left a gap, and a possible flicker on load.</p>
+<h2 class="reveal">Mistakes that became rules</h2>
+<p class="reveal">I found most of these on my phone. Each became a line in CLAUDE.md, so the next session doesn’t repeat it.</p>
+<ul class="reveal"><li><strong>Broken characters on the live site.</strong> “·” turned into “&Acirc;·”. Rule: build special characters from codes and scan every file for broken encoding after each edit.</li><li><strong>A result cut in half.</strong> The Live Quiz result ended at “…12–”. Rule: no joining strings inside a PowerShell array.</li><li><strong>An extra 48px above About.</strong> I asked why the gap looked bigger; Claude measured 168px instead of 120. Rule: check the real gap between neighbours.</li><li><strong>Arrows on the baseline.</strong> Rule: only SVG arrows, centred on the type.</li><li><strong>A hidden button kept its space.</strong> Rule: a hidden element gives its width back.</li></ul>
+<h2 class="reveal">AI as a critic: what I accepted, what I rejected</h2>
+<p class="reveal">Once, Claude reviewed the live site in one pass with four skills: design-critique, impeccable (critique), design-taste-frontend and review-animations. It saw the home page and one case.</p>
+<p class="reveal">I accepted most of its ten notes: one system for case covers, the lead case first, concepts apart, our own accent instead of Tailwind’s, a bigger hero, a CV link. I kept the italic and the dark cards. A week later the concepts went back into one list.</p>
+<div class="media reveal"><figure class="fig"><img src="img/ai-workflow/before-after.webp" alt="Selected work before and after the critique: seven cards of one weight with mixed cover styles and a lone last card, then the lead case full width, covers in each product’s colour and concepts in their own group" width="2048" height="2272" loading="lazy" decoding="async"><figcaption>One cover system, the lead case first</figcaption></figure></div>
+<p class="reveal">One note was wrong. Two text columns in cases took three iterations; on my screenshots the text looked shifted, and I moved it back to the left edge. The new rule: critique every page, and check layout advice on a phone before merging.</p>
+<h2 class="reveal">What I don’t delegate</h2>
+<ul class="reveal"><li><strong>Choices.</strong> Claude brings options with a recommendation; I pick, and sometimes undo my own pick after seeing it on desktop.</li><li><strong>Facts.</strong> I confirm the team, the shared design system and every metric; the metrics come from my screenshot of the company’s site.</li><li><strong>The visual check.</strong> Claude measures, checks links and scans encoding. How it looks on a real phone is mine to judge.</li><li><strong>The final “ok”.</strong> Nothing big reaches main without it.</li></ul>
+<h2 class="reveal">Result</h2>
+<div class="stats reveal"><p class="stats__kicker"><strong>Repository numbers.</strong> From git, 6–&#8288;29&nbsp;October 2026.</p><div class="stats__grid"><div class="stat"><p class="stat__value">167</p><p class="stat__label">commits on main, 117 co-signed by Claude</p></div><div class="stat"><p class="stat__value">35</p><p class="stat__label">branches besides main</p></div><div class="stat"><p class="stat__value">6</p><p class="stat__label">new case pages</p></div><div class="stat"><p class="stat__value">4.14<span class="stat__arrow"><svg viewBox="4 4 16 16" aria-hidden="true" focusable="false"><path d="M5 12h14M12 5l7 7-7 7"/></svg><span class="sr-only"> to </span></span>1.36</p><p class="stat__label">MB, home page with images</p></div></div></div>
+<p class="reveal">Images moved to WebP. The code itself grew, from 14 to 64&nbsp;KB of CSS and JS, as the token system and motion came in. Co-signed commits name Claude Opus 5.5 (112) and Sonnet 5.5 (5). Not measured: how long one change takes from my message to the live site.</p>
+<div class="media reveal"><figure class="fig"><img src="img/ai-workflow/page-weight.webp" alt="Bar chart of page weight on 7 and 29 October: home 4.14 to 1.36 MB, Live Quiz 7.92 to 0.79 MB, White-label 10.02 to 1.68 MB" width="2048" height="760" loading="lazy" decoding="async"><figcaption>Images in WebP: pages 3–10× lighter</figcaption></figure></div>
+<h2 class="reveal">What I learned</h2>
+<ul class="reveal"><li><strong>A fix in chat is forgotten; a rule in CLAUDE.md isn’t.</strong> Only the file reaches the next session.</li><li><strong>A critique is as wide as what it saw.</strong> One case reviewed meant a 90px gap and alignment issues surfaced later.</li><li><strong>My phone is the real test.</strong> Most visual bugs showed up on my screenshots, not in Claude’s checks.</li></ul>
+  </div>
+</article>
+<section class="cta wrap" aria-labelledby="cta-h">
+  <h2 class="cta__title" id="cta-h">Have a product that needs design?</h2>
+  <p class="cta__actions"><a class="btn" href="mailto:igor@voitenkodesign.com">Email me</a><a class="btn btn--ghost" href="https://www.linkedin.com/in/voitenkodesign" target="_blank" rel="noopener">LinkedIn</a></p>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap site-footer__inner">
+    <p>© 2026 Igor Voitenko<span class="local-time" hidden><span class="sep">·</span><span class="local-time__clock" tabindex="0"><span class="local-time__city">Kyiv</span> <time></time></span><span class="local-time__note" role="status"></span></span></p>
+    <p class="contact"><a href="mailto:igor@voitenkodesign.com"><img src="mail-01.svg" alt="" width="18" height="18" decoding="async">Email</a><span class="sep">·</span><a href="https://www.linkedin.com/in/voitenkodesign" target="_blank" rel="noopener"><img src="linkedin-01.svg" alt="" width="18" height="18" decoding="async">LinkedIn</a><span class="sep">·</span><a href="/cv" target="_blank" rel="noopener" data-cv><img src="cv-01.svg" alt="" width="18" height="18" decoding="async">CV</a></p>
+  </div>
+</footer>
+</body>
+</html>
