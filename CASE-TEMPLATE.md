@@ -225,7 +225,7 @@ Figma file `hML2htcfzwCFXafq3E0sh9`. Work page for exports: **White label case**
 | 8c | Solution: **Ticketing: two providers, many states** | Wallet (missing connection → tickets → season card) · Transfer strip (allow contacts → pick → confirm → done) · **Release (confirm → released) — new** · Eventii path (email → account notice) | Existing images + Release `17979:141449`, `17979:140905` (export from FCK page, not TEST) |
 | 9 | States | Transfer error toast, inbox empty, first-time QR hint, error screen | Existing `error-transferring.webp`; TEST › Inbox `17998:532074`; Wallet first-time hint `37627:162987`; TEST › Error |
 | 8d | Fan web cabinet | Keep as is, short | `fan-web-cabinet.webp` |
-| 10 | Result | Link to the FCK release article first, then stats. Allowed figures: +50% active fans · +50K MAU (over 80% of fans use the app each month) · 1.2M sessions/month · +€50K ticket and +€20K shop sales per month · no-show 40% → 15% (or "50% no-show reduction on season cards") | sportsinnovation.dk (owner’s screenshot, 2026-10-15) |
+| 10 | Result | Link to the FCK release article first, then stats. Allowed figures: +47% active fans · +50K MAU (over 80% of fans use the app each month) · 1.18M sessions/month · +€48K ticket and +€19K shop sales per month · no-show 39% → 16% (or "50% no-show reduction on season cards") | sportsinnovation.dk (owner’s screenshot, 2026-10-15) |
 | 11 | What I learned | Confirmed by the owner: provider rules shape the UX (Eventii forced an email path) · in white-label work the system is the product, one screen is a test of it · a feature used by 40% of season-card holders every match deserves its own flow, not a menu item | — |
 
 Current images — keep / replace / drop:

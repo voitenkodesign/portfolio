@@ -74,10 +74,10 @@ Breakpoints currently in use: 360, 480, 600, 700, 760, 900, 1000 (cleanup to 480
 
 - **Never invent facts, metrics, team members or quotes.** Ask the owner.
 - Company: Sports Innovation A/S (sportsinnovation.dk). Metrics come from its public site and are labelled
-  "Platform results. Product numbers, not personal ones." Correct no-show metric: **"40% → 15% no-show rate after the app
-  launch"** (also "50% no-show reduction on season cards"). +€50K ticket / +€20K shop sales per month, +50% active fans,
-  1.2M sessions/month, 87% open rate on segmented messages, 13% / 14% offer metrics, Live Quiz: 313 fans at AC Horsens,
-  12–30% participation. Public links to Sports Innovation case articles are allowed.
+  "Platform results. Product numbers, not personal ones." Correct no-show metric: **"39% → 16% no-show rate after the app
+  launch"** (also "50% no-show reduction on season cards"). +€48K ticket / +€19K shop sales per month, +47% active fans,
+  1.18M sessions/month, 87% open rate on segmented messages, 13% / 14% offer metrics, Live Quiz: 313 fans at AC Horsens,
+  12–29% participation. (Exact figures confirmed with the former team; earlier round numbers are retired.) Public links to Sports Innovation case articles are allowed.
 - Team in case facts: **"2 designers, project manager, developers, QA"** (there was a second designer, Edgaras).
   The design system was **co-owned with a second designer** — never "I built it alone". Keel is a **solo concept**.
 - Role everywhere: "UI/UX & Product Designer". Domains: "SportTech · …", "FinTech · …".
