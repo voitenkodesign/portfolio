@@ -106,8 +106,9 @@ Case structure: see CASE-TEMPLATE.md (block order, HTML patterns, image and writ
    pager, CTA, footer with the Kyiv clock.
 4. **Home** (`index.html`): add a card in `.cards` (client work) or the second `.cards` under "Concepts" — cover, `card__meta` ("Domain<span class="sep">·</span>Platform"),
    title link, one-line description, "View case".
-5. **Pager chain**: update Previous/Next on the neighbouring case pages so the order stays continuous; last case links to
-   `other-work.html`.
+5. **Pager chain**: Previous/Next follow the order of the cards on the home page exactly. The first case has no
+   Previous, the last home case has no Next. Cases listed on `other-work.html` chain in their own card order; the first and
+   last link "Back to" Other work instead of Previous/Next.
 6. **sitemap.xml** (add the URL) and the pages table in **README.md**.
 7. **Verify** (section 8), push the branch, send the preview URL + phone screenshots, wait for "ок", merge ff-only.
 
