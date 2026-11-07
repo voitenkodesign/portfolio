@@ -432,7 +432,7 @@ strong { color: var(--title); font-weight: 600; }
 
 /* Case pages — left-aligned in a 1120px content column: title, facts, summary, then numbered section rows;
    body text 640px; images run the full content width. */
-.case-hero, .prose, .pager, .cta { max-width: calc(var(--case) + 2 * var(--s-5)); }
+.case-hero, .prose, .pager, .cta, .case > .section { max-width: calc(var(--case) + 2 * var(--s-5)); }
 .case-hero { padding-top: var(--s-8); padding-bottom: 0; }
 .case-hero h1 { font-size: var(--fs-display); line-height: var(--lh-tight); letter-spacing: var(--ls-display); max-width: 22ch; }
 .case-hero > * { animation: rise var(--dur-slow) var(--ease-out) both; }

@@ -16,10 +16,10 @@ Static portfolio site: plain HTML + one shared `styles.css`. No framework, no np
 | `design-system.html` | 07. Design system for multi-brand club apps |
 | `zgoda-team-onboarding-billing.html` | 08. Zgoda — a team’s first two weeks, from sign-up to a second person (concept, not shipped) |
 | `live-quiz.html` | 09. Live Quiz for match-day engagement |
-| `personalized-offers.html` | 10. Personalized offers and voucher flows |
-| `keel-ai-financial-management.html` | 11. Keel — AI Financial Management (concept, not shipped) |
-| `3f-superliga.html` | 12. 3F Superliga website |
-| `other-work.html` | Other work (visual and marketing work) |
+| `personalized-offers.html` | Personalized offers and voucher flows (listed on Other work) |
+| `keel-ai-financial-management.html` | Keel — AI Financial Management (concept, not shipped; listed on Other work) |
+| `3f-superliga.html` | 3F Superliga website (listed on Other work) |
+| `other-work.html` | Other work: three more case studies (cards) and visual and marketing work |
 | `ai-workflow.html` | How I work with AI — Claude Code builds, I decide and check (not a numbered case: linked from the home hero, not in cards or the pager) |
 | `404.html` | Not-found page |
 
